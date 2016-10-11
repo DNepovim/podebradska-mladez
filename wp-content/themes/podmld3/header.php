@@ -11,17 +11,12 @@
     <!-- Title -->
     <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/dist/css/bootstrap.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/dist/styles.min.css">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/dist/css/bootstrap-theme.min.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen"/>
 
     <?php wp_head(); ?>
 
@@ -33,4 +28,4 @@
 <body <?php body_class(); ?>>
 
     <div class="container">
-	<?php include_once("analyticstracking.php") ?>
+	<?php include_once( "analyticstracking.php" ) ?>

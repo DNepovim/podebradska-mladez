@@ -1,4 +1,8 @@
 <?php
+// DEFINE CPT
+require_once 'src/cpt/define.php';
+require_once 'src/cpt/meta.php';
+
 // MENU
 add_action('init', 'register_my_menus');
 

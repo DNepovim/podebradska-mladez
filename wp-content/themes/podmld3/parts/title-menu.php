@@ -5,7 +5,7 @@
             <!--Title-->
             <h1><?php bloginfo( 'name' ); ?></h1>
             <!--Logo-->
-            <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/img/ryba.png">
+            <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ryba.png">
             <!--Description-->
             <h2><?php bloginfo( 'description' ); ?></h2>
             <!--Menu-->

@@ -1,5 +1,5 @@
 <?php get_header();
-include 'title-menu.php'; ?>
+include 'parts/title-menu.php'; ?>
 <div class="invitation">
 	<div class="col-md-5">
 		<?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>

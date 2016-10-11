@@ -1,7 +1,7 @@
 <!--HEADER-->
 <?php get_header(); ?>
 <!--MENU-->
-<?php include 'title-menu.php'?>
+<?php include 'parts/title-menu.php' ?>
 <!--PAGE-->
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="col-md-10 page single">

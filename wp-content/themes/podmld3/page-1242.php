@@ -1,7 +1,7 @@
 <!--HEADER-->
 <?php get_header(); ?>
 <!--MENU-->
-<?php include 'secret-menu.php'?>
+<?php include 'parts/secret-menu.php' ?>
 <!--PAGE-->
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="col-md-7 page single">
