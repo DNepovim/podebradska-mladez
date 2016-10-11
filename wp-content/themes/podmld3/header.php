@@ -17,9 +17,6 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/dist/css/bootstrap-theme.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="<?php echo get_stylesheet_directory_uri() ?>/dist/js/bootstrap.min.js"></script>
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
