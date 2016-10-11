@@ -1,3 +1,6 @@
+wp-content/themes/podmld3/dist
+node_modules
+
 .idea
 *.log
 wp-config.php
@@ -10,3 +13,4 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
+
