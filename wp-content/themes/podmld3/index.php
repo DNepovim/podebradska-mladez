@@ -18,7 +18,6 @@
 	); ?>
 	<?php $events = get_posts( $args ); ?>
 	<?php $event = $events[0]; ?>
-	<?php bdump($event); ?>
 
 	<div class="col-md-5 invitation">
 		<div class="invitation__image">
