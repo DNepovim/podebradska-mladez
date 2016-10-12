@@ -6,8 +6,7 @@
 	<?php
 	$args = array(
 		'post_type'  => 'events',
-		'post_count' => 1,
-		'order'      => 'ASC',
+		'offset' => 1,
 		'meta_query' => array(
 			array(
 				'key'     => 'pm_end_date',
@@ -16,20 +15,19 @@
 			)
 		)
 	); ?>
-	<?php query_posts( $args ); ?>
-	<?php the_post(); ?>
+	<?php $event = get_posts($args)[0]; ?>
 
 	<div class="col-md-5 invitation">
 		<div class="image">
-			<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'blog', array( 'class' => 'img-responsive' ) ); ?></a>
+			<a href="<?php $event->the_permalink ?>"><?php echo get_the_post_thumbnail($event, 'blog', array( 'class' => 'img-responsive' ) ); ?></a>
 		</div>
 		<div class="text">
-			<?php the_content() ?>
+			<?php echo $event->post_content ?>
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="map">
-			<?php $map_post_id = get_post_meta( get_the_ID(), 'pm_position', true ); ?>
+			<?php $map_post_id = get_post_meta( $event->ID, 'pm_position', true ); ?>
 			<?php echo get_post_meta( $map_post_id, 'pm_position', true ) ?>
 		</div>
 	</div>
@@ -39,7 +37,15 @@
 	<div class="col-md-3">
 		<div class="calendar">
 			<p class="popis">Další akce:</p>
-			<?php echo do_shortcode( '[pt_view id="d6f2fd52d0"]' ); ?>
+			<?php get_posts() ?>
+			<table>
+				<tbody>
+				<tr>
+					<td class="name">Podzimní SDM</td>
+					<td class="date">11. - 13. 11.</td>
+				</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 
