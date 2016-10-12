@@ -6,7 +6,8 @@
 	<?php
 	$args = array(
 		'post_type'  => 'events',
-		'offset'     => 1,
+		'offset'     => 0,
+		'order' => 'ASC',
 		'meta_query' => array(
 			array(
 				'key'     => 'pm_end_date',
@@ -15,7 +16,9 @@
 			)
 		)
 	); ?>
-	<?php $event = get_posts( $args )[0]; ?>
+	<?php $events = get_posts( $args ); ?>
+	<?php $event = $events[0]; ?>
+	<?php bdump($event); ?>
 
 	<div class="col-md-5 invitation">
 		<div class="invitation__image">
@@ -37,21 +40,9 @@
 	<div class="col-md-5">
 		<div class="calendar">
 			<p class="calendar__popis popis">Další akce:</p>
-			<?php
-			$args = array(
-				'post_type'  => 'events',
-				'meta_query' => array(
-					array(
-						'key'     => 'pm_end_date',
-						'value'   => get_post_meta( $event->ID, 'pm_end_date', true ),
-						'compare' => '>',
-					)
-				)
-			); ?>
-			<?php $calendar = get_posts( $args ); ?>
 			<table class="calendar__table">
 				<tbody>
-				<?php foreach ( $calendar as $item ): ?>
+				<?php foreach ( array_slice($events, 1) as $item ): ?>
 					<?php
 					$start = strtotime(get_post_meta($item->ID, 'pm_start_date', true));
 					$end = strtotime(get_post_meta($item->ID, 'pm_end_date', true));
