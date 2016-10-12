@@ -1,0 +1,122 @@
+.navigation {
+  background-color: @brand;
+  &__title,
+  &__subtitle {
+    color: @blank;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  &__title {
+    padding-top: 20px;
+    letter-spacing: 0.4em;
+    padding-left: 7px;
+    font-size: 20px;
+  }
+  &__subtitle {
+    padding-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+  &__link {
+    transition: background-color 0.25s ease-in-out;
+    &:hover {
+      background-color: @brand;
+    }
+    &,
+    &:hover,
+    &:active,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+  & .secret {
+    background-color: @secret;
+  }
+  &__img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__menu {
+    padding: 0;
+    &__list {
+      list-style: none;
+      margin: 0 20px;
+      padding: 0;
+      & li {
+        text-align: center;
+        border-top: white solid 2px;
+        & a {
+          line-height: 1.5em;
+          display: block;
+          color: @blank;
+          font-size: 20px;
+          font-variant: small-caps;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__links {
+    margin-top: 20px;
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      color: @brand;
+    }
+
+    &__item {
+      text-align: center;
+      border-left: solid rgba(59, 129, 0, 0.68) 2px;
+      border-right: solid rgba(59, 129, 0, 0.68) 2px;
+      border-top: solid rgba(59, 129, 0, 0.68) 1px;
+      border-bottom: solid rgba(59, 129, 0, 0.68) 1px;
+
+      & a {
+        transition: background-color 0.25s ease-in-out;
+        line-height: 1.5em;
+        display: block;
+        color: @black;
+        font-variant: small-caps;
+        font-weight: bold;
+        background-color: @text-background;
+
+        &:hover {
+          background-color: @brand;
+        }
+
+        &,
+        &:hover,
+        &:active,
+        &:visited {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__link {
+    margin: 0;
+    font-size: 7px;
+    color: @brand;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+
+    & a {
+      color: @brand;
+
+      &:hover {
+        color: @gray;
+        background-color: @text-background;
+      }
+
+      &,
+      &:hover,
+      &:active,
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}

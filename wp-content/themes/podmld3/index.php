@@ -31,12 +31,12 @@
 			<?php echo get_post_meta( $map_post_id, 'pm_position', true ) ?>
 		</div>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-5">
 		<?php echo do_shortcode( '[pt_view id="ea205c204c"]' ); ?>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-5">
 		<div class="calendar">
-			<p class="popis">Další akce:</p>
+			<p class="calendar__popis popis">Další akce:</p>
 			<?php
 			$args = array(
 				'post_type'  => 'events',
@@ -49,7 +49,7 @@
 				)
 			); ?>
 			<?php $calendar = get_posts( $args ); ?>
-			<table>
+			<table class="calendar__table">
 				<tbody>
 				<?php foreach ( $calendar as $item ): ?>
 					<?php
@@ -62,8 +62,8 @@
 					}
 					?>
 					<tr>
-						<td class="name"><?php echo $item->post_title; ?></td>
-						<td class="date"><?php echo $date; ?></td>
+						<td class="calendar__name"><?php echo $item->post_title; ?></td>
+						<td class="calendar__date"><?php echo $date; ?></td>
 					</tr>
 				<?php endforeach; ?>
 				</tbody>
