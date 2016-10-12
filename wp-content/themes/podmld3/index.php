@@ -6,7 +6,7 @@
 	<?php
 	$args = array(
 		'post_type'  => 'events',
-		'offset' => 1,
+		'offset'     => 1,
 		'meta_query' => array(
 			array(
 				'key'     => 'pm_end_date',
@@ -15,11 +15,11 @@
 			)
 		)
 	); ?>
-	<?php $event = get_posts($args)[0]; ?>
+	<?php $event = get_posts( $args )[0]; ?>
 
 	<div class="col-md-5 invitation">
 		<div class="image">
-			<a href="<?php $event->the_permalink ?>"><?php echo get_the_post_thumbnail($event, 'blog', array( 'class' => 'img-responsive' ) ); ?></a>
+			<a href="<?php $event->the_permalink ?>"><?php echo get_the_post_thumbnail( $event, 'blog', array( 'class' => 'img-responsive' ) ); ?></a>
 		</div>
 		<div class="text">
 			<?php echo $event->post_content ?>
@@ -37,13 +37,35 @@
 	<div class="col-md-3">
 		<div class="calendar">
 			<p class="popis">Další akce:</p>
-			<?php get_posts() ?>
+			<?php
+			$args = array(
+				'post_type'  => 'events',
+				'meta_query' => array(
+					array(
+						'key'     => 'pm_end_date',
+						'value'   => get_post_meta( $event->ID, 'pm_end_date', true ),
+						'compare' => '>',
+					)
+				)
+			); ?>
+			<?php $calendar = get_posts( $args ); ?>
 			<table>
 				<tbody>
-				<tr>
-					<td class="name">Podzimní SDM</td>
-					<td class="date">11. - 13. 11.</td>
-				</tr>
+				<?php foreach ( $calendar as $item ): ?>
+					<?php
+					$start = strtotime(get_post_meta($item->ID, 'pm_start_date', true));
+					$end = strtotime(get_post_meta($item->ID, 'pm_end_date', true));
+					if(date('m', $start) == date('m', $end)){
+						$date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
+					} else {
+						$date = date('j. n.', $start) . ' - ' . date('j. n. Y', $end);
+					}
+					?>
+					<tr>
+						<td class="name"><?php echo $item->post_title; ?></td>
+						<td class="date"><?php echo $date; ?></td>
+					</tr>
+				<?php endforeach; ?>
 				</tbody>
 			</table>
 		</div>
