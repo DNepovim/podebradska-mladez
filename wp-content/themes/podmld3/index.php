@@ -18,10 +18,10 @@
 	<?php $event = get_posts( $args )[0]; ?>
 
 	<div class="col-md-5 invitation">
-		<div class="image">
-			<a href="<?php $event->the_permalink ?>"><?php echo get_the_post_thumbnail( $event, 'blog', array( 'class' => 'img-responsive' ) ); ?></a>
+		<div class="invitation__image">
+			<a class="invitation__link" href="<?php $event->the_permalink ?>"><?php echo get_the_post_thumbnail( $event, 'blog', array( 'class' => 'img-responsive' ) ); ?></a>
 		</div>
-		<div class="text">
+		<div class="invitation__text text">
 			<?php echo $event->post_content ?>
 		</div>
 	</div>

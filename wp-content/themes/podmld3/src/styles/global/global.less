@@ -4,6 +4,37 @@ html, body {
   font-weight: 300;
 }
 
+iframe {
+  width: 100%;
+}
+
+a {
+  transition: color 0.25s ease-in-out;
+  color: @gray;
+  text-decoration: underline;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: @brand;
+  }
+}
+
 .title {
   font-size: 3rem;
+}
+
+
+p.popis {
+  color: @brand;
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+
+.text {
+  padding: 10px;
 }

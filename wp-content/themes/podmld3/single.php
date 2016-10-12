@@ -8,10 +8,10 @@
         <!--title-->
         <h1><?php the_title(); ?></h1>
         <!--content-->
-        <div class="col-md-5 text">
+        <div class="col-md-5 single__text text">
             <?php the_content(__('Read more...', 'theme')); ?>
         </div>
-        <div class="col-md-5 image">
+        <div class="col-md-5 single__image image">
             <?php the_post_thumbnail('blog',array('class'=>'img-responsive')); ?>
         </div>
     </div>
