@@ -1,0 +1,17 @@
+extends layouts/default
+
+block content
+  - if (have_posts()):
+    - while (have_posts()) : the_post();
+      .col-md-7.page.single
+        .text=the_content()
+    - endwhile;
+  - else:
+    .col-md-10.page.single
+      h1='Error 404 - Not Found'
+      .text='Stránka, kterou hledáte, zde není...'
+  - endif;
+    .col-md-3 drive'
+      a.vtajne(href='https://drive.google.com/folderview?id=0B8vvlzr1LcJZS2FneVhzZzZrZDQ&usp=sharing')
+      h1='Google Drive'
+      iframe(src='https://drive.google.com/embeddedfolderview?id=0B8vvlzr1LcJZS2FneVhzZzZrZDQ#list', height='600', frameborder='0',  scrolling=no)

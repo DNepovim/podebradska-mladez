@@ -1,0 +1,17 @@
+extends layouts/default
+
+block content
+  - if (have_posts()):
+    - while (have_posts()) : the_post()
+      .single
+        h1(class=the_title())
+        .col-md-5.single__text.text=the_content('Read more...')
+        .col-md-5.single__image.image
+          -the_post_thumbnail('blog',array('class'=>'img-responsive'))
+    - endwhile
+  - else:
+    div
+      h1='Error 404 - Not Found'
+    .text
+      p='Stráka, kterou hledáte zde není...'
+  - endif

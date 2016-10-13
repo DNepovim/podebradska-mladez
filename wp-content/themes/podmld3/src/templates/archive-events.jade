@@ -1,0 +1,36 @@
+extends layouts/default
+
+block content
+  .invitation
+    .col-md-5
+      - $i = 0
+      - if (have_posts()):
+        - while(have_posts()):
+          - $i++
+          - if(($i % 2) == 0):
+            - $wp_query->next_post()
+          - else :
+            - the_post()
+            a(href=the_permalink())=the_post_thumbnail('blog',array('class'=>'img-responsive'))
+          - endif
+        - endwhile
+      - else:
+          div='Nic zde není...'
+      - endif
+
+    - $i = 0
+    - rewind_posts()
+    .col-md-5
+      - if (have_posts()):
+        - while(have_posts()):
+          - $i++
+          - if(($i % 2) !== 0):
+            - $wp_query->next_post()
+          - else:
+            - the_post()
+            a(href=the_permalink())=the_post_thumbnail('blog',array('class'=>'img-responsive'))
+          - endif;
+        - endwhile
+      - else:
+        div='Nic zde není...'
+      - endif
