@@ -1,0 +1,40 @@
+.col-md-2
+  .navigation
+    a.navigation__link(href=home_url( '/' ), title=esc_attr(get_bloginfo('name','display')), rel='home')
+      h1.navigation__title=bloginfo( 'name' )
+      img.navigation__img.img-responsive(src=get_stylesheet_directory_uri() + '/dist/images/ryba.png')
+      h2.navigation__subtitle=bloginfo( 'description' )
+      .navigation__menu
+        | <?php
+        | $args = array(
+        |   'menu_class' => 'navigation__menu__list',
+        |   'container' => 'nav',
+        |   'container_class' => 'navigation__menu__container',
+        |   'depth' => 1,
+        |   'theme_location' => 'title-menu'
+        | ); ?>
+        - if (has_nav_menu('title-menu')) :
+          - wp_nav_menu($args)
+        - endif
+  .navigation__links
+    ul.navigation__links__list
+      | E-mail:
+      li.navigation__links__item
+        a(href='https://groups.google.com/forum/?hl=cs#!forum/info-podebradska-mladez' target='_blank')='Informace o akcích'
+      li.navigation__links__item
+        a(href=home_url( '/' ) + '?page_id=3378')='Napište somu'
+    ul.navigation__links__list
+      | Odkazy:
+      li.navigation__links__item
+        a(href='http://mladez.evangnet.cz', target='_blank')='Mládež ČCE'
+      li.navigation__links__item
+        a(href='http://podebradsky-seniorat.evangnet.cz', target='_blank')='Poděbradský seniorát'
+      li.navigation__links__item
+        a(href='http://www.e-cirkev.cz', target='_blank')='ČCE'
+      li.navigation__links__item
+        a(href='https://www.evangnet.cz', target='_blank')='Evangnet'
+    p.navigation__link
+      a(href='http://podebradska-mladez.evangnet.cz/wp-login.php')='Login'
+      a(href='http://podebradska-mladez.evangnet.cz/?page_id=1242')='Secure'
+    p.navigation__link
+      a(href='http://www.dombl.cz', target='_blank')='Dominik Bláha'

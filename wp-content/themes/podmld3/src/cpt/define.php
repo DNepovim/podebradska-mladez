@@ -32,5 +32,18 @@ function create_post_type()
 			)
 		)
 	);
+
+	register_post_type('participants',
+		array(
+			'labels' => array(
+				'name' => __('Přihlášení'),
+			),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array(
+				'title',
+			)
+		)
+	);
 }
 
