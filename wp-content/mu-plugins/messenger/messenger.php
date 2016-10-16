@@ -112,6 +112,9 @@ if ( $postback == 'REGISTER' ) {
                 "type":"web_url",
                 "url":"https://beta-podebradska-mladez.evangnet.cz",
                 "title":"Víc informací"
+              },
+			{
+				"type":"element_share"
               }
             ]
           }
