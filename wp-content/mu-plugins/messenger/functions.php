@@ -105,9 +105,26 @@ function sendText( $sender, $text ) {
 	send( $jsonData );
 }
 
+function sendImage( $sender, $image ) {
+	$jsonData = '{
+		"recipient":{
+            "id":"' . $sender . '"
+        },
+        "message":{
+          "attachment":{
+            "type":"image",
+            "payload":{
+              "url":"' . $image . '"
+            }
+          }
+        }
+	}';
+	send( $jsonData );
+}
+
 function sendInvitationCard( $sender, $event ) {
 	$thumb_id  = get_post_thumbnail_id( $event->ID );
-	$thumb_url = wp_get_attachment_image_src( $thumb_id )[0];
+	$thumb_url = wp_get_attachment_image_src( $thumb_id, 'invitation' )[0];
 
 	$start = strtotime( get_post_meta( $event->ID, 'pm_start_date', true ) );
 	$end   = strtotime( get_post_meta( $event->ID, 'pm_end_date', true ) );
@@ -139,8 +156,8 @@ function sendInvitationCard( $sender, $event ) {
         "elements":[
           {
             "title":"' . $event->post_title . ' | ' . $date . '",
-            "item_url":"' . get_home_url() . '",
             "image_url":"' . $thumb_url . '",
+            "item_url":"' . get_home_url() . '",
             "subtitle":"",
             "buttons":[
               {
@@ -149,10 +166,9 @@ function sendInvitationCard( $sender, $event ) {
                 "payload":"REGISTER"
               },
               {
-                "type":"web_url",
-                "url":"https://beta-podebradska-mladez.evangnet.cz",
-                "webview_height_ratio": "tall",
-                "title":"Chci víc informací"
+                "type":"postback",
+                "title":"Ukaž mi pozvánku",
+                "payload":"SEND_INV"
               },
 			  {
 				"type":"element_share",

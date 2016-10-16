@@ -32,5 +32,15 @@ if ( $postback == 'REGISTER' ) {
 	}
 
 } elseif ( invitationRequest($input) ) {
+
 	sendInvitationCard($sender, $nextEvent);
+
+} elseif ( $postback == 'SEND_INV') {
+
+	$thumb_id  = get_post_thumbnail_id( $nextEvent->ID );
+	$thumb_url = wp_get_attachment_image_src( $thumb_id, 'invitation' )[0];
+
+	sendImage($sender, $thumb_url);
+
 }
+
