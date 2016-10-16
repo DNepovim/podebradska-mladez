@@ -100,7 +100,7 @@ if ( $postback == 'REGISTER' ) {
             "image_url":"' . $thumb_url . '",
             "subtitle":"' . $userID . '",
             "buttons":[';
-	if ( !isUserRegistered( $userID ) ) {
+	if ( ! isUserRegistered( $userID, $nextEvent->ID ) ) {
 		$jsonData .= '{
                 "type":"postback",
                 "title":"Přihlásit se",
@@ -108,8 +108,8 @@ if ( $postback == 'REGISTER' ) {
               },';
 	}
 	$jsonData .=
-		'{
-	              "type":"web_url",
+			'{
+                "type":"web_url",
                 "url":"https://beta-podebradska-mladez.evangnet.cz",
                 "title":"Víc informací"
               }
@@ -148,11 +148,21 @@ function send( $data, $access_token ) {
 	}
 }
 
-function isUserRegistered( $userId ) {
+function isUserRegistered( $userID, $eventID ) {
 
 	$args = array(
-		'meta_key'   => 'participant_fb_id',
-		'meta_value' => $userId,
+		'post_type'  => 'participants',
+		'post_status' => 'private',
+		'meta_query' => array(
+			array(
+				'key'   => 'participant_fb_id',
+				'value' => $userID,
+			),
+			array(
+				'key'   => 'event_id',
+				'value' => $eventID,
+			)
+		)
 	);
 	if ( ! empty( sizeof( get_posts( $args ) ) ) ) {
 		return true;
@@ -160,4 +170,3 @@ function isUserRegistered( $userId ) {
 		return false;
 	};
 }
-
