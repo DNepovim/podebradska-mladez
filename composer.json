@@ -1,0 +1,33 @@
+{
+  "name": "dnepovim/podebradska-mladez",
+  "description": "Official web.",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "wpackagist-plugin/wp-tracy": "^1.0.5",
+    "wpackagist-plugin/meta-box": "^4.8.7",
+    "wpackagist-plugin/html-editor-syntax-highlighter": "^1.7.2",
+    "wpackagist-plugin/contact-form-7": "^4.5",
+    "wpackagist-plugin/contact-form-7-to-database-extension": "^2.10",
+    "wpackagist-plugin/threewp-activity-monitor": "^2.12",
+    "wpackagist-plugin/user-role-editor": "^4.27"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/mu-plugins/{$name}": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dominik Blaha",
+      "email": "jsem@dominikblaha.cz"
+    }
+  ]
+}
