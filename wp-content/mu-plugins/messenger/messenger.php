@@ -27,10 +27,10 @@ if ( $postback == 'REGISTER' ) {
 		sendText( $sender, $message );
 	} else {
 		registerUser( $userID, $userData, $nextEvent );
-		$message = 'Výborně! Přihlásil jsem tě a těšíme se na tebe.';
+		$message = 'Výborně! Přihlásil jsem tě a těším se na tebe.';
 		sendText( $sender, $message );
 	}
 
-} elseif ( $input['entry'][0]['messaging'][0]['message'] ) {
+} elseif ( invitationRequest($input) ) {
 	sendInvitationCard($sender, $nextEvent);
 }

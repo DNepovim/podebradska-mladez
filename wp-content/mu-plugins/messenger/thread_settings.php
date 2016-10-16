@@ -36,7 +36,11 @@ $jsonWhitelist = '{
   "whitelisted_domains" : ["https://podebradska-mladez.evangnet.cz"],
   "domain_action_type": "add"
 }';
+$jsonGreeting = '{
+ "setting_type":"greeting",
+  "greeting":{
+    "text":"Ahoj, jsem SOMBot. Budu ti posílat informace o našich akcích a můžeš se na ně přese mě i přihlásit."
+  }
+}';
 
-sendJson($jsonWhitelist, $access_token);
-
-send($jsonMenu, 'thread_settings');
+send($jsonGreeting, 'thread_settings');

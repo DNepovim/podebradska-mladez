@@ -117,6 +117,11 @@ function sendInvitationCard( $sender, $event ) {
 		$date = date( 'j. n.', $start ) . ' - ' . date( 'j. n. Y', $end );
 	}
 
+	if ( isUserRegistered( $sender, $event->ID ) ) {
+		$registrationButton = 'Už jsi přihlášen';
+	} else {
+		$registrationButton = 'Přihlaš mě';
+	}
 
 	$jsonData = '{
     "recipient":{
@@ -137,22 +142,19 @@ function sendInvitationCard( $sender, $event ) {
             "item_url":"' . get_home_url() . '",
             "image_url":"' . $thumb_url . '",
             "subtitle":"",
-            "buttons":[';
-	if ( ! isUserRegistered( $sender, $event->ID ) ) {
-		$jsonData .= '{
+            "buttons":[
+              {
                 "type":"postback",
-                "title":"Přihlaš mě",
+                "title":"' . $registrationButton . '",
                 "payload":"REGISTER"
-              },';
-	}
-	$jsonData .=
-		'{
+              },
+              {
                 "type":"web_url",
                 "url":"https://beta-podebradska-mladez.evangnet.cz",
                 "webview_height_ratio": "tall",
                 "title":"Chci víc informací"
               },
-			{
+			  {
 				"type":"element_share",
               }
             ]
@@ -164,4 +166,14 @@ function sendInvitationCard( $sender, $event ) {
 }';
 	send( $jsonData );
 
+}
+
+function invitationRequest( $input ) {
+	$message  = $input['entry'][0]['messaging'][0]['message']['text'];
+	$postback = $input['entry'][0]['messaging'][0]['postback']['payload'];
+	if ( $postback == 'START' || $postback == 'SEND_INVITATION' || strpos( $message, 'pozv' ) !== false ) {
+		return true;
+	} else {
+		return false;
+	}
 }
