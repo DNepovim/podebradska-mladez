@@ -103,7 +103,7 @@ if ( $postback == 'REGISTER' ) {
 	if ( ! isUserRegistered( $userID, $nextEvent->ID ) ) {
 		$jsonData .= '{
                 "type":"postback",
-                "title":"Přihlásit se",
+                "title":"Přihlaš mě",
                 "payload":"REGISTER"
               },';
 	}
@@ -111,7 +111,7 @@ if ( $postback == 'REGISTER' ) {
 			'{
                 "type":"web_url",
                 "url":"https://beta-podebradska-mladez.evangnet.cz",
-                "title":"Víc informací"
+                "title":"Chci víc informací (web)"
               },
 			{
 				"type":"element_share"
