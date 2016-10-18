@@ -75,11 +75,17 @@
 
     &__list {
       color: @brand;
+      font-size: 0.8rem;
     }
 
     &__item {
       text-align: center;
       border: solid @brand 1px;
+      border-bottom: none;
+
+      &:last-of-type {
+        border-bottom: solid @brand 1px;
+      }
 
       & a {
         display: block;
@@ -91,7 +97,7 @@
         transition: background-color 0.25s ease-in-out;
 
         &:hover {
-          background-color: @brand;
+          background-color: fade(@brand, 50);
         }
       }
     }
@@ -102,13 +108,16 @@
       color: @brand;
       text-align: center;
       position: relative;
+      margin: 0.2rem;
       & a {
-        margin: 0.2rem;
+        margin: 0 0.2rem;
+        padding: 0.1em 0.2rem;
         border-radius: 1em;
+        transition: background-color 300ms;
 
         &:hover {
           color: @gray;
-          background-color: @brand
+          background-color: fade(@brand, 50);
         }
       }
     }
