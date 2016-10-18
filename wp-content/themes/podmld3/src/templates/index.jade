@@ -18,7 +18,7 @@ block content
   - $events = get_posts($args)
   - $event = $events[0]
 
-  .col-md-5.invitation
+  .col-md-6.invitation
     .invitation__image.box
       a.invitation__link(href='<?php echo $event->the_permalink ?>')
         - echo get_the_post_thumbnail($event, 'blog', array('class' => 'img-responsive'))
@@ -62,9 +62,7 @@ block content
 
   .col-md-5
     .calendar
-      p.calendar__popis='popisDalší akce:'
-      table.calendar__table
-        tbody
+      p.calendar__popis='Další akce:'
         - foreach (array_slice($events, 1) as $item ):
         | <?php
         | $start = strtotime(get_post_meta($item->ID, 'pm_start_date', true));
