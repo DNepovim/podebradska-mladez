@@ -83,8 +83,13 @@
       border: solid @brand 1px;
       border-bottom: none;
 
+      &:first-of-type {
+        border-radius: @radius @radius 0 0;
+      }
+
       &:last-of-type {
         border-bottom: solid @brand 1px;
+        border-radius: 0 0 @radius @radius;
       }
 
       & a {
