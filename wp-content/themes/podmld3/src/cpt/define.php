@@ -42,6 +42,7 @@ function create_post_type()
 			'has_archive' => true,
 			'supports' => array(
 				'title',
+				'custom-fields'
 			)
 		)
 	);
