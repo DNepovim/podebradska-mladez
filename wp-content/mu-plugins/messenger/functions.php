@@ -87,6 +87,8 @@ function registerUser( $userID, $userData, $event ) {
 	$post_id = wp_insert_post( $post_information );
 
 	add_post_meta( $post_id, 'event_id', $event->ID );
+	add_post_meta( $post_id, 'participant_date', current_time( 'Y-m-d H:i' ));
+	add_post_meta( $post_id, 'participant_type', 'facebook');
 	add_post_meta( $post_id, 'participant_name', $userData->first_name );
 	add_post_meta( $post_id, 'participant_surname', $userData->last_name );
 	add_post_meta( $post_id, 'participant_gender', $userData->gender );
