@@ -3,4 +3,5 @@ dist
 
 !functions.php
 !analyticstracking.php
+!post-process.php
 !/src/cpt/*
