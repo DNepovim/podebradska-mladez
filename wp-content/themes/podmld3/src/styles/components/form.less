@@ -35,5 +35,30 @@
       background: @gray;
     }
   }
+
+  &__error {
+    display: block;
+    font-size: 0.8rem;
+    color: @error;
+    width: 100%;
+    margin: 0.2em 0;
+  }
+
+  &__message {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem 0.5rem;
+    &--success {
+      background: fade(@brand, 10);
+      color: @brand;
+      border: solid 1px @brand;
+    }
+    &--error {
+      background: fade(@error, 10);
+      color: @error;
+      border: solid 1px @error;
+    }
+  }
 }
 

@@ -10,7 +10,7 @@ block content
     |   'meta_query' => array(
     |       array(
     |           'key'     => 'pm_end_date',
-    |           'value'   => date( 'Y-m-d h:m' ),
+    |           'value'   => current_time( 'Y-m-d H:i' ),
     |           'compare' => '>',
     |       )
     |   )
@@ -44,9 +44,21 @@ block content
         - endif
       input#inputSurname.form__input(type='text', name='postSurname', required='required')
 
+      label.form__label(for='inputMail')='E-mail:'
+      - if (!empty($_GET['postMail'])):
+        span.form__error='E-mail musí být vyplněn.'
+      - endif
+      input#inputMail.form__input(type='text', name='postMail', required='required')
+
       input#submitted(type='hidden', name='submitted', value='true')
       - wp_nonce_field( 'post_nonce', 'post_nonce_field' )
       button.button.button.form__button(type='submit')='Přihlásit se'
+
+      - if ($_GET['status'] == 'success'):
+        span.form__message.form__message--success= 'Byl jsi úspěšně přihlášen.'
+      - elseif ($_GET['status'] == 'error'):
+        span.form__message.form__message--error= 'Něco se pokazilo.'
+      - endif;
 
   .col-md-5
     .calendar

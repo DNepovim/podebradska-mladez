@@ -7,12 +7,17 @@ if (isset( $_POST['submitted'])
 ) {
 
 	if (trim($_POST['postName']) === '') {
-		$err['postTitle'] = true;
+		$err['postName'] = true;
 		$hasError         = true;
 	}
 
-	if (trim( $_POST['postName']) === '') {
-		$err['postContent'] = true;
+	if (trim( $_POST['postSurname']) === '') {
+		$err['postSurname'] = true;
+		$hasError           = true;
+	}
+
+	if (trim( $_POST['postMail']) === '') {
+		$err['postMail'] = true;
 		$hasError           = true;
 	}
 
@@ -21,6 +26,7 @@ if (isset( $_POST['submitted'])
 		foreach ($err as $key => $value) {
 			$query .= $key . '=' . $value . '&';
 		}
+		$query .= 'status=error';
 		wp_redirect(home_url($query));
 		exit;
 	}
@@ -36,10 +42,14 @@ if (isset( $_POST['submitted'])
 	$post_id = wp_insert_post($post_information);
 
 	add_post_meta($post_id,'event_id',$_POST['postID']);
+	add_post_meta($post_id,'participant_date',current_time( 'Y-m-d H:i' ));
+	add_post_meta($post_id,'participant_type','web');
 	add_post_meta($post_id,'participant_name',$_POST['postName']);
 	add_post_meta($post_id,'participant_surname',$_POST['postSurname']);
+	add_post_meta($post_id,'participant_mail',$_POST['postMail']);
 
 	if ($post_id) {
-		wp_redirect(home_url());
+		$query = '?status=success';
+		wp_redirect(home_url($query));
 	}
 }
