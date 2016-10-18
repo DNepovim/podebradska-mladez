@@ -4,6 +4,10 @@ html, body {
   font-weight: 300;
 }
 
+::selection {
+  background: fade(@brand, 50);
+}
+
 iframe {
   width: 100%;
 }
@@ -13,14 +17,21 @@ a {
   color: @gray;
   text-decoration: underline;
 
+  &,
   &:hover,
-  &:active {
+  &:active,
+  &:visited {
     text-decoration: none;
   }
 
   &:hover {
     color: @brand;
   }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .title {
@@ -30,11 +41,16 @@ a {
 
 p.popis {
   color: @brand;
-  margin-top: 20px;
   margin-bottom: 0;
   font-weight: bolder;
 }
 
 .text {
-  padding: 10px;
+  padding: 10px 0;
+}
+
+.box {
+  margin-top: 20px;
+  border-radius: @radius;
+  overflow: hidden;
 }

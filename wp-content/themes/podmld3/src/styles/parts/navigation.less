@@ -1,28 +1,24 @@
 .navigation {
-  background-color: @brand;
+  text-align: center;
   &__title,
   &__subtitle {
     color: @blank;
-    text-align: center;
-    text-transform: uppercase;
     font-weight: bolder;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0.7rem 0;
   }
   &__title {
-    padding-top: 20px;
-    letter-spacing: 0.4em;
-    padding-left: 7px;
-    font-size: 20px;
+    font-size: 1.1rem;
   }
   &__subtitle {
-    padding-bottom: 10px;
-    font-size: 12px;
-    letter-spacing: 0.1em;
+    font-size: 0.7rem;
   }
   &__link {
+    display: block;
+    background-color: @brand;
     transition: background-color 0.25s ease-in-out;
-    &:hover {
-      background-color: @brand;
-    }
     &,
     &:hover,
     &:active,
@@ -34,25 +30,42 @@
     background-color: @secret;
   }
   &__img {
-    margin-left: auto;
-    margin-right: auto;
+    width: 90%;
+    margin: 0 5%;
+    padding: 0;
   }
   &__menu {
+    margin: 0;
     padding: 0;
     &__list {
-      list-style: none;
-      margin: 0 20px;
-      padding: 0;
+      margin: 0;
       & li {
         text-align: center;
-        border-top: white solid 2px;
+        margin-top: 2px;
         & a {
-          line-height: 1.5em;
           display: block;
           color: @blank;
+          background: @brand;
           font-size: 20px;
           font-variant: small-caps;
           text-decoration: none;
+          line-height: 1.5em;
+          border: solid 1px @brand;
+          transition: color 300ms, background 300ms;
+
+          &[rel='home'] {
+            display: none;
+          }
+
+          &:hover {
+            color: @brand;
+            background: transparent;
+          }
+        }
+        &:last-of-type {
+          a {
+            border-radius: 0 0 @radius @radius;
+          }
         }
       }
     }
@@ -61,61 +74,42 @@
     margin-top: 20px;
 
     &__list {
-      list-style: none;
-      padding: 0;
       color: @brand;
     }
 
     &__item {
       text-align: center;
-      border-left: solid rgba(59, 129, 0, 0.68) 2px;
-      border-right: solid rgba(59, 129, 0, 0.68) 2px;
-      border-top: solid rgba(59, 129, 0, 0.68) 1px;
-      border-bottom: solid rgba(59, 129, 0, 0.68) 1px;
+      border: solid @brand 1px;
 
       & a {
-        transition: background-color 0.25s ease-in-out;
-        line-height: 1.5em;
         display: block;
         color: @black;
+        background-color: @text-background;
         font-variant: small-caps;
         font-weight: bold;
-        background-color: @text-background;
+        line-height: 1.5em;
+        transition: background-color 0.25s ease-in-out;
 
         &:hover {
           background-color: @brand;
         }
-
-        &,
-        &:hover,
-        &:active,
-        &:visited {
-          text-decoration: none;
-        }
       }
     }
   }
-  &__link {
-    margin: 0;
-    font-size: 7px;
-    color: @brand;
-    text-align: center;
-    position: relative;
-    bottom: 10px;
-
-    & a {
+  &__footer {
+    &__link {
+      font-size: 0.5rem;
       color: @brand;
+      text-align: center;
+      position: relative;
+      & a {
+        margin: 0.2rem;
+        border-radius: 1em;
 
-      &:hover {
-        color: @gray;
-        background-color: @text-background;
-      }
-
-      &,
-      &:hover,
-      &:active,
-      &:visited {
-        text-decoration: none;
+        &:hover {
+          color: @gray;
+          background-color: @brand
+        }
       }
     }
   }
