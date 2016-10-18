@@ -18,7 +18,7 @@ block content
   - $events = get_posts($args)
   - $event = $events[0]
 
-  .col-md-6.invitation
+  main.col-md-6.invitation
     .invitation__image.box
       a.invitation__link(href='<?php echo $event->the_permalink ?>')
         - echo get_the_post_thumbnail($event, 'blog', array('class' => 'img-responsive'))
