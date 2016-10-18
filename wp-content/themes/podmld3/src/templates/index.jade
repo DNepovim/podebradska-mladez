@@ -23,12 +23,31 @@ block content
       a.invitation__link(href='<?php echo $event->the_permalink ?>')
         - echo get_the_post_thumbnail($event, 'blog', array('class' => 'img-responsive'))
     .invitation__text.text
-      = $event -> post_content
+      = $event->post_content
   .col-md-4
     .map
       - $map_post_id = get_post_meta($event->ID,'pm_position',true)
       - echo get_post_meta($map_post_id, 'pm_position', true)
+
   .col-md-5
+    form#registerForm.form(action=bloginfo('template_directory') + '/post-process.php', method='POST')
+      input#postID.form__input(type='hidden', name='postID', value='<?php echo $event->ID; ?>')
+      label.form__label(for='postName')='Jméno:'
+        - if (!empty($_GET['postName'])):
+          span.form__error='Jméno musí být vyplněno.'
+        - endif
+      input#postName.form__input(type='text', name='postName', required='required')
+
+      label.form__label(for='inputSurname')='Příjmení:'
+        - if (!empty($_GET['postSurname'])):
+          span.form__error='Příjmení musí být vyplněno.'
+        - endif
+      input#inputSurname.form__input(type='text', name='postSurname', required='required')
+
+      input#submitted(type='hidden', name='submitted', value='true')
+      - wp_nonce_field( 'post_nonce', 'post_nonce_field' )
+      button.button.button.form__button(type='submit')='Přidat příspěvek'
+
   .col-md-5
     .calendar
       p.calendar__popis='popisDalší akce:'
