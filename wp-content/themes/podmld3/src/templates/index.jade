@@ -61,22 +61,22 @@ block content
       - endif;
 
   .col-md-5
-    .calendar
-      p.calendar__popis='Další akce:'
-        - foreach (array_slice($events, 1) as $item ):
-        | <?php
-        | $start = strtotime(get_post_meta($item->ID, 'pm_start_date', true));
-        | $end = strtotime(get_post_meta($item->ID, 'pm_end_date', true));
-        | if(date('m', $start) == date('m', $end)){
-        |   $date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
-        | } else {
-        |   $date = date('j. n.', $start) . ' - ' . date('j. n. Y', $end);
-        | }
-        | ?>
-        tr
-          td.calendar__name=$item->post_title
-          td.calendar__date=$date
-        - endforeach
+    .calendar.box
+      p.calendar__description='Další akce:'
+        .calendar__list
+          - foreach (array_slice($events, 1) as $item ):
+            | <?php
+            | $start = strtotime(get_post_meta($item->ID, 'pm_start_date', true));
+            | $end = strtotime(get_post_meta($item->ID, 'pm_end_date', true));
+            | if(date('m', $start) == date('m', $end)){
+            |   $date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
+            | } else {
+            |   $date = date('j. n.', $start) . ' - ' . date('j. n. Y', $end);
+            | }
+            | ?>
+            .calendar__name=$item->post_title
+            .calendar__date=$date
+          - endforeach
   - endif
   - wp_reset_query()
 

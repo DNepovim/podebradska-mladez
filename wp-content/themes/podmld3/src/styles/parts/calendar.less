@@ -1,25 +1,36 @@
 .calendar {
-  margin-top: 20px;
-  font-weight: bolder;
   width: 100%;
+
+  &__list {
+    width: 100%;
+    font-size: 0;
+    border-radius: @radius;
+    overflow: hidden;
+    border: solid 1px @brand;
+  }
+
+  &__name, &__date {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+  }
 
   &__name {
     text-align: right;
-    background-color: @text-background;
-    margin: 2px;
-    padding: 2px 5px;
+    width: 60%;
   }
 
   &__date {
-    color: @black;
+    color: @blank;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
     text-align: left;
-    background-color: @text-background;
-    padding: 2px 5px;
-    margin: 2px 2px;
+    background-color: @brand;
+    width: 40%;
   }
 
-  &__popis {
-    position: relative;
-    left: -14px;
+  &__description{
+    color: @brand;
+    font-size: 0.8rem;
   }
 }
