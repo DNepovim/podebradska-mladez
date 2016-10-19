@@ -1,0 +1,25 @@
+.button {
+  display: block;
+  background: @messenger;
+  color: @blank;
+  text-align: center;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: @radius;
+  transition: background 300ms;
+
+  &:hover {
+    color: @blank;
+    background: @brand;
+  }
+
+  &__caption {
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  &__title {
+    display: block;
+    font-size: 1.2rem;
+  }
+}
