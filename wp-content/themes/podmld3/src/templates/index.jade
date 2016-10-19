@@ -72,11 +72,13 @@ block content
             - wp_nonce_field( 'post_nonce', 'post_nonce_field' )
             button.button.button.form__button(type='submit')='Přihlásit se'
 
-            - if ($_GET['status'] == 'success'):
-              span.form__message.form__message--success= 'Byl jsi úspěšně přihlášen.'
-            - elseif ($_GET['status'] == 'error'):
-              span.form__message.form__message--error= 'Něco se pokazilo.'
-            - endif;
+            - if (!empty($_GET['status'])):
+              - if ($_GET['status'] == 'success'):
+                span.form__message.form__message--success= 'Byl jsi úspěšně přihlášen.'
+              - elseif ($_GET['status'] == 'error'):
+                span.form__message.form__message--error= 'Něco se pokazilo.'
+              - endif
+            - endif
         - else:
           .form__late.box= 'Přihlašování už bylo uzavřeno.'
         - endif
