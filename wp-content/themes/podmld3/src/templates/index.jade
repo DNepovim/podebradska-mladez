@@ -31,8 +31,6 @@ block content
 
   .col-md-3
     - $register_to = get_post_meta($event->ID, 'pm_register_to', true)
-    - bdump($register_to)
-    - bdump(current_time( 'Y-m-d' ))
     - if ($register_to >= current_time( 'Y-m-d' )):
       .form__text
         = 'Přihlašujte se do ' . date('j. n. Y', strtotime($register_to))
