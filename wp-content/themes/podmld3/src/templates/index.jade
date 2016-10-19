@@ -17,7 +17,7 @@ block content
 
   - if ($events = get_posts($args)):
     - $event = $events[0]
-    main.col-md-6.invitation
+    main.col-sm-9.col-md-6.invitation
       - if (has_post_thumbnail($event)):
         .invitation__image.box
           a.invitation__link(href= get_the_post_thumbnail_url($event, 'full'))
@@ -38,12 +38,12 @@ block content
       - endif
       .invitation__text.text.box
         = $event->post_content
-    .col-md-4
+    .col-sm-10.col-sm-offset-1.col-md-4.col-md-offset-0
       .map.box
         - $map_post_id = get_post_meta($event->ID,'pm_position',true)
         - echo get_post_meta($map_post_id, 'pm_position', true)
 
-    .col-md-3
+    .col-sm-6.col-sm-offset-3.col-md-3.col-md-offset-0
       - if ($register_to = get_post_meta($event->ID, 'pm_register_to', true)):
         - if ($register_to >= current_time( 'Y-m-d' )):
           .form__text
@@ -85,7 +85,7 @@ block content
       - endif
 
     - if ($nextEvents = array_slice($events, 1)):
-      .col-md-5.col-md-offset-4
+      .col-sm-10.col-sm-offset-1.col-md-5.col-md-offset-4
         .calendar.box
           p.calendar__description='Další akce:'
             .calendar__list
@@ -105,7 +105,7 @@ block content
     - endif
     - wp_reset_query()
   - else:
-    main.col-md-6.invitation
+    main.col-sm-6.invitation
       .invitation__image.invitation__image--empty.box
         h1.invitation__title= 'Nejsou naplánované žádné akce'
         h2.invitation__subtitle= 'Zkus to později'
