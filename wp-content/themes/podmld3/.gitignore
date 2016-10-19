@@ -1,5 +1,4 @@
 dist
-*.php
 
 !functions.php
 !analyticstracking.php
