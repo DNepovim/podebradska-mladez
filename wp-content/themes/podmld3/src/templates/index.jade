@@ -65,7 +65,7 @@ block content
       - if ($register_to = get_post_meta($event->ID, 'pm_register_to', true)):
         - if ($register_to >= current_time( 'Y-m-d' )):
           .form__text
-            = 'Přihlašujte se do ' . date('j. n. Y', strtotime($register_to))
+            = 'Přihlaš se do ' . date('j. n. Y', strtotime($register_to)) . ':'
           form#registerForm.form.box(action=bloginfo('template_directory') + '/post-process.php', method='POST')
             input#postID.form__input(type='hidden', name='postID', value='<?php echo $event->ID; ?>')
             label.form__label(for='postName')='Jméno:'
