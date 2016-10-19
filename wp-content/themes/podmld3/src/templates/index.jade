@@ -20,7 +20,7 @@ block content
 
   main.col-md-6.invitation
     .invitation__image.box
-      a.invitation__link(href='<?php echo $event->the_permalink ?>')
+      a.invitation__link(href= get_the_post_thumbnail_url($event, 'full'))
         - echo get_the_post_thumbnail($event, 'blog', array('class' => 'img-responsive'))
     .invitation__text.text.box
       = $event->post_content
