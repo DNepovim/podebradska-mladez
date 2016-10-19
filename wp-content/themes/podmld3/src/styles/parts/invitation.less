@@ -1,4 +1,26 @@
 .invitation {
+  &__image {
+    &--empty {
+      text-align: center;
+      padding: 3rem 0;
+      border: solid 1px @brand;
+      border-radius: @radius;
+    }
+  }
+
+  &__title, &__subtitle {
+    color: @brand;
+    margin: 1rem;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+  }
+
   &__text {
     background-color: @text-background;
   }
