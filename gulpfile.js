@@ -17,7 +17,7 @@ const
     browserSync     = require('browser-sync');
 
 const
-    localhostURL = 'podebradska-maldez.dev'
+    localhostURL = 'https://podebradska-mladez.dev'
     pathToTemplate = 'wp-content/themes/podmld3/';
 
 
