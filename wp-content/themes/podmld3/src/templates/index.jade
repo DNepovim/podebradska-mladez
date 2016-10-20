@@ -77,19 +77,19 @@ block content
               - if (!empty($_GET['postName'])):
                 span.form__error='Jméno musí být vyplněno.'
               - endif
-            input#postName.form__input(type='text', name='postName', required='required')
+            input#postName.form__input(type='text', name='postName', placeholder='Ruprd', required='required')
 
             label.form__label(for='inputSurname')='Příjmení:'
               - if (!empty($_GET['postSurname'])):
                 span.form__error='Příjmení musí být vyplněno.'
               - endif
-            input#inputSurname.form__input(type='text', name='postSurname', required='required')
+            input#inputSurname.form__input(type='text', name='postSurname', placeholder='Murdoch', required='required')
 
             label.form__label(for='inputMail')='E-mail:'
             - if (!empty($_GET['postMail'])):
               span.form__error='E-mail musí být vyplněn.'
             - endif
-            input#inputMail.form__input(type='text', name='postMail', required='required')
+            input#inputMail.form__input(type='text', name='postMail', required='required', placeholder='ruprde@email.hu')
 
             input#submitted(type='hidden', name='submitted', value='true')
             - wp_nonce_field( 'post_nonce', 'post_nonce_field' )
