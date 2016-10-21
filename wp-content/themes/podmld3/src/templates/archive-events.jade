@@ -4,7 +4,7 @@ block content
   | <?php
   | $args = array(
   |   'post_type'  => 'events',
-  |   'offset'     => 0,
+  |   'offset'     => -1,
   |   'order' => 'ASC',
   |   'meta_query' => array(
   |       array(
@@ -14,7 +14,7 @@ block content
   |       )
   |   )
   | ); ?>
-  .invitation
+  main.invitation
     - if ($events = get_posts($args)):
       .col-md-5
         - $i = 0
@@ -23,10 +23,10 @@ block content
           - if(($i % 2) == 0):
             - continue
           - else :
-            a(href=$item->the_permalink)
-              - echo get_the_post_thumbnail($event, 'blog', array('class' => 'img-responsive'))
+            a.box(href= '$item->the_permalink')
+              - echo get_the_post_thumbnail($item, 'blog', array('class' => 'img-responsive'))
           - endif
-        - endwhile
+        - endforeach
 
       .col-md-5
         - $i = 0
@@ -35,10 +35,10 @@ block content
           - if(($i % 2) !== 0):
             - continue
           - else:
-            a(href=$item->the_permalink)
-              - echo get_the_post_thumbnail($event, 'blog', array('class' => 'img-responsive'))
+            a.box(href= '$item->the_permalink')
+              - echo get_the_post_thumbnail($item, 'blog', array('class' => 'img-responsive'))
           - endif;
-        - endwhile
+        - endforeach
     - else:
       div='Nic zde není...'
     - endif
