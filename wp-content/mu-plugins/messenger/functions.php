@@ -159,7 +159,7 @@ function sendInvitationCard( $sender, $event ) {
           {
             "title":"' . $event->post_title . ' | ' . $date . '",
             "image_url":"' . $thumb_url . '",
-            "item_url":"' . get_home_url() . '",
+            "item_url":"https://podebradska-mladez.evangnet.cz",
             "subtitle":"",
             "buttons":[
               {
@@ -168,9 +168,9 @@ function sendInvitationCard( $sender, $event ) {
                 "payload":"REGISTER"
               },
               {
-                "type":"postback",
-                "title":"Ukaž mi pozvánku",
-                "payload":"SEND_INV"
+                "type":"web_url",
+                "title":"Na web",
+                "url":"https://podebradska-mladez.evangnet.cz"
               },
 			  {
 				"type":"element_share",
