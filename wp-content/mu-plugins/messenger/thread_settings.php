@@ -43,4 +43,4 @@ $jsonGreeting = '{
   }
 }';
 
-send($jsonGreeting, 'thread_settings');
+//send($jsonGreeting, 'thread_settings');
