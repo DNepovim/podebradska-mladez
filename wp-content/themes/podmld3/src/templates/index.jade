@@ -66,11 +66,11 @@ block content
         - if ($register_to >= current_time( 'Y-m-d' )):
           .form__text.form__text--center
             = 'Přihlaš se do ' . date('j. n. Y', strtotime($register_to))
-          //a.button.button--call(href='http://m.me/podebradskamladez', target='_blank', title='Facebook Messenger')
-          //  span.button__caption= 'Přihlásit se přes'
-          //  span.button__title= 'FB Messenger'
-          //.form__text.form__text--center
-          //  = 'nebo přes formulář'
+          a.button.button--call(href='http://m.me/podebradskamladez', target='_blank', title='Facebook Messenger')
+            span.button__caption= 'Přihlásit se přes'
+            span.button__title= 'FB Messenger'
+          .form__text.form__text--center
+            = 'nebo přes formulář'
           form#registerForm.form.box(action=bloginfo('template_directory') + '/post-process.php', method='POST')
             input#postID.form__input(type='hidden', name='postID', value='<?php echo $event->ID; ?>')
             label.form__label(for='postName')='Jméno:'
