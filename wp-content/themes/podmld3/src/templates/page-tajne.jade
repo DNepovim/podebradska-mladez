@@ -1,0 +1,56 @@
+extends layouts/default
+
+block content
+  main.col-md-7.box
+    | <?php
+    | $args_events = array(
+    |   'post_type'  => 'events',
+    |   'offset'     => 0,
+    |   'order' => 'ASC',
+    |   'meta_query' => array(
+    |       array(
+    |           'key'     => 'pm_end_date',
+    |           'value'   => current_time( 'Y-m-d H:i' ),
+    |           'compare' => '>',
+    |       )
+    |   )
+    | ); ?>
+
+    - if ($events = get_posts($args_events)):
+      - $event = $events[0]
+      | <?php
+      | $args_participants = array(
+      |   'post_type'  => 'participants',
+      |   'post_status' => 'private',
+      |   'offset'     => 0,
+      |   'meta_key'   => 'event_id',
+      |   'meta_value' => $event->ID
+      | ); ?>
+
+      - if ($participants = get_posts($args_participants)):
+        h1.title.title__middle= $event->post_title
+        table.list
+          - foreach ($participants as $participant):
+            - $class = get_post_meta($participant->ID, "participant_type", true)
+            tr.list__item(class = $class)
+              td.list__col.list__date= date( 'j. n. y', strtotime(get_post_meta($participant->ID, 'participant_date', true)))
+              td.list__col.list__surname= get_post_meta($participant->ID, 'participant_surname', true)
+              td.list__col.list__name= get_post_meta($participant->ID, 'participant_name', true)
+              td.list__col.list__name= get_post_meta($participant->ID, 'participant_mail', true)
+
+          - endforeach
+
+      - else:
+        = 'Zatím nejsou žádní přihlášení'
+
+      - endif
+
+    - else:
+      = 'Žádná akce není k dispozici'
+    - endif
+
+  .col-md-3.drive
+    a.vtajne(href='https://drive.google.com/folderview?id=0B8vvlzr1LcJZS2FneVhzZzZrZDQ&usp=sharing')
+    h1='Google Drive'
+    iframe(src='https://drive.google.com/embeddedfolderview?id=0B8vvlzr1LcJZS2FneVhzZzZrZDQ#list', height='600', frameborder='0',  scrolling=no)
+
