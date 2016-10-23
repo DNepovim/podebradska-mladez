@@ -22,7 +22,7 @@ if (isset( $_POST['submitted'])
 	}
 
 	if ($hasError) {
-		$query = '?';
+		$query .= '?';
 		foreach ($err as $key => $value) {
 			$query .= $key . '=' . $value . '&';
 		}
@@ -50,6 +50,6 @@ if (isset( $_POST['submitted'])
 
 	if ($post_id) {
 		$query = '?status=success';
-		wp_redirect(home_url($query));
+		wp_redirect(home_url( $query . '#registerForm'));
 	}
 }
