@@ -34,8 +34,13 @@ block content
           |   $date = date('j. n.', $start) . ' - ' . date('j. n. Y', $end);
           | }
           | ?>
+          p.invitation__text.text.text--hight='naše příští akce je'
           h1.invitation__title= $event->post_title
           h2.invitation__subtitle= $date
+          p.invitation__text.text.text--hight='více informací brzy'
+          p.invitation__text.text.text--hight
+            ='sledujte náš '
+            a(href='https://www.facebook.com/podebradskamladez/', target='_blank')='facebook'
       - endif
       .invitation__text.text.box
         - echo $event->post_content
@@ -43,23 +48,27 @@ block content
       .map.box
         - echo get_post_meta($map_post_id, 'pm_position', true)
 
-    .col-sm-6.col-sm-offset-3.col-md-3.col-md-offset-0
-      - $start = strtotime( get_post_meta( $event->ID, 'pm_start_date', true ) )
-      - $queries['date'] = date('d.m.Y', $start)
-      - $queries['time'] = date( 'H:i', $start - 1/4 * 60 * 60 )
-      - $queries['t'] = get_post($map_post_id)->post_title
-      .form__text= 'Najdi si spoj:'
-      form#idosForm.form.box(action= 'http://jizdnirady.idnes.cz/vlakyautobusy/spojeni', target='_blank')
-        - foreach ($queries as $key => $value):
-          input(type='hidden', name=$key, value=$value)
-        - endforeach;
-        input(type='hidden', name='byarr', value='true')
+    - if ($map_post_id):
+      - if ($to = get_post($map_post_id)->post_title):
+        .col-sm-6.col-sm-offset-3.col-md-3.col-md-offset-0
+          - $start = strtotime( get_post_meta( $event->ID, 'pm_start_date', true ) )
+          - $queries['date'] = date('d.m.Y', $start)
+          - $queries['time'] = date( 'H:i', $start - 1/4 * 60 * 60 )
+          - $queries['t'] = $to
+          .form__text= 'Najdi si spoj:'
+          form#idosForm.form.box(action= 'http://jizdnirady.idnes.cz/vlakyautobusy/spojeni', target='_blank')
+            - foreach ($queries as $key => $value):
+              input(type='hidden', name=$key, value=$value)
+            - endforeach;
+            input(type='hidden', name='byarr', value='true')
 
-        label.form__label(for='idosFrom')='Odkud:'
-        input#idosFrom.form__input(type='text', name='f', placeholder='Úžice' required='required')
+            label.form__label(for='idosFrom')='Odkud:'
+            input#idosFrom.form__input(type='text', name='f', placeholder='Úžice' required='required')
 
-        input#idosSubmitt(type='hidden', name='submit', value='true')
-        button.button.button.form__button(type='submit')='Odeslat'
+            input#idosSubmitt(type='hidden', name='submit', value='true')
+            button.button.button.form__button(type='submit')='Odeslat'
+      - endif
+    - endif
 
     .col-sm-6.col-sm-offset-3.col-md-3.col-md-offset-0
       - if ($register_to = get_post_meta($event->ID, 'pm_register_to', true)):
