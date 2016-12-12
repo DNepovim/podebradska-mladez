@@ -28,10 +28,14 @@ block content
           | <?php
           | $start = strtotime(get_post_meta($event->ID, 'pm_start_date', true));
           | $end = strtotime(get_post_meta($event->ID, 'pm_end_date', true));
-          | if(date('m', $start) == date('m', $end)){
-          |   $date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
+          | if (date('dmy', $start) == date('dmy', $end)) {
+          |     $date = date('j. n. Y', $start);
           | } else {
-          |   $date = date('j. n.', $start) . ' - ' . date('j. n. Y', $end);
+          |   if(date('m', $start) == date('m', $end)){
+          |     $date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
+          |   } else {
+          |     $date = date('j. n. Y', $start);
+          |   }
           | }
           | ?>
           p.invitation__text.text.text--hight='naše příští akce je'
@@ -98,7 +102,7 @@ block content
             - if (!empty($_GET['postMail'])):
               span.form__error='E-mail musí být vyplněn.'
             - endif
-            input#inputMail.form__input(type='text', name='postMail', required='required', placeholder='ruprde@email.hu')
+            input#inputMail.form__input(type='text', name='postMail',  placeholder='ruprde@email.hu')
 
             input#submitted(type='hidden', name='submitted', value='true')
             - wp_nonce_field( 'post_nonce', 'post_nonce_field' )
@@ -127,10 +131,14 @@ block content
                 | <?php
                 | $start = strtotime(get_post_meta($item->ID, 'pm_start_date', true));
                 | $end = strtotime(get_post_meta($item->ID, 'pm_end_date', true));
-                | if(date('m', $start) == date('m', $end)){
-                |   $date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
+                | if (date('dmy', $start) == date('dmy', $end)) {
+                |     $date = date('j. n. Y', $start);
                 | } else {
-                |   $date = date('j. n.', $start) . ' - ' . date('j. n. Y', $end);
+                |   if(date('m', $start) == date('m', $end)){
+                |     $date = date('j.', $start) . ' - ' . date('j. n. Y', $end);
+                |   } else {
+                |     $date = date('j. n. Y', $start);
+                |   }
                 | }
                 | ?>
                 .calendar__name=$item->post_title
