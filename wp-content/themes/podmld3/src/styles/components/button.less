@@ -1,16 +1,21 @@
 .button {
   display: block;
-  background: @messenger;
+  background: @brand;
   color: @blank;
   text-align: center;
   width: 100%;
+  margin: 1rem 0;
   padding: 0.5em 1em;
   border-radius: @radius;
   transition: background 300ms;
 
   &:hover {
     color: @blank;
-    background: @brand;
+    background: @black;
+  }
+
+  &:visited {
+    color: @blank;
   }
 
   &__caption {
@@ -21,5 +26,13 @@
   &__title {
     display: block;
     font-size: 1.2rem;
+  }
+
+  &--call {
+    background: @messenger;
+    &:hover {
+      color: @blank;
+      background: @brand;
+    }
   }
 }
