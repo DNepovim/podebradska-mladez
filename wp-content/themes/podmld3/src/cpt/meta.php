@@ -59,5 +59,24 @@ function your_prefix_meta_boxes( $meta_boxes ) {
 		),
 	);
 
+	$meta_boxes[] = array(
+		'title'      => __( 'Pozice', 'textdomain' ),
+		'context' => 'side',
+		'post_types' => 'som',
+		'fields'     => array(
+			array(
+				'id'   => $prefix . 'position',
+				'type' => 'radio',
+				'inline' => false,
+				'options' => array(
+					'chairman' => 'předseda',
+					'vice-chairman' => 'místopředseda',
+					'member' => 'člen',
+					'ex-member' => 'bývalý člen'
+					)
+			)
+		),
+	);
+
 	return $meta_boxes;
 }

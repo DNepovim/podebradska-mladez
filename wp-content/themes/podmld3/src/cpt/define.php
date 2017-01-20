@@ -49,5 +49,21 @@ function create_post_type()
 			)
 		)
 	);
+
+	register_post_type('som',
+		array(
+			'labels' => array(
+				'name' => __('SOM'),
+			),
+			'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-businessman',
+			'supports' => array(
+				'title',
+				'editor',
+				'thumbnail'
+			)
+		)
+	);
 }
 

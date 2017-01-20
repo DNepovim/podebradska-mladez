@@ -1,0 +1,18 @@
+extends layouts/default
+
+block content
+  main.som.col-md-10.col-sm-9
+
+    - if ( have_posts() ):
+    - while ( have_posts() ):
+    - the_post();
+        article.person
+            figure.person-image.col-md-3
+                - the_post_thumbnail('blog', array('class' => 'img-responsive box'))
+            .person-content.col-md-9
+                h1.person-title=the_title()
+                - the_content()
+    - endwhile;
+    - else:
+      div='Nic zde není...'
+    - endif
