@@ -11,6 +11,7 @@ function create_post_type()
 			),
 			'public' => true,
 			'has_archive' => true,
+			'menu_icon' => 'dashicons-exerpt-view',
 			'supports' => array(
 				'title',
 				'author',
@@ -23,10 +24,11 @@ function create_post_type()
 	register_post_type('maps',
 		array(
 			'labels' => array(
-				'name' => __('Mapy'),
+				'name' => __('Místa'),
 			),
 			'public' => true,
 			'has_archive' => true,
+			'menu_icon' => 'dashicons-location',
 			'supports' => array(
 				'title',
 			)
@@ -36,10 +38,11 @@ function create_post_type()
 	register_post_type('participants',
 		array(
 			'labels' => array(
-				'name' => __('Přihlášení'),
+				'name' => __('Přihlašování'),
 			),
 			'public' => true,
 			'has_archive' => true,
+			'menu_icon' => 'dashicons-groups',
 			'supports' => array(
 				'title',
 				'custom-fields'
