@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "30cfb71d2250c56faad4a0e2bb9a4c9f",
-    "content-hash": "f60241fa3443dbddc04b3ed8da6a06fc",
+    "content-hash": "9ec5aaae632bd76946fe69e563014818",
     "packages": [
         {
             "name": "composer/installers",
@@ -112,20 +111,40 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
-            "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.5.1",
+            "name": "wpackagist-plugin/blue-admin",
+            "version": "16.10",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.5.1"
+                "url": "https://plugins.svn.wordpress.org/blue-admin/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.5.1.zip",
-                "reference": "tags/4.5.1",
+                "url": "https://downloads.wordpress.org/plugin/blue-admin.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/blue-admin/"
+        },
+        {
+            "name": "wpackagist-plugin/contact-form-7",
+            "version": "4.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/contact-form-7/",
+                "reference": "tags/4.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.6.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -133,26 +152,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
-        },
-        {
-            "name": "wpackagist-plugin/contact-form-7-to-database-extension",
-            "version": "2.10.24",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/contact-form-7-to-database-extension/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7-to-database-extension.zip",
-                "reference": "trunk",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/contact-form-7-to-database-extension/"
         },
         {
             "name": "wpackagist-plugin/html-editor-syntax-highlighter",
@@ -176,16 +175,16 @@
         },
         {
             "name": "wpackagist-plugin/meta-box",
-            "version": "4.9.6",
+            "version": "4.10.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/meta-box/",
-                "reference": "tags/4.9.6"
+                "reference": "tags/4.10.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box.4.9.6.zip",
-                "reference": "tags/4.9.6",
+                "url": "https://downloads.wordpress.org/plugin/meta-box.4.10.1.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -216,15 +215,15 @@
         },
         {
             "name": "wpackagist-plugin/user-role-editor",
-            "version": "4.27.2",
+            "version": "4.31.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-role-editor/",
-                "reference": "tags/4.27.2"
+                "reference": "tags/4.31.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.27.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.31.1.zip",
                 "reference": null,
                 "shasum": null
             },
