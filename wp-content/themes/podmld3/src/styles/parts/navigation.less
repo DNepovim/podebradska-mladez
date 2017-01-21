@@ -1,14 +1,19 @@
 .navigation {
   text-align: center;
 
+  &__top {
+    background: @brand;
+  }
+
   &__title,
   &__subtitle {
-    color: @blank;
+    color: @brand;
     font-weight: bolder;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin: 0;
-    padding: 0.7rem 0;
+    padding: 0;
+    width: 64%;
+    margin: 0.2em 18% 0.2em 18%;
   }
 
   &__title {
@@ -19,26 +24,41 @@
     font-size: 0.7rem;
   }
 
+  &__img {
+    padding: 10px 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &__link {
-    display: block;
-    background-color: @brand;
     transition: background-color 0.25s ease-in-out;
+    background-color: @blank;
+
     &,
     &:hover,
     &:active,
     &:visited {
       text-decoration: none;
     }
+
   }
 
   & .secret {
     background-color: @secret;
   }
 
-  &__img {
-    width: 90%;
-    margin: 0 5%;
-    padding: 0;
+
+  &__burger {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
   }
 
   &__menu {
@@ -139,6 +159,62 @@
           background-color: fade(@brand, 50);
         }
       }
+    }
+  }
+  @media (max-width: 767px) {
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 3%;
+      width: 15%;
+      height: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          fill: @brand;
+          stroke: @brand;
+        }
+      }
+    }
+
+    &__menu {
+      &__list {
+        & li {
+          &:first-of-type {
+            a {
+              border-radius: @radius @radius 0 0 ;
+            }
+          }
+        }
+      }
+    }
+
+    &__top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 50;
+      padding: 0.5rem;
+      background: @blank;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__title,
+    &__subtitle {
+      color: @blank;
+      padding: 0.7rem 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    &__link {
+      background-color: @brand;
     }
   }
 }

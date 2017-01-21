@@ -59,3 +59,15 @@ p.popis {
   border-radius: @radius;
   overflow: hidden;
 }
+
+.container {
+  position: relative;
+  right: 0;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  transition: right 300ms;
+
+  @media (min-width: 768px) {
+    padding-top: 0
+  }
+}

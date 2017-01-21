@@ -1,0 +1,79 @@
+.burger {
+	display: none;
+
+	&__check {
+		display: none
+	}
+
+	@media (max-width: 768px) {
+		display: block;
+		position: relative;
+		padding: 10px 20px;
+		width: 2rem;
+		height: 20px;
+
+		&__spin {
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 3px;
+			border-radius: 1.5rem;
+			background: @brand;
+			transition: opacity 500ms, transform 300ms, top 300ms, bottom 300ms;
+
+			&--1 {
+				top: 0;
+			}
+			&--2 {
+				top: calc(~'50% - 1.5px');
+			}
+			&--3 {
+				bottom: 0;
+			}
+		}
+
+		&__nav {
+			transition: right 300ms, left 300ms;
+		}
+
+		&__container {
+			position: fixed;
+			top: 0;
+			left: 100vw;
+			z-index: 60;
+			width: 80vw;
+			height: 100vh;
+			padding-top: 50px;
+	    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+			transition: left 300ms;
+		}
+
+		&__check:checked ~ .container {
+			right: 80vw;
+
+			.burger {
+				&__spin {
+					&--1 {
+						top: calc(~'50% - 1.5px');
+						transform: rotate(-45deg);
+					}
+					&--2 {
+						opacity: 0;
+					}
+					&--3 {
+						bottom: calc(~'50% - 1.5px');
+						transform: rotate(45deg);
+					}
+				}
+				&__container {
+					left: 20vw;
+				}
+				&__nav {
+					left: -80vw;
+				}
+			}
+		}
+	}
+}

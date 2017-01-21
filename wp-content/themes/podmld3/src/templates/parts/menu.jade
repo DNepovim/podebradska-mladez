@@ -1,21 +1,29 @@
-.col-sm-3.col-md-2
+.col-sm-3.col-md-2.navigation__container.burger__container
   .navigation.box
-    a.navigation__link(href=home_url( '/' ), title=esc_attr(get_bloginfo('name','display')), rel='home')
-      h1.navigation__title=bloginfo( 'name' )
-      img.navigation__img.img-responsive(src=get_stylesheet_directory_uri() + '/dist/images/ryba.png')
-      h2.navigation__subtitle=bloginfo( 'description' )
-      .navigation__menu
-        | <?php
-        | $args = array(
-        |   'menu_class' => 'navigation__menu__list',
-        |   'container' => 'nav',
-        |   'container_class' => 'navigation__menu__container',
-        |   'depth' => 1,
-        |   'theme_location' => 'title-menu'
-        | ); ?>
-        - if (has_nav_menu('title-menu')) :
-          - wp_nav_menu($args)
-        - endif
+    .navigation__top.burger__nav
+      a.navigation__link(href=home_url( '/' ), title=esc_attr(get_bloginfo('name','display')), rel='home')
+        h1.navigation__title=bloginfo( 'name' )
+        .navigation__img
+          svg(width="231", height="99", viewBox="0 0 231 99", xmlns="http://www.w3.org/2000/svg")
+            path(d="M99.579 91.773c26.137 0 53.146-13.07 81.897-33.108C193.673 67.378 215 97 218.068 97c3.068 0 8.72-7.91 11.326-10.455s-24.395-27.88-35.72-37.045c12.196-11.744 36.843-37.63 35.72-38.753-4.356-4.356-10.628-9.16-11.326-8.712C215 4 201.514 25.558 181.476 39.498 158.823 25.558 137.77 6.391 99.579 6.391 42.077 6.39 2 40.369 2 49.517c0 9.148 45.305 42.256 97.579 42.256zM91.738 76.09c34.414 0 74.927-19.055 74.927-26.573 0-7.517-40.513-28.315-74.927-28.315-34.414 0-67.957 21.09-67.957 27.444 0 6.354 33.543 27.444 67.957 27.444z", stroke="#FFF", stroke-width="3", fill="#FFF", fill-rule="evenodd")
+        h2.navigation__subtitle=bloginfo( 'description' )
+        label.navigation__burger(for="burger-check")
+          .burger
+            span.burger__spin.burger__spin--1
+            span.burger__spin.burger__spin--2
+            span.burger__spin.burger__spin--3
+    .navigation__menu
+      | <?php
+      | $args = array(
+      |   'menu_class' => 'navigation__menu__list',
+      |   'container' => 'nav',
+      |   'container_class' => 'navigation__menu__container',
+      |   'depth' => 1,
+      |   'theme_location' => 'title-menu'
+      | ); ?>
+      - if (has_nav_menu('title-menu')) :
+        - wp_nav_menu($args)
+      - endif
   .navigation__links
     ul.navigation__links__list
       | E-mail:

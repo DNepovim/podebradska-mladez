@@ -19,10 +19,12 @@ head
 | <body <?php body_class(); ?>>
 - require_once 'analyticstracking.php'
 
+input.burger__check#burger-check(type="checkbox")
 .container
-  include ../parts/menu
+  .row
+    include ../parts/menu
 
-  block content
+    block content
 
 | </body>
 | </html>
