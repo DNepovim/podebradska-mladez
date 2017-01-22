@@ -13,12 +13,8 @@
  * directory to allow the WordPress directory to remain
  * untouched.
  *
- * @internal This file must be parsable by PHP4.
- *
  * @package WordPress
  */
-
-require __DIR__ . '/vendor/autoload.php';
 
 /** Define ABSPATH as this file's directory */
 if ( ! defined( 'ABSPATH' ) ) {
