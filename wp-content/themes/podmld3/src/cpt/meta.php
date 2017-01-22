@@ -37,13 +37,7 @@ function your_prefix_meta_boxes( $meta_boxes ) {
 				'id'   => $prefix . 'register_to',
 				'name' => __( 'Přihlašujte se do', 'textdomain' ),
 				'type' => 'date'
-			),
-			array(
-				'id'   => $prefix . 'register_fields',
-				'name' => __( 'Další pole', 'textdomain' ),
-				'type' => 'text',
-				'clone' => true
-			),
+			)
 		),
 	);
 
