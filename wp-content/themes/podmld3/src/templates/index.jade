@@ -46,8 +46,10 @@ block content
             ='sledujte náš '
             a(href='https://www.facebook.com/podebradskamladez/', target='_blank')='facebook'
       - endif
+      - if (!empty($event->post_content)):
       .invitation__text.text.box
         - echo $event->post_content
+      - endif
     - if ($map = get_post_meta($map_post_id, 'pm_position', true)):
     .col-sm-10.col-sm-offset-1.col-md-4.col-md-offset-0
       .map.box
