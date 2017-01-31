@@ -10,7 +10,7 @@ function fptc_load() {
 	] );
 
 	try {
-		$response = $fb->get( '/' . $options['page_id'] . '/posts?locale=cs_CZ&fields=message,link,created_time,story', $options['access_token'] );
+		$response = $fb->get( '/' . $options['page_id'] . '/posts?locale=cs_CZ&fields=message,link,created_time,story,full_picture', $options['access_token'] );
 	} catch ( Facebook\Exceptions\FacebookResponseException $e ) {
 		echo 'Graph returned an error: ' . $e->getMessage();
 		exit;
@@ -30,9 +30,15 @@ function fptc_save( $obj ) {
 
 		if ( $exist_post = fptc_exist_post( $args['meta_input']['fptc_fb_id'] ) ) {
 			$args['ID'] = $exist_post;
-			wp_update_post( $args );
+			$id = wp_update_post( $args );
+			if (!empty($item['full_picture'])) {
+				fptc_save_image($id, $item['full_picture']);
+			}
 		} else {
-			wp_insert_post( $args );
+			$id = wp_insert_post( $args );
+			if (!empty($item['full_picture'])) {
+				fptc_save_image($id, $item['full_picture']);
+			}
 		}
 	}
 
@@ -86,4 +92,35 @@ function fptc_colect_data( $data ) {
 	);
 
 	return $args;
+}
+
+function fptc_save_image($postID, $imageUrl) {
+
+	$uploaddir = wp_upload_dir();
+	$filename = $postID . '-thumbnail.jpg';
+
+	if ( wp_mkdir_p( $upload_dir['path'] ) ) {
+		$file = $uploaddir['path'] . '/' . $filename;
+	} else {
+		$file = $uploaddir['basedir'] . '/' . $filename;
+	}
+
+	file_put_contents($file, file_get_contents($imageUrl));
+
+	$wp_filetype = wp_check_filetype( $filename, null );
+
+	$attachment  = array(
+		'post_mime_type' => $wp_filetype['type'],
+		'post_title'     => sanitize_file_name( $filename ),
+		'post_content'   => '',
+		'post_status'    => 'inherit'
+	);
+
+	$attach_id   = wp_insert_attachment( $attachment, $file, $postID );
+
+	require_once( ABSPATH . 'wp-admin/includes/image.php' );
+
+	$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+	$res1        = wp_update_attachment_metadata( $attach_id, $attach_data );
+	$res2        = set_post_thumbnail( $postID, $attach_id );
 }
