@@ -38,7 +38,7 @@ function fptc_save( $obj ) {
 
 				preg_match_all('/#([^\s]+)/', $item['message'], $hashtags);
 				foreach ($hashtags[0] as $item) {
-					add_post_meta($id, 'fptc_hashtags',$item);
+					add_post_meta($id, 'fptc_hashtag',$item);
 				}
 			}
 
@@ -54,7 +54,7 @@ function fptc_save( $obj ) {
 
 				preg_match_all('/#([^\s]+)/', $item['message'], $hashtags);
 				foreach ($hashtags[0] as $item) {
-					add_post_meta($id, 'fptc_hashtags',$item);
+					add_post_meta($id, 'fptc_hashtag',$item);
 				}
 			}
 

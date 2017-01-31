@@ -26,6 +26,11 @@ function your_prefix_meta_boxes( $meta_boxes ) {
 				'type'      => 'post',
 				'post_type' => 'maps'
 			),
+			array(
+				'id'        => $prefix . 'hashtag',
+				'name'      => __( 'Facebook hashtag', 'textdomain' ),
+				'type'      => 'text'
+			),
 		),
 	);
 
