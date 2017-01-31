@@ -9,6 +9,9 @@ function create_post_type()
 			'labels' => array(
 				'name' => __('Události'),
 			),
+			'rewrite' => array(
+				'slug' => 'akce'
+			),
 			'public' => true,
 			'has_archive' => true,
 			'menu_icon' => 'dashicons-exerpt-view',

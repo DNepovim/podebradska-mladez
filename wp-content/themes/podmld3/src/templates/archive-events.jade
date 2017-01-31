@@ -1,44 +1,46 @@
 extends layouts/default
 
 block content
-  | <?php
-  | $args = array(
-  |   'post_type'  => 'events',
-  |   'offset'     => -1,
-  |   'order' => 'ASC',
-  |   'meta_query' => array(
-  |       array(
-  |           'key'     => 'pm_end_date',
-  |           'value'   => current_time( 'Y-m-d H:i' ),
-  |           'compare' => '<',
-  |       )
-  |   )
-  | ); ?>
-  main.invitation
-    - if ($events = get_posts($args)):
-      .col-md-5
-        - $i = 0
-        - foreach($events as $item):
-          - $i++
-          - if(($i % 2) == 0):
-            - continue
-          - else :
-            a.box(href= '$item->the_permalink')
-              - echo get_the_post_thumbnail($item, 'blog', array('class' => 'img-responsive'))
-          - endif
-        - endforeach
+  main.som.col-md-10.col-sm-9
 
-      .col-md-5
-        - $i = 0
-        - foreach($events as $item):
-          - $i++
-          - if(($i % 2) !== 0):
-            - continue
-          - else:
-            a.box(href= '$item->the_permalink')
-              - echo get_the_post_thumbnail($item, 'blog', array('class' => 'img-responsive'))
-          - endif;
-        - endforeach
+    | <?php
+    | $args = array(
+    |   'order' => 'ASC',
+    |   'post_type'  => 'events',
+    |   'order'      => 'DESC',
+    |   'meta_query' => array(
+    |       array(
+    |           'key'     => 'pm_end_date',
+    |           'value'   => current_time( 'Y-m-d H:i' ),
+    |           'compare' => '<',
+    |       )
+    |   )
+    | ); ?>
+
+    - query_posts($args)
+    - if ( have_posts() ):
+    - while ( have_posts() ):
+    - the_post();
+      | <?php
+      | $start = strtotime(get_post_meta(get_the_ID(), 'pm_start_date', true));
+      | $end = strtotime(get_post_meta(get_the_ID(), 'pm_end_date', true));
+      | if (date('dmy', $start) == date('dmy', $end)) {
+      |     $date = date('j. n. Y', $start);
+      | } else {
+      |   if(date('m', $start) == date('m', $end)){
+      |     $date = date('j.', $start) . '–' . date('j. n. Y', $end);
+      |   } else {
+      |     $date = date('j. n.', $start) . '–' . date('j. n. Y', $end);
+      |   }
+      | }
+      | ?>
+      article.person
+          figure.person-image.col-md-3
+              - the_post_thumbnail('blog', array('class' => 'img-responsive box'))
+          .person-content.col-md-9
+              h1.person-title=the_title()
+              h2=$date
+    - endwhile;
     - else:
       div='Nic zde není...'
     - endif
