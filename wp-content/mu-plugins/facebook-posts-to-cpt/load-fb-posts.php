@@ -31,11 +31,33 @@ function fptc_save( $obj ) {
 		if ( $exist_post = fptc_exist_post( $args['meta_input']['fptc_fb_id'] ) ) {
 			$args['ID'] = $exist_post;
 			$id = wp_update_post( $args );
+
+			if (!empty($item['message'])) {
+
+				delete_post_meta($id, 'fptc_hashtags');
+
+				preg_match_all('/#([^\s]+)/', $item['message'], $hashtags);
+				foreach ($hashtags[0] as $item) {
+					add_post_meta($id, 'fptc_hashtags',$item);
+				}
+			}
+
 			if (!empty($item['full_picture'])) {
 				fptc_save_image($id, $item['full_picture']);
 			}
 		} else {
 			$id = wp_insert_post( $args );
+
+			if (!empty($item['message'])) {
+
+				delete_post_meta($id, 'fptc_hashtags');
+
+				preg_match_all('/#([^\s]+)/', $item['message'], $hashtags);
+				foreach ($hashtags[0] as $item) {
+					add_post_meta($id, 'fptc_hashtags',$item);
+				}
+			}
+
 			if (!empty($item['full_picture'])) {
 				fptc_save_image($id, $item['full_picture']);
 			}
