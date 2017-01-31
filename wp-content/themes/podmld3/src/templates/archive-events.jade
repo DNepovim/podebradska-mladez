@@ -5,7 +5,6 @@ block content
 
     | <?php
     | $args = array(
-    |   'order' => 'ASC',
     |   'post_type'  => 'events',
     |   'order'      => 'DESC',
     |   'meta_query' => array(
@@ -34,12 +33,15 @@ block content
       |   }
       | }
       | ?>
-      article.person
-          figure.person-image.col-md-3
+      article.archive
+          figure.archive-image.col-md-3
               - the_post_thumbnail('blog', array('class' => 'img-responsive box'))
-          .person-content.col-md-9
-              h1.person-title=the_title()
-              h2=$date
+          .archive-content.col-md-9
+              h1.archive-title=the_title()
+              h2.archive-subtitle=$date
+              - foreach(get_event_hashtags(get_the_ID()) as $item):
+                span.archive-hashtag=$item
+              - endforeach
     - endwhile;
     - else:
       div='Nic zde není...'
