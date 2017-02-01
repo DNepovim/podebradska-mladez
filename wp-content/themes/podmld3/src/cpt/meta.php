@@ -26,23 +26,28 @@ function your_prefix_meta_boxes( $meta_boxes ) {
 				'type'      => 'post',
 				'post_type' => 'maps'
 			),
+		),
+	);
+
+	$meta_boxes[] = array(
+		'title'      => __( 'Kronika', 'textdomain' ),
+		'post_types' => 'events',
+		'fields'     => array(
 			array(
 				'id'        => $prefix . 'hashtag',
 				'name'      => __( 'Facebook hashtag', 'textdomain' ),
 				'type'      => 'text'
 			),
-		),
-	);
-
-	$meta_boxes[] = array(
-		'title'      => __( 'Přihlašování', 'textdomain' ),
-		'post_types' => 'events',
-		'fields'     => array(
 			array(
-				'id'   => $prefix . 'register_to',
-				'name' => __( 'Přihlašujte se do', 'textdomain' ),
-				'type' => 'date'
-			)
+				'id'        => $prefix . 'article',
+				'name'      => __( 'Zápis', 'textdomain' ),
+				'type'      => 'wysiwyg'
+			),
+			array(
+				'id'        => $prefix . 'images',
+				'name'      => __( 'Fotky', 'textdomain' ),
+				'type'      => 'image_upload'
+			),
 		),
 	);
 

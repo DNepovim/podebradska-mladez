@@ -18,6 +18,8 @@ function register_my_menus()
 
 // POST THUMBNAILS
 add_theme_support( 'post-thumbnails' );
+add_image_size( 'gallery-thumb', 300 );
+add_image_size( 'fb-thumb', 500 );
 add_image_size( 'invitation', 470 );
 
 

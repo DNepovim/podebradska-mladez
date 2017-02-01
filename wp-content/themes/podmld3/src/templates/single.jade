@@ -3,11 +3,39 @@ extends layouts/default
 block content
   - if (have_posts()):
     - while (have_posts()) : the_post()
-      .single
-        h1(class=the_title())
-        .col-md-5.single__text.text=the_content('Read more...')
-        .col-md-5.single__image.image
-          -the_post_thumbnail('blog',array('class'=>'img-responsive'))
+      | <?php
+      | $start = strtotime(get_post_meta(get_the_ID(), 'pm_start_date', true));
+      | $end = strtotime(get_post_meta(get_the_ID(), 'pm_end_date', true));
+      | if (date('dmy', $start) == date('dmy', $end)) {
+      |     $date = date('j. n. Y', $start);
+      | } else {
+      |   if(date('m', $start) == date('m', $end)){
+      |     $date = date('j.', $start) . '–' . date('j. n. Y', $end);
+      |   } else {
+      |     $date = date('j. n.', $start) . '–' . date('j. n. Y', $end);
+      |   }
+      | }
+      | ?>
+      .col-md-6
+        h1.title.single-title=the_title()
+        h2.single-date
+          =$date
+          - if (!empty(get_post_meta(get_the_ID(),'pm_position',true))):
+            =' | '
+            =get_the_title(get_post_meta(get_the_ID(),'pm_position',true))
+          - endif
+        .single-content!=get_post_meta(get_the_ID(), 'pm_article', true)
+        - foreach (get_event_fb_posts(get_the_ID()) as $post):
+          article
+            p.single-fbdescription!=get_post_meta($post->ID, 'fptc_message', true)
+            - the_post_thumbnail('fb-thumb', array('class' => 'box single-fbimage'))
+
+        - endforeach
+        - wp_reset_query()
+      .col-md-3.col-md-offset-1
+        - foreach (get_post_meta(get_the_ID(),'pm_images') as $image):
+          figure.single-image.box(style="background-image: url('<?php echo wp_get_attachment_image_src($image, 'gallery-thumb')[0]; ?>')")
+        - endforeach
     - endwhile
   - else:
     div
