@@ -19,7 +19,7 @@
   },
   "extra": {
     "installer-paths": {
-      "wp-content/vendor-plugins/{$name}": [
+      "wp-content/mu-plugins/{$name}": [
         "type:wordpress-plugin"
       ]
     }
