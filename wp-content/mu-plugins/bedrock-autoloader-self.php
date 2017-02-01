@@ -13,7 +13,7 @@ namespace Roots\Bedrock;
 
 if (!is_blog_installed()) { return; }
 
-class AutoloaderVendor {
+class AutoloaderSelf {
   private static $cache; // Stores our plugin cache and site option.
   private static $auto_plugins; // Contains the autoloaded plugins (only when needed).
   private static $mu_plugins; // Contains the mu plugins (only when needed).
@@ -149,4 +149,4 @@ class AutoloaderVendor {
   }
 }
 
-$vendor = new AutoloaderVendor('../vendor-plugins');
+$self = new AutoloaderSelf('../self-plugins');
