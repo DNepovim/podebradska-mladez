@@ -36,7 +36,8 @@ block content
       article.archive.row
           figure.archive-image.box(style="background-image: url('<?php the_post_thumbnail_url('blog')?>')")
           .archive-content
-              h1.archive-title=the_title()
+              h1.archive-title
+                a(href=get_permalink())=the_title()
               h2.archive-date
                 =$date
                 - if (!empty(get_post_meta(get_the_ID(),'pm_position',true))):
