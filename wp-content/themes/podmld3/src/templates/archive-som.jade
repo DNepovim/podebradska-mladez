@@ -7,8 +7,8 @@ block content
     - while ( have_posts() ):
     - the_post();
         article.person
-            figure.person-image.col-md-3
-                - the_post_thumbnail('blog', array('class' => 'img-responsive box'))
+            .col-md-3
+                figure.person-image.box(style="background-image: url('<?php the_post_thumbnail_url('som-face')?>')")
             .person-content.col-md-9
                 h1.person-title=the_title()
                 - the_content()
