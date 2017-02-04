@@ -13,5 +13,8 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-wp-content/vendor-plugins/
+wp-content/mu-plugins/
 vendor/
+
+!wp-content/mu-plugins/bedrock-autoloader.php
+!wp-content/mu-plugins/bedrock-autoloader-self.php
