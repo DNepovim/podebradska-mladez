@@ -15,7 +15,8 @@
     "wpackagist-plugin/contact-form-7": "^4.5",
     "wpackagist-plugin/threewp-activity-monitor": "^2.12",
     "wpackagist-plugin/user-role-editor": "^4.27",
-    "wpackagist-plugin/blue-admin": "16.10"
+    "wpackagist-plugin/blue-admin": "^16.10",
+    "wpackagist-plugin/simple-custom-post-order": "^2.3"
   },
   "extra": {
     "installer-paths": {
