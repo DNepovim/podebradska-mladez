@@ -42,5 +42,7 @@ if ( $postback == 'REGISTER' ) {
 
 	sendImage($sender, $thumb_url);
 
+} else {
+	sendInvitationCard($sender, $nextEvent);
 }
 
