@@ -30,6 +30,18 @@ function your_prefix_meta_boxes( $meta_boxes ) {
 	);
 
 	$meta_boxes[] = array(
+		'title'      => __( 'Přihlašování', 'textdomain' ),
+		'post_types' => 'events',
+		'fields'     => array(
+			array(
+				'id'        => $prefix . 'register_to',
+				'name'      => __( 'Uzávěrka', 'textdomain' ),
+				'type'      => 'date'
+			)
+		),
+	);
+
+	$meta_boxes[] = array(
 		'title'      => __( 'Kronika', 'textdomain' ),
 		'post_types' => 'events',
 		'fields'     => array(
