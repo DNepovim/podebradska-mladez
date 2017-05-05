@@ -4,46 +4,37 @@ include 'config.php';
 include 'verify.php';
 include 'functions.php';
 
-$jsonMenu = '{
-"setting_type" : "call_to_actions",
-  "thread_state" : "existing_thread",
-  "call_to_actions":[
+$json = '{
+  "get_started":{
+    "payload":"START"
+  },
+  "persistent_menu":[
     {
-      "type":"postback",
-      "title":"Pošli mi pozvánku",
-      "payload":"SEND_INVITATION"
-    },
+      "locale":"default",
+      "call_to_actions":[
+        {
+          "title":"Pošli mi pozvánku",
+          "type":"postback",
+          "payload":"SEND_INVITATION"
+        },
+        {
+          "type":"web_url",
+          "title":"Náš web",
+          "url":"https://podebradska-mladez.evangnet.cz",
+          "webview_height_ratio":"full"
+        }
+      ]
+    }
+  ],
+  "whitelisted_domains":[
+    "https://podebradska-mladez.evangnet.cz"
+  ],
+  "greeting":[
     {
-      "type":"web_url",
-      "title":"Náš web",
-      "url":"https://podebradska-mladez.evangnet.cz",
-      "webview_height_ratio": "full",
-      "messenger_extensions": true
+      "locale":"default",
+      "text":"Ahoj, jsem SOMBot. Budu ti posílat informace o našich akcích a můžeš se na ně přese mě i přihlásit."
     }
   ]
-}';
-$jsonButton = '{
-"setting_type":"call_to_actions",
-  "thread_state":"new_thread",
-  "call_to_actions":[
-    {
-      "payload":"START"
-    }
-  ]
-}';
-$jsonWhitelist = '{
-"setting_type" : "domain_whitelisting",
-  "whitelisted_domains" : ["https://podebradska-mladez.evangnet.cz"],
-  "domain_action_type": "add"
-}';
-$jsonGreeting = '{
- "setting_type":"greeting",
-  "greeting":{
-    "text":"Ahoj, jsem SOMBot. Budu ti posílat informace o našich akcích a můžeš se na ně přese mě i přihlásit."
-  }
 }';
 
-send($jsonMenu, 'thread_settings');
-send($jsonButton, 'thread_settings');
-send($jsonWhitelist, 'thread_settings');
-send($jsonGreeting, 'thread_settings');
+send($json, 'messenger_profile');
