@@ -1,7 +1,0 @@
-dist
-*.php
-
-!functions.php
-!analyticstracking.php
-!post-process.php
-!/src/cpt/*

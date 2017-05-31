@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+{default $activeLang = get_active_lang_code()}
+
+<html lang="{$activeLang}">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>{site_title()}</title>
+
+	<meta name="description" content="{get_bloginfo('description')|noescape}">
+
+	{use_google_fonts([ 'Ubuntu:300,400&subset=latin-ext'])}
+
+	<link rel="stylesheet" href="{$assetsPath}/styles/{$buildstamp}index.css" media="screen">
+	<link rel="stylesheet" href="{$assetsPath}/styles/{$buildstamp}print.css" media="print">
+
+	{* <link rel="shortcut icon" type="image/x-icon" href="{$basePath}/favicon.ico"> *}
+	<link rel="icon" type="image/png" href="{$assetsPath}/images/favicon.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="{$assetsPath}/images/favicon-32x32.png" sizes="32x32">
+
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="{$assetsPath}/styles/{$buildstamp|noescape}oldie.css" media="screen">
+	<script src="{$assetsPath}/node_modules/lt-ie-9/lt-ie-9.min.js"></script>
+	<![endif]-->
+
+	<script>
+		initComponents = [
+			{ name: 'shapes', data: { url: {$assetsPath}+'/images/shapes.svg' } }
+		]
+	</script>
+
+	{wp_head()}
+
+</head>
+<body n:class="body_class()">
+
+	{$mangoSnippet}
+
+
+	<input type="checkbox" class="burger-check" id="burger-check">
+
+	<div class="container">
+		<div class="row">
+
+			{include parts/menu.latte}
+
+			{block content}{/block}
+
+		</div>
+	</div>
+
+	{block scripts}
+		{analytics()}
+		{*eu_cookies($activeLang)*}
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer></script>
+		<script src="{$assetsPath}/scripts/{$buildstamp}index.js" defer></script>
+	{/block}
+
+	{wp_footer()}
+
+</body>
+</html>

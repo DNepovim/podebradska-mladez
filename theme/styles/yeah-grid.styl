@@ -1,0 +1,119 @@
+// YEAH! This is grid!
+
+// yeah, you can set gap between columns
+$gap = 10px
+
+// yeah, you can set count of columns
+$columns = 12
+
+// yeah, you can set where may grid turn to fluid layout
+$turnToFluid = 600px
+
+// yeah, if you use Tracy (mostly with Nette framework), you can use breakpoints debug mode
+$debug = true
+
+// yeah, you can set your own breakpoints values and keys
+$breakpoints = {
+	xs  : 300px
+	s   : 500px
+	m   : 700px
+	l   : 900px
+	xl  : 1080px
+}
+
+
+// this is just a clearfix
+clearfix()
+	&:after
+		content ""
+		visibility hidden
+		display block
+		height 0
+		clear both
+
+// basic sets for your layout container
+.container
+	margin-right auto
+	margin-left auto
+	padding  $gap / 2 $gap
+	clearfix()
+
+// do you need fluid layout? here it is
+.container-fluid
+	width 100%
+	clearfix()
+
+// this is row, use it if you need even out gaps on the sides of container
+.row
+	margin-left (-1 * $gap)
+	margin-right (-1 * $gap)
+	clearfix()
+
+// and here is advertised debug mode
+#tracy-debug-bar:before
+	content: '-'
+	display flex
+	align-items ceter
+	justify-content center
+	position fixed
+	top 0
+	left 0
+	padding 5px 10px
+	background red
+	color white
+	font-weight bold
+	text-transform uppercase
+
+// I need declare breakpoints variables
+$break = {}
+$breakM = {}
+
+column()
+	display inline
+	vertical-align baseline
+	padding-left $gap
+	padding-right $gap
+	float left
+	min-height 1rem
+
+for i in (1)..($columns)
+	.yeah-{i}
+		width (i / $columns * 100%)
+		column()
+
+// I iterate all breakpoints defined by yourself
+for key, break in $breakpoints
+
+	// now I fill variables with your breakpoints
+	$break[key] = "(min-width:" + break +")"
+	$breakM[key] = "(max-width:" + (break - 1) +")"
+
+	// I set breakpoints for container
+	@media (min-width: break)
+		.container
+			max-width (break - $gap)
+
+		// and again our debug mod
+		if $debug
+			#tracy-debug-bar:before
+				content: key
+
+		// now I iterate columns defined by yourself
+		for i in (1)..($columns)
+
+			// finally I set up columns
+			.yeah-{key}-{i}
+				width (i / $columns * 100%)
+				column()
+
+.yeah-center
+	display block
+	float none
+	margin-left auto
+	margin-right auto
+
+// when you set where may by container turned to fluid, here it happens
+if $turnToFluid
+	@media (max-width: $turnToFluid)
+		.container
+			max-width 100%

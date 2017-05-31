@@ -1,35 +1,64 @@
 {
-  "name": "dnepovim/podebradska-mladez",
-  "description": "Official web.",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
-  "require": {
-    "facebook/graph-sdk": "^5.2",
-    "wpackagist-plugin/wp-tracy": "^1.0.5",
-    "wpackagist-plugin/meta-box": "^4.8.7",
-    "wpackagist-plugin/html-editor-syntax-highlighter": "^1.7.2",
-    "wpackagist-plugin/contact-form-7": "^4.5",
-    "wpackagist-plugin/threewp-activity-monitor": "^2.12",
-    "wpackagist-plugin/user-role-editor": "^4.27",
-    "wpackagist-plugin/blue-admin": "^16.10",
-    "wpackagist-plugin/simple-custom-post-order": "^2.3"
-  },
-  "extra": {
-    "installer-paths": {
-      "wp-content/mu-plugins/{$name}": [
-        "type:wordpress-plugin"
-      ]
-    }
-  },
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Dominik Blaha",
-      "email": "jsem@dominikblaha.cz"
-    }
-  ]
+	"name": "mangoweb/mangopress",
+	"description": "ManGoweb's WordPress project boilerplate.",
+	"require": {
+		"wordpress/wordpress": "*",
+		"nette/nette": "^2.4.0",
+		"mangoweb/mangopress-sql-panel": "dev-master",
+		"mangoweb/mangopress-templating": "dev-master",
+		"sentry/sentry": "^0.16.0",
+		"roots/wp-password-bcrypt": "^1.0"
+	},
+	"require-dev": {
+		"nette/tester": "^1.7.0"
+	},
+	"authors": [
+		{
+			"name": "ViliamKopecky",
+			"email": "vk@viliamkopecky.cz"
+		},
+		{
+			"name": "Matej Simek",
+			"email": "email@matejsimek.com",
+			"homepage": "http://www.matejsimek.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wordpress/wordpress",
+				"type": "webroot",
+				"version": "4.7.3",
+				"dist": {
+					"type": "zip",
+					"url": "https://github.com/WordPress/WordPress/archive/4.7.3.zip"
+				},
+				"require": {
+					"fancyguy/webroot-installer": "1.1.0"
+				}
+			}
+		}
+	],
+	"extra": {
+		"installer-paths": {
+			"public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "type:wordpress-plugin"],
+			"public/wp-content/themes/{$name}": ["type:wordpress-theme"]
+		},
+		"webroot-dir": "public/wp-core",
+		"webroot-package": "wordpress/wordpress"
+	},
+	"config": {
+		"preferred-install": "dist",
+		"optimize-autoloader": true
+	},
+	"minimum-stability": "stable",
+	"scripts": {
+		"post-update-cmd": ["echo Warning: Deleting all .git dirs under vendor ", "rm -rf vendor/**/**/.git"],
+		"post-install-cmd": ["echo Warning: Deleting all .git dirs under vendor", "rm -rf vendor/**/**/.git"]
+	}
 }

@@ -1,0 +1,10 @@
+{form $Form[register]}
+	{foreach $form->components as $component}
+		{label $component class => form-label}
+		{input $component class => form-input}
+		<span class="form-error" n:ifempty>{inputError $component}</span>
+	{/foreach}
+
+	<span class="form-message view-success" n:if="$_GET['status'] && $_GET['status'] == 'success'">Byl jsi úspěšně přihlášen.</span>
+	<span class="form-message view-error"  n:if="$_GET['status'] && $_GET['status'] == 'error'">Něco se pokazilo.<br>Zkus to znovu, nebo nám napiš.</span>
+{/form}

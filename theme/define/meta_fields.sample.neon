@@ -1,0 +1,64 @@
+#
+# Requires MetaBox plugin: http://metabox.io/
+#
+
+register:
+	one:
+		title: Data
+		context: normal
+		post_types: events
+		fields:
+			start_date:
+				name: Začátek
+				type: datetime
+			end_date:
+				name: Konec
+				type: datetime
+			position:
+				name: Mapa
+				type: post
+				post_type: maps
+
+	two:
+		title: Přihlašování
+		post_types: events
+		fields:
+			register_to:
+				name:  Uzávěrka
+				type: date
+
+	three:
+		title: Kronika
+		post_types: events
+		fields:
+			hashtag:
+				name: 'Facebook hashtag'
+				type: text
+			article:
+				name: Zápis
+				type: wysiwyg
+			images:
+				name: Fotky
+				type: image_upload
+
+	four:
+		title: Mapa
+		post_types: maps
+		fields:
+			position:
+				name: Mapa
+				type: textarea
+
+	five:
+		title: Pozice
+		context: side
+		post_types: som
+		fields:
+			position:
+				type: radio
+				inline: false
+				options:
+					chairman: předseda
+					vice-chairman: místopředseda
+					member: člen
+					ex-member: bývalý člen

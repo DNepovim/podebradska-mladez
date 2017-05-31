@@ -1,0 +1,17 @@
+{var $start = strtotime(get_post_meta($event->ID, 'pm_start_date', true ))}
+{var $to = get_post(meta($event,'pm_position'))->post_title}
+
+{form $Forms[idos] id => idosForm, class=> 'form box'}
+
+	{input date value => date('d.m.Y', $start)}
+	{input time value => date( 'H:i', $start - 1/4 * 60 * 60 )}
+	{input t value => $to}
+	{input byarr value => true}
+
+	{label f class => form-label}
+	{input f id => idosForm, class => form-input}
+	{inputError f}
+
+	{input send class => 'button form-button'}
+
+{/form}
