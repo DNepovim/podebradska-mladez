@@ -11,31 +11,27 @@
 		padding 0.2em 0.7em
 		border solid 1px $light-gray
 
-		&focus
+		&:focus
 			outline solid 2px $brand
-
-
 
 	&-label
 		display block
 		font-size 0.8rem
 		color $gray
 
-
 	&-button
 		display block
 		appearance none
-		background $brand
+		background-color $brand
 		color $blank
 		margin 0.2em auto
 		padding 0.2em 1em
 		border none
 		border-radius 5px
 		transition background 300ms
+
 		&:hover
-			background $gray
-
-
+			background-color $gray
 
 	&-error
 		display block
@@ -44,7 +40,6 @@
 		width 100%
 		margin 0.2em 0
 
-
 	&-message
 		display block
 		text-align center
@@ -52,17 +47,14 @@
 		padding 1rem 0.5rem
 
 		&.view-success
-			background fade($brand, 10)
+			background-color fade($brand, 10)
 			color $brand
 			border solid 1px $brand
 
-
 		&.view-error
-			background fade($error, 10)
+			background-color fade($error, 10)
 			color $error
 			border solid 1px $error
-
-
 
 	&-late
 		color $brand
@@ -80,7 +72,3 @@
 		&.view-center
 			text-align center
 			margin 1em 0
-
-
-
-

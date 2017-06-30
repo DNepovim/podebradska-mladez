@@ -4,75 +4,62 @@
 	&-check
 		display none
 
-
-	$media (max-width 768px)
+	@media $breakM.m
 		display block
 		position relative
 		padding 10px 20px
-		width 2rem
-		height 20px
+		margin-left auto
+		margin-right @margin-left
+		size 2rem 20px
 
 		&-spin
 			display block
-			position absolute
-			left 0
-			right 0
-			width 100%
-			height 3px
+			absolute left 0 right 0
+			size 100% 3px
 			border-radius 1.5rem
-			background $brand
+			background-color $brand
 			transition opacity 500ms, transform 300ms, top 300ms, bottom 300ms
 
-			&.view-1
+			&.view-one
 				top 0
 
-			&.view-2
-				top calc(~'50% - 1.5px')
+			&.view-two
+				top calc(50% - 1.5px)
 
-			&.view-3
+			&.view-three
 				bottom 0
-
-
 
 		&-nav
 			transition right 300ms, left 300ms
 
 
 		&-container
-			position fixed
-			top 0
-			left 100vw
+			fixed top 0 left 100vw
 			z-index 60
-			width 80vw
-			height 100vh
+			size 80vw 100vh
 			padding-top 50px
 			box-shadow 0 2px 4px 0 rgba(0,0,0,0.08)
 			transition left 300ms
 
 
-		&-checkchecked ~ .container
+		&-check:checked ~ .container
 			right 80vw
 
 			.burger
 				&-spin
-					&.view-1
-						top calc(~'50% - 1.5px')
+					&.view-one
+						top calc(50% - 1.5px)
 						transform rotate(-45deg)
 
-					&.view-2
+					&.view-two
 						opacity 0
 
-					&.view-3
-						bottom calc(~'50% - 1.5px')
+					&.view-three
+						bottom calc(50% - 1.5px)
 						transform rotate(45deg)
-
 
 				&-container
 					left 20vw
 
 				&-nav
 					left -80vw
-
-
-
-

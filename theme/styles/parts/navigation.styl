@@ -1,65 +1,46 @@
 .navigation
-	text-align center
-
-	&-top
-		background $brand
-
-
-	&-title,
+	&-title
 	&-subtitle
 		color $brand
-		font-weight bolder
+		font-weight bold
 		letter-spacing 0.1em
 		text-transform uppercase
 		padding 0
-		width 64%
 		margin 0.2em 18% 0.2em 18%
-
+		text-align center
 
 	&-title
-		font-size 1.1rem
-
+		font-size 2rem
 
 	&-subtitle
 		font-size 0.7rem
 
-
 	&-img
 		padding 10px
+		display block
 
 		svg
-			width 100%
-			height 100%
-
-
+			size 100%
+			fill $brand
 
 	&-link
 		transition background-color 0.25s ease-in-out
 		background-color $blank
 
-		&,
-		&:hover,
-		&active,
-		&visited
+		&
+		&:hover
+		&:active
+		&:visited
 			text-decoration none
 
-
-
-
-	& .secret
+	.view-secret &
 		background-color $secret
 
-
-
 	&-burger
-		position absolute
-		top 0
-		right 3%
-		height 100%
-		width 15%
+		absolute top 0 right 3%
+		size 15% 100%
 		display flex
 		align-items center
-
 
 	&-menu
 		margin 0
@@ -68,19 +49,18 @@
 		&-list
 			margin 0
 
-			& li
+			li
 				text-align center
 				margin-top 2px
 
-				& a
+				a
 					display block
-					color $blank
-					background $brand
+					color $brand
 					font-size 20px
 					font-variant small-caps
 					text-decoration none
 					line-height 1.5em
-					border solid 1px $brand
+					border solid 1px $border
 					transition color 300ms, background 300ms
 
 					&[rel='home']
@@ -88,19 +68,11 @@
 
 
 					&:hover
-						color $brand
-						background transparent
+						background $brandHover
 
-
-
-				&last-of-type
+				&:last-of-type
 					a
 						border-radius 0 0 $radius $radius
-
-
-
-
-
 
 	&-links
 		margin-top 20px
@@ -110,22 +82,19 @@
 			font-size 0.8rem
 			margin 0
 
-
 		&-item
 			text-align center
-			border solid $brand 1px
+			border solid $border 1px
 			border-bottom none
 
-			&first-of-type
+			&:first-of-type
 				border-radius $radius $radius 0 0
 
-
-			&last-of-type
-				border-bottom solid $brand 1px
+			&:last-of-type
+				border-bottom solid $border 1px
 				border-radius 0 0 $radius $radius
 
-
-			& a
+			a
 				display block
 				color $black
 				background-color $text-background
@@ -135,10 +104,7 @@
 				transition background-color 0.25s ease-in-out
 
 				&:hover
-					background-color fade($brand, 50)
-
-
-
+					background-color $brandHover
 
 	&-footer
 		&-link
@@ -148,7 +114,7 @@
 			position relative
 			margin 0.2rem
 
-			& a
+			a
 				margin 0 0.2rem
 				padding 0.1em 0.5rem
 				border-radius 1em
@@ -158,64 +124,43 @@
 					color $gray
 					background-color fade($brand, 50)
 
-
-
-
-	$media (max-width 767px)
+	@media $breakM.m
 		&-img
-			position absolute
-			top 0
-			left 3%
-			width 15%
-			height 100%
+			absolute top 0 left 3%
+			size 15%
 			padding 10px 0
 
 			svg
-				width 100%
-				height 100%
+				size 100%
 
 				path
 					fill $brand
 					stroke $brand
 
-
-
-
 		&-menu
 			&-list
-				& li
-					&first-of-type
+				li
+					&:first-of-type
 						a
 							border-radius $radius $radius 0 0
 
-
-
-
-
-
 		&-top
-			position fixed
-			top 0
-			left 0
-			width 100vw
+			fixed	top 0	left 0
 			z-index 50
+			width 100vw
 			padding 0.5rem
-			background $blank
+			background-color $blank
 			box-shadow 0 2px 4px 0 rgba(0,0,0,0.08)
 
 
 
-	$media (min-width 768px)
-		&-title,
+	@media $break.m
+		&-top
+			border solid 1px $border
+			border-radius $radius $radius 0 0
+
+		&-title
 		&-subtitle
-			color $blank
 			padding 0.7rem 0
 			margin 0
 			width 100%
-
-
-		&-link
-			background-color $brand
-
-
-
