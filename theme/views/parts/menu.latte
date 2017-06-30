@@ -1,55 +1,55 @@
-<div class="yeah-3 yeah-m-2 navigation-container burger-container">
-	<div class="navigation box">
-		<div class="navigation-top burger-nav">
-			<a href="{home_url( "/" )}" class="navigation-link" title="{esc_attr(get_bloginfo("name","display"))}" rel="home">
-				<h1 class="navigation-title" n:ifcontent>{bloginfo("name")}</h1>
-				<span class="navigation-img">
-					<svg width="231" height="99" viewBox="0 0 231 99" xmlns="http://www.w3.org/2000/svg"></svg>
-						<path d="M99.579 91.773c26.137 0 53.146-13.07 81.897-33.108C193.673 67.378 215 97 218.068 97c3.068 0 8.72-7.91 11.326-10.455s-24.395-27.88-35.72-37.045c12.196-11.744 36.843-37.63 35.72-38.753-4.356-4.356-10.628-9.16-11.326-8.712C215 4 201.514 25.558 181.476 39.498 158.823 25.558 137.77 6.391 99.579 6.391 42.077 6.39 2 40.369 2 49.517c0 9.148 45.305 42.256 97.579 42.256zM91.738 76.09c34.414 0 74.927-19.055 74.927-26.573 0-7.517-40.513-28.315-74.927-28.315-34.414 0-67.957 21.09-67.957 27.444 0 6.354 33.543 27.444 67.957 27.444z" stroke="#FFF" stroke-width="3" fill="#FFF" fill-rule="evenodd">
-					</svg>
-				</span>
-				<h2 class="navigation-subtitle" n:ifcontent>{bloginfo("description")}</h2>
-				<label for="burger-check" class="navigation-burger">
-					<span class="burger">
-						<span class="burger-spin view-one"></span>
-						<span class="burger-spin view-two"></span>
-						<span class="burger-spin view-three"></span>
+	<div class="navigation-container burger-container">
+		<div class="navigation box">
+			<div class="navigation-top burger-nav">
+				<a href="{home_url( "/" )}" class="navigation-link" title="{esc_attr(get_bloginfo("name","display"))}" rel="home">
+					<h1 class="navigation-title" n:ifcontent>{bloginfo("name")}</h1>
+					<span class="navigation-img">
+						<svg viewBox="0 0 231 99" xmlns="http://www.w3.org/2000/svg">
+							<path d="M99.579 91.773c26.137 0 53.146-13.07 81.897-33.108C193.673 67.378 215 97 218.068 97c3.068 0 8.72-7.91 11.326-10.455s-24.395-27.88-35.72-37.045c12.196-11.744 36.843-37.63 35.72-38.753-4.356-4.356-10.628-9.16-11.326-8.712C215 4 201.514 25.558 181.476 39.498 158.823 25.558 137.77 6.391 99.579 6.391 42.077 6.39 2 40.369 2 49.517c0 9.148 45.305 42.256 97.579 42.256zM91.738 76.09c34.414 0 74.927-19.055 74.927-26.573 0-7.517-40.513-28.315-74.927-28.315-34.414 0-67.957 21.09-67.957 27.444 0 6.354 33.543 27.444 67.957 27.444z" fill-rule="evenodd">
+						</svg>
 					</span>
-				</label>
-			</a>
+					<h2 class="navigation-subtitle" n:ifcontent>{bloginfo("description")}</h2>
+					<label for="burger-check" class="navigation-burger">
+						<span class="burger">
+							<span class="burger-spin view-one"></span>
+							<span class="burger-spin view-two"></span>
+							<span class="burger-spin view-three"></span>
+						</span>
+					</label>
+				</a>
+			</div>
+			<div class="navigation-menu" n:if="$main_menu">
+				<nav class="navigation-menu-container">
+					<ul class="navigation-menu-list">
+						<li class="navigation-menu-item" n:foreach="$main_menu as $item">
+							<a href="{$item|wp_permalink}">{$item|wp_title}</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</div>
-		<div class="navigation-menu" n:if="$main_menu">
-			<nav class="navigation-menu-container">
-				<ul class="navigation-menu-list">
-					<li class="navigation-menu-item" n:foreach="$main_menu as $item">
-						<a href="{$item|wp_permalink}">{$item|wp_title}</a>
-					</li>
-				</ul>
-			</nav>
+		<div class="navigation-links">
+			<ul class="navigation-links-list" n:if="$links_menu">
+				E-mail:
+				<li class="navigation-links-item" n:foreach="$contacts_menu as $item">
+					<a href="{$item|wp_permalink}" target="_blank">{$item|wp_title}</a>
+				</li>
+			</ul>
+			<ul class="navigation-links-list" n:if="$links_menu">
+				Odkazy:
+				<li class="navigation-links-item" n:foreach="$links_menu as $item">
+					<a href="{$item|wp_permalink}" target="_blank">{$item|wp_title}</a>
+				</li>
+			</ul>
+			<div class="navigation-footer">
+				<p class="navigation-footer-link">
+					<a href="http://podebradska-mladez.evangnet.cz/wp-login.php">Login</a>
+					<a href="http://podebradska-mladez.evangnet.cz/?page_id=1242">Secure</a>
+				</p>
+				<p class="navigation-footer-link">
+					<a href="http://www.dombl.cz" target="_blank">Dominik Bláha</a>
+					<a href="https://www.github.com/DNepovim/podebradska-mladez" target="_blank">Github</a>
+				</p>
+			</div>
 		</div>
 	</div>
-	<div class="navigation-links">
-		<ul class="navigation-links-list" n:if="$links_menu">
-			E-mail:
-			<li class="navigation-links-item" n:foreach="$contacts_menu as $item">
-				<a href="{$item|wp_permalink}" target="_blank">{$item|wp_title}</a>
-			</li>
-		</ul>
-		<ul class="navigation-links-list" n:if="$links_menu">
-			Odkazy:
-			<li class="navigation-links-item" n:foreach="$links_menu as $item">
-				<a href="{$item|wp_permalink}" target="_blank">{$item|wp_title}</a>
-			</li>
-		</ul>
-		<div class="navigation-footer">
-			<p class="navigation-footer-link">
-				<a href="http://podebradska-mladez.evangnet.cz/wp-login.php">Login</a>
-				<a href="http://podebradska-mladez.evangnet.cz/?page_id=1242">Secure</a>
-			</p>
-			<p class="navigation-footer-link">
-				<a href="http://www.dombl.cz" target="_blank">Dominik Bláha</a>
-				<a href="https://www.github.com/DNepovim/podebradska-mladez" target="_blank">Github</a>
-			</p>
-		</div>
-	</div>
-</div>

@@ -35,7 +35,7 @@
 	{wp_head()}
 
 </head>
-<body n:class="body_class()">
+<body>
 
 	{$mangoSnippet}
 
@@ -45,9 +45,13 @@
 	<div class="container">
 		<div class="row">
 
-			{include parts/menu.latte}
+			<div class="yeah-0 yeah-m-4">
+				{include parts/menu.latte}
+			</div>
 
-			{block content}{/block}
+			<main class="yeah-12 yeah-m-6 invitation main">
+				{block content}{/block}
+			</main>
 
 		</div>
 	</div>
