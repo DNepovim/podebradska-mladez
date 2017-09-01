@@ -60,3 +60,11 @@ if(is_admin()){
 }
 
 // Customize TinyMCE
+function format_TinyMCE( $in ) {
+		$in['block_formats'] = "Nadpis=h2; Podnadpis=h3; Odstavec=p";
+		$in['toolbar1'] = 'formatselect,bold,underline,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,spellchecker,wp_fullscreen,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help  ';
+	$in['toolbar2'] = '';
+	return $in;
+}
+add_filter( 'tiny_mce_before_init', 'format_TinyMCE' );
+
