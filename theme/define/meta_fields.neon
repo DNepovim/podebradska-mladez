@@ -2,6 +2,8 @@
 # Requires MetaBox plugin: http://metabox.io/
 #
 
+prefix: pm_
+
 register:
 	one:
 		title: Data
