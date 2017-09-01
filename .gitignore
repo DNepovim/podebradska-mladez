@@ -15,4 +15,5 @@
 /public/wp-core
 /public/wp-content/uploads
 /public/wp-content/cache
+/public/wp-content/mu-plugins
 .idea
