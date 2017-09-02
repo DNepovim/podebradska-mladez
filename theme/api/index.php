@@ -7,8 +7,8 @@ $payload = [
 ];
 
 switch($ApiRequest[0]) {
-	case 'ping':
-		$payload['status'] = 'pong';
+	case 'load-fb-posts':
+		$payload['status'] = fptc_load();
 		break;
 	case 'echo':
 		$payload = [

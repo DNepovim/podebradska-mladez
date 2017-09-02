@@ -64,3 +64,17 @@ register:
 					vice-chairman: místopředseda
 					member: člen
 					ex-member: bývalý člen
+
+	fb-settings:
+		title: Facebook API
+		settings_pages:
+			- fb-settings
+		fields:
+			fb_app_id:
+				name: App ID
+			fb_app_secret:
+				name: App Secret
+			fb_page_id:
+				name: Page ID
+			fb_access_token:
+				name: Access Token

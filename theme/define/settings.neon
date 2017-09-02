@@ -1,0 +1,8 @@
+#
+# Requires MetaBox plugin: http://metabox.io/
+# and mb-settings-page (paid plugin, ask someone)
+#
+
+register:
+	fb-settings:
+		title: Facebook API
