@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+!bedrock-autoloader.php
+!register-theme-directory.php
+!/mb-settings-page/
+!mb-settings-page/
+!/mb-settings-page
+!mb-settings-page
+!mb-settings-page/**/*
