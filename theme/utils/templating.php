@@ -33,3 +33,14 @@ MangoFilters::$set['czk'] = function($number, $decimal = 2){
 MangoFilters::$set['daterange'] = function($event){
 	return get_daterange($event);
 };
+
+MangoFilters::$set['gpsizes'] = function($url, $width = null, $height = null){
+	$url .= '=';
+	if ($width) {
+		$url .= 'w' . $width . '-';
+	}
+	if ($height) {
+		$url .= 'h' . $height;
+	}
+	return $url;
+};

@@ -36,6 +36,8 @@ register:
 			hashtag:
 				name: 'Facebook hashtag'
 				type: text
+			google_photos_album:
+				name: Fotky google album
 			article:
 				name: Zápis
 				type: wysiwyg
