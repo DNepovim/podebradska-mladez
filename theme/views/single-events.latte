@@ -1,0 +1,48 @@
+
+{extends @layout.latte}
+
+{block #head}
+	<link href="{$assetsPath}/node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+{/block}
+
+{block #content}
+	{each}
+		<article class="article text box" n:ifcontent>
+			<header class="article-head">
+				<h1 class="article-title" n:ifcontent>{$Post|wp_title}</h1>
+				<p class="article-subtitle">{$Post|daterange}, {$Post|wp_meta:pm_position|wp_title}</p>
+				<div class="article-hashtags" n:ifcontent>
+					<span class="article-hashtags-item" n:foreach="$hashtags as $hashtag">{$hashtag}</span>
+				</div>
+			</header>
+
+			{if has_post_thumbnail()}
+				<div class="invitation-image box">
+					<a href="{get_the_post_thumbnail_url($Post, 'full')}" class="invitation-link">
+						{get_the_post_thumbnail($Post, "blog", array("class" => "img-responsive"))|noescape}
+					</a>
+				</div>
+			{/if}
+			{$Post|wp_meta:pm_article|noescape}
+		</article>
+		<article class="article" n:if="!empty(($Post|wp_content))">
+			<h1 class="article-title">Informace</h1>
+			{$Post|wp_content}
+		</article>
+	{/each}
+{/block}
+
+{block #bottom}
+	<section class="yeah-12">
+		<div class="gallery">
+			<a class="gallery-item" href="{$photo|gpsizes:1500|noescape}" data-lightbox="gallery" target="_blank" n:foreach="$photos as $photo">
+				<img class="gallery-item-img" src="{$photo|gpsizes:300|noescape}" alt="">
+			</a>
+		</div>
+	</section>
+{/block}
+
+{block #scripts}
+	{include #parent}
+	<script src="{$assetsPath}/node_modules/lightbox2/dist/js/lightbox.min.js" defer></script>
+{/block}

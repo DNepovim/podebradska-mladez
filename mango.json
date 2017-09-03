@@ -19,7 +19,10 @@
     "theme/libs/**",
     "theme/images/**/*.svg",
     "theme/fonts/**",
-    "node_modules/lt-ie-9/lt-ie-9.min.js"
+    "node_modules/lt-ie-9/lt-ie-9.min.js",
+    "node_modules/lightbox2/dist/js/lightbox.min.js",
+    "node_modules/lightbox2/dist/css/lightbox.min.css",
+    "node_modules/lightbox2/dist/images/*"
   ],
   "buildstamp": [
     "public/assets/styles/index.css",
@@ -30,7 +33,8 @@
   "dependencies": [
     "bootstrap-styl",
     "jquery",
-    "lt-ie-9"
+    "lt-ie-9",
+    "lightbox2"
   ],
   "watch": [
     "theme/**/*.{latte,php}"

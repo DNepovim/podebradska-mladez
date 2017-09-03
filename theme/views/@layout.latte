@@ -26,6 +26,8 @@
 	<script src="{$assetsPath}/node_modules/lt-ie-9/lt-ie-9.min.js"></script>
 	<![endif]-->
 
+	{block head}{/block}
+
 	<script>
 		initComponents = [
 			{ name: 'shapes', data: { url: {$assetsPath}+'/images/shapes.svg' } }
@@ -45,7 +47,7 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="yeah-0 yeah-m-4">
+			<div class="yeah-0 yeah-m-2">
 				{include parts/menu.latte}
 			</div>
 
@@ -53,6 +55,12 @@
 				{block content}{/block}
 			</main>
 
+			<aside class="yeah-12 yeah-m-4">
+				{block aside}{/block}
+			</aside>
+		</div>
+		<div class="row">
+			{block bottom}{/block}
 		</div>
 	</div>
 
