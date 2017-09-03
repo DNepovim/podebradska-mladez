@@ -45,9 +45,6 @@ function fptc_save($obj) {
 					add_post_meta($id, 'fptc_hashtag',$item);
 				}
 			}
-			if (!empty($item['full_picture'])) {
-				fptc_save_image($id, $item['full_picture']);
-			}
 		}
 	}
 	exit;
@@ -90,7 +87,8 @@ function fptc_colect_data($data) {
 		'meta_input'  => [
 			'fptc_fb_id'   => (string) $data['id'],
 			'fptc_story'   => (string) $data['story'],
-			'fptc_message' => (string) $data['message']
+			'fptc_message' => (string) $data['message'],
+			'fptc_image'   => (string) $data['full_picture']
 		]
 	];
 	return $args;
@@ -118,5 +116,4 @@ function fptc_save_image($post_id, $imageUrl) {
 	$attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
 	$res1        = wp_update_attachment_metadata($attach_id, $attach_data);
 	$res2        = set_post_thumbnail($post_id, $attach_id);
-
 }

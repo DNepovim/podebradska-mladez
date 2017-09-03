@@ -25,6 +25,12 @@
 			{/if}
 			{$Post|wp_meta:pm_article|noescape}
 		</article>
+		<section class="feed" n:if="!empty($fb_posts)">
+			<figure class="feed-item" n:foreach="$fb_posts as $post">
+				<img class="box" src="{$post|wp_meta:fptc_image}" alt="">
+				<figcaption class="feed-caption">{$post|wp_meta:fptc_message}</figcaption>
+			</figure>
+		</section>
 		<article class="article" n:if="!empty(($Post|wp_content))">
 			<h1 class="article-title">Informace</h1>
 			{$Post|wp_content}
