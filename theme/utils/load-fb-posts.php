@@ -54,11 +54,11 @@ function fptc_save($obj) {
 }
 
 function fptc_exist_post($fb_id) {
-	$args = array(
+	$args = [
 		'post_type'  => 'fb',
 		'meta_key'   => 'fptc_fb_id',
 		'meta_value' => $fb_id
-	);
+	];
 	$posts = get_posts($args);
 	try {
 		if ($posts) {
@@ -82,21 +82,21 @@ function fptc_colect_data($data) {
 		$title = $data['message'];
 	}
 	$title = wp_trim_words($title, 7);
-	$args = array(
+	$args = [
 		'post_title'  => $title,
 		'post_status' => 'publish',
 		'post_type'   => 'fb',
 		'post_date'   => $data['created_time'],
-		'meta_input'  => array(
+		'meta_input'  => [
 			'fptc_fb_id'   => (string) $data['id'],
 			'fptc_story'   => (string) $data['story'],
 			'fptc_message' => (string) $data['message']
-		)
-	);
+		]
+	];
 	return $args;
 }
 
-function fptc_save_image($postID, $imageUrl) {
+function fptc_save_image($post_id, $imageUrl) {
 
 	global $post;
 

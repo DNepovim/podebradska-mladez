@@ -68,3 +68,31 @@ function format_TinyMCE( $in ) {
 }
 add_filter( 'tiny_mce_before_init', 'format_TinyMCE' );
 
+function get_event_fb_posts($postID){
+	$hashtag = meta($postID, 'pm_hashtag');
+	if (!empty($hashtag)) {
+		$args = [
+			'post_type'  => 'fb',
+			'meta_key'   => 'fptc_hashtag',
+			'meta_value' => $hashtag
+		];
+		$fb_posts = get_posts($args);
+		return $fb_posts;
+	} else {
+		return false;
+	}
+}
+
+function get_event_hashtags($postID) {
+	$fb_posts = get_event_fb_posts($postID);
+	if (!empty($fb_posts)) {
+		$hashtags = [];
+		foreach ($fb_posts as $post) {
+			$potsHashtags = get_field($post->ID, 'fptc_hashtag', null, false);
+			$hashtags = array_merge($hashtags, $potsHashtags);
+		}
+		return array_unique($hashtags);
+	} else {
+		return false;
+	}
+}
