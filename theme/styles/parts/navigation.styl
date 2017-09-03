@@ -16,7 +16,8 @@
 		font-size 0.7rem
 
 	&-img
-		padding 10px
+		padding-left 10px
+		padding-right @padding-left
 		display block
 
 		svg
@@ -41,6 +42,7 @@
 		size 15% 100%
 		display flex
 		align-items center
+		display none
 
 	&-menu
 		margin 0
@@ -149,14 +151,14 @@
 			z-index 50
 			width 100vw
 			padding 0.5rem
-			background-color $blank
+			background-color $brand
 			box-shadow 0 2px 4px 0 rgba(0,0,0,0.08)
 
 
 
 	@media $break.m
 		&-top
-			border solid 1px $border
+			border solid 1px $brand
 			border-radius $radius $radius 0 0
 
 		&-title

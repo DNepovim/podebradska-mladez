@@ -6,22 +6,22 @@ if(isset($_GET['styleguide'])) {
 }
 
 
-$args = array(
+$args = [
 	'post_type'  => 'events',
 	'numberposts'     => -1,
 	'order' => 'ASC',
-	'meta_query' => array(
-		array(
-				'key'     => 'pm_end_date',
-				'value'   => current_time( 'Y-m-d H:i' ),
-				'compare' => '>',
-		)
-	)
-);
+	'meta_query' => [
+		[
+			'key'     => 'pm_end_date',
+			'value'   => current_time( 'Y-m-d H:i' ),
+			'compare' => '>',
+		]
+	]
+];
 
 $events = get_posts($args);
 
-$netxtEvent = $events ? $events[0] : false;
+$nextEvent = $events ? $events[0] : false;
 
 $futureEvents = array_slice($events, 1);
 

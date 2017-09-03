@@ -1,7 +1,7 @@
 {var $start = strtotime(get_post_meta($event->ID, 'pm_start_date', true ))}
 {var $to = get_post(meta($event,'pm_position'))->post_title}
 
-{form $Forms[idos] id => idosForm, class=> 'form box'}
+{form $Forms[idos] id => idosForm, class=> 'form'}
 
 	{input date value => date('d.m.Y', $start)}
 	{input time value => date( 'H:i', $start - 1/4 * 60 * 60 )}
@@ -12,6 +12,6 @@
 	{input f id => idosForm, class => form-input}
 	{inputError f}
 
-	{input send class => 'button form-button'}
+	{input send class => 'button form-button', value => 'Najdi mi spoj'}
 
 {/form}

@@ -1,67 +1,58 @@
 {extends @layout.latte}
 
 {block #content}
-		{if $events}
-			{if has_post_thumbnail($event)}
+	{if $nextEvent}
+		<article class="invitation-text text box" n:ifcontent>
+			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
-					<a href="{get_the_post_thumbnail_url($event, "full")}" class="invitation-link"></a>
-						{get_the_post_thumbnail($event, "blog", array("class" => "img-responsive"))}
+					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" class="invitation-link">
+						{get_the_post_thumbnail($nextEvent, "blog", array("class" => "img-responsive"))|noescape}
 					</a>
 				</div>
 			{else}
 				<div class="invitation-image view-empty box">
 					<p class="invitation-text text view-hight">naše příští akce je</p>
-					<h1 class="invitation-title">{$event|wp_title}</h1>
-					<h2 class="invitation-subtitle">{$event|daterange}</h2>
+					<h1 class="invitation-title">{$nextEvent|wp_title}</h1>
+					<h2 class="invitation-subtitle">{$nextEvent|daterange}</h2>
 					<p class="invitation-text text view-hight">více informací brzy</p>
 					<p class="invitation-text text textview-hight">sledujte náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a></p>
 			{/if}
-			<div class="invitation-text text box" n:ifcontent>{$event->post_content}</div>
-			<div class="yeah-10 yeah-m-4">
-				<div class="row">
-					<div class="yeah-12" n:ifcontent>
-						<div class="map box">{$map}</div>
-					</div>
+			{$nextEvent|wp_content}
+		</article>
+	{else}
+		<div class="invitation-image invitation-image view-empty box">
+			<h1 class="invitation-title">Nejsou naplánované žádné akce</h1>
+			<h2 class="invitation-subtitle">Zkus to později</h2>
+		</div>
+	{/if}
+{/block}
+{block #aside}
+	<div class="map box">{$map|noescape}</div>
 
-					<div class="yeah-6 yeah-m-10" n:if="!empty($map)">
-						<div class="form-text">"Najdi si spoj:"</div>
-						{include components/idos-form.latte event => $nextEvent}
-					</div>
+	<div n:if="!empty($registerTo)">
+		<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$registerTo|date:"j. n. Y"}</strong>:</div>
+		{include components/register-form.latte event => $nextEvent}
+	</div>
 
-					<div class="yeah-6 yeah-m-10" n:if="!empty($registerTo)">
-						<div class="form-text form-text view-center">
-							Přihlaš se do {$registerTo|date:"j. n. Y"} // date("j. n. Y", strtotime($register_to))
-							<a href="https://m.me/podebradskamladez" target="_blank" title="Facebook Messenger" class="button view-call">
-								<span class="button-caption">Přihlásit se přes</span>
-								<span class="button-title">FB Messenger</span>
-							</a>
-							<div class="form-text form-text view-center">
-								nebo přes formulář
-								{include components/idos-form.latte event => $nextEvent}
-							</div>
-						</div>
-					</div>
-					<div class="yeah-10 yeah-m-12" n:if="!empty($futureEvents)">
-						<div class="calendar box">
-							<p class="calendar-description">Další akce:</p>
-							<div class="calendar-list">
-								{foreach $nextEvents as $item}
-									<div class="calendar-date">{$item|daterange}</div>
-									<div class="calendar-name">{$item|wp_title}</div>
-								{/foreach}
-							</div>
-						</div>
-					</div>
-					<div class="yeah-10 yeah-m-10">
-						<a href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank" class="center">
-							Přidej si náš kalendář google <br>do svého účtu
-						</a>
-					</div>
-				</div>
+	<div n:if="!empty($map)">
+		<div class="form-text">Najdi si spoj:</div>
+		{include components/idos-form.latte event => $nextEvent}
+	</div>
+
+	<div n:if="!empty($futureEvents)">
+		<div class="calendar box">
+			<p class="calendar-description">Další akce:</p>
+			<div class="calendar-list">
+				{foreach $futureEvents as $item}
+					<div class="calendar-date">{$item|daterange}</div>
+					<div class="calendar-name">{$item|wp_title}</div>
+				{/foreach}
 			</div>
-		{else}
-			<div class="invitation-image invitation-image view-empty box">
-				<h1 class="invitation-title">Nejsou naplánované žádné akce</h1>
-				<h2 class="invitation-subtitle">Zkus to později</h2>
-			</div>
-		{/if}
+		</div>
+	</div>
+	<div class="yeah-10 yeah-m-10">
+		<a href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank" class="center">
+			Přidej si náš kalendář google <br>do svého účtu
+		</a>
+	</div>
+{/block}

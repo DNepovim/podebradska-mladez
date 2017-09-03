@@ -1,9 +1,11 @@
-{form $Form[register]}
-	{foreach $form->components as $component}
+{form $Forms[register], class=> 'form box view-border'}
+	{var $inputs = ['firstname', 'surname', 'email']}
+	{foreach $inputs as $component}
 		{label $component class => form-label}
 		{input $component class => form-input}
-		<span class="form-error" n:ifempty>{inputError $component}</span>
+		<span class="form-error" n:ifcontent>{inputError $component}</span>
 	{/foreach}
+	{input register class => 'button form-button', value => 'Přihlaš mě na ' . ($event|wp_title)}
 
 	<span class="form-message view-success" n:if="$_GET['status'] && $_GET['status'] == 'success'">Byl jsi úspěšně přihlášen.</span>
 	<span class="form-message view-error"  n:if="$_GET['status'] && $_GET['status'] == 'error'">Něco se pokazilo.<br>Zkus to znovu, nebo nám napiš.</span>
