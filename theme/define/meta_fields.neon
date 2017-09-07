@@ -69,7 +69,7 @@ register:
 
 	fb-settings:
 		title: Facebook API
-		settings_page:
+		settings_pages:
 			- fb-settings
 		fields:
 			fb_app_id:
