@@ -14,10 +14,8 @@ $form->addHidden('time');
 $form->addHidden('t');
 $form->addHidden('byarr');
 
-$form->addText('f', 'Odkud')
-	->setAttribute('placeholder', 'Úžice')
-	->setRequired('Musíš sem napsat odkud jedeš.');
+$form->addText('f', 'Odkud pojedeš?')
+	->setRequired('Musíš sem napsat odkud pojedeš.');
 
-$form->addSubmit('send', 'Odeslat');
-
+$form->addSubmit('send', 'Najít');
 return $form;
