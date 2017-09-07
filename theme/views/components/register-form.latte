@@ -1,8 +1,10 @@
 {form $Forms[register], class=> 'form box view-border'}
 	{var $inputs = ['firstname', 'surname', 'email']}
 	{foreach $inputs as $component}
-		{label $component class => form-label}
-		{input $component class => form-input}
+		<fieldset class="form-fieldset floating">
+			{input $component class => 'form-input floating-input'}
+			{label $component class => 'form-label floating-label'}
+		</fieldset>
 		<span class="form-error" n:ifcontent>{inputError $component}</span>
 	{/foreach}
 	{input register class => 'button form-button', value => 'Přihlaš mě na ' . ($event|wp_title)}

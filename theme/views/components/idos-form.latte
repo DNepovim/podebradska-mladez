@@ -1,17 +1,19 @@
 {var $start = strtotime(get_post_meta($event->ID, 'pm_start_date', true ))}
 {var $to = get_post(meta($event,'pm_position'))->post_title}
 
-{form $Forms[idos] id => idosForm, class=> 'form'}
+{form $Forms[idos] id => idosForm, class=> 'form view-idos'}
 
 	{input date value => date('d.m.Y', $start)}
 	{input time value => date( 'H:i', $start - 1/4 * 60 * 60 )}
 	{input t value => $to}
 	{input byarr value => true}
 
-	{label f class => form-label}
-	{input f id => idosForm, class => form-input}
-	{inputError f}
+	<fieldset class="form-inline">
+		{input f class => 'form-inline-input floating-input'}
+		{label f class => 'form-label floating-label'}
+		{input send class => 'form-inline-button'}
+	</fieldset>
 
-	{input send class => 'button form-button', value => 'Najdi mi spoj'}
+	{inputError f}
 
 {/form}
