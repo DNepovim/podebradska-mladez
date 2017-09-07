@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d151cb7459677f187a1a64ca1852bf7",
+    "content-hash": "4f847a732fb41323a9b5b3036c758d64",
     "packages": [
         {
             "name": "composer/installers",
@@ -617,16 +617,16 @@
         },
         {
             "name": "nette/caching",
-            "version": "v2.5.5",
+            "version": "v2.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/caching.git",
-                "reference": "997d3b9868840da8b51f27565bfe1a8210e94620"
+                "reference": "1231735b5135ca02bd381b70482c052d2a90bdc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/caching/zipball/997d3b9868840da8b51f27565bfe1a8210e94620",
-                "reference": "997d3b9868840da8b51f27565bfe1a8210e94620",
+                "url": "https://api.github.com/repos/nette/caching/zipball/1231735b5135ca02bd381b70482c052d2a90bdc9",
+                "reference": "1231735b5135ca02bd381b70482c052d2a90bdc9",
                 "shasum": ""
             },
             "require": {
@@ -682,7 +682,7 @@
                 "nette",
                 "sqlite"
             ],
-            "time": "2017-08-18T15:20:18+00:00"
+            "time": "2017-08-30T12:12:25+00:00"
         },
         {
             "name": "nette/component-model",
@@ -875,16 +875,16 @@
         },
         {
             "name": "nette/di",
-            "version": "v2.4.9",
+            "version": "v2.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "25437788ff126d0ae6b1f2f684ecdd823812abba"
+                "reference": "a4b3be935b755f23aebea1ce33d7e3c832cdff98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/25437788ff126d0ae6b1f2f684ecdd823812abba",
-                "reference": "25437788ff126d0ae6b1f2f684ecdd823812abba",
+                "url": "https://api.github.com/repos/nette/di/zipball/a4b3be935b755f23aebea1ce33d7e3c832cdff98",
+                "reference": "a4b3be935b755f23aebea1ce33d7e3c832cdff98",
                 "shasum": ""
             },
             "require": {
@@ -929,9 +929,18 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "Nette Dependency Injection Component",
+            "description": "💎 Nette Dependency Injection Container: Flexible, compiled and full-featured DIC with perfectly usable autowiring and support for all new PHP 7.1 features.",
             "homepage": "https://nette.org",
-            "time": "2017-07-11T17:55:11+00:00"
+            "keywords": [
+                "compiled",
+                "di",
+                "dic",
+                "factory",
+                "ioc",
+                "nette",
+                "static"
+            ],
+            "time": "2017-08-31T22:42:00+00:00"
         },
         {
             "name": "nette/finder",
@@ -1976,10 +1985,10 @@
         },
         {
             "name": "wordpress/wordpress",
-            "version": "4.8",
+            "version": "4.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.8.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2010,15 +2019,15 @@
         },
         {
             "name": "wpackagist-plugin/html-editor-syntax-highlighter",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/html-editor-syntax-highlighter/",
-                "reference": "tags/2.2.1"
+                "reference": "tags/2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
