@@ -1,11 +1,15 @@
-{extends @layout.latte}
+{extends layouts/sidebar.latte}
 
-{block #content}
+{block #head}
+	<link href="{$assetsPath}/node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+{/block}
+
+{block #main}
 	{if $nextEvent}
 		<article class="invitation-text text box" n:ifcontent>
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
-					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" class="invitation-link">
+					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
 						{get_the_post_thumbnail($nextEvent, "blog", array("class" => "img-responsive"))|noescape}
 					</a>
 				</div>
@@ -17,7 +21,9 @@
 					<p class="invitation-text text view-hight">více informací brzy</p>
 					<p class="invitation-text text textview-hight">sledujte náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a></p>
 			{/if}
-			{$nextEvent|wp_content}
+			<div class="article box view-white view-article">
+				{$nextEvent|wp_content}
+			</div>
 		</article>
 	{else}
 		<div class="invitation-image invitation-image view-empty box">
@@ -29,7 +35,7 @@
 {block #aside}
 	<div class="map box">{$map|noescape}</div>
 
-	<div n:if="!empty($registerTo)">
+	<div class="form-container" n:if="!empty($registerTo)">
 		<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$registerTo|date:"j. n. Y"}</strong>:</div>
 		{include components/register-form.latte event => $nextEvent}
 	</div>
@@ -40,19 +46,22 @@
 	</div>
 
 	<div n:if="!empty($futureEvents)">
+		<div class="calendar-description form-text">Přijeď i na další akce:</div>
 		<div class="calendar box">
-			<p class="calendar-description">Další akce:</p>
-			<div class="calendar-list">
-				{foreach $futureEvents as $item}
-					<div class="calendar-date">{$item|daterange}</div>
-					<div class="calendar-name">{$item|wp_title}</div>
-				{/foreach}
-			</div>
+			{foreach $futureEvents as $item}
+				<div class="calendar-name">{$item|wp_title}</div>
+				<div class="calendar-date">{$item|daterange}{if ($item|wp_meta:pm_position)}, {$Post|wp_meta:pm_position|wp_title}{/if}</div>
+			{/foreach}
 		</div>
 	</div>
-	<div class="yeah-10 yeah-m-10">
-		<a href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank" class="center">
-			Přidej si náš kalendář google <br>do svého účtu
+	<div>
+		<a class="button view-light" href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank">
+			Google calendář
 		</a>
 	</div>
+{/block}
+
+{block #scripts}
+	{include #parent}
+	<script src="{$assetsPath}/node_modules/lightbox2/dist/js/lightbox.min.js" defer></script>
 {/block}

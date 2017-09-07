@@ -1,39 +1,51 @@
 
-{extends @layout.latte}
+{extends layouts/simple.latte}
 
 {block #head}
 	<link href="{$assetsPath}/node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
 {/block}
 
-{block #content}
+{block #main}
 	{each}
-		<article class="article text box" n:ifcontent>
-			<header class="article-head">
-				<h1 class="article-title" n:ifcontent>{$Post|wp_title}</h1>
-				<p class="article-subtitle">{$Post|daterange}, {$Post|wp_meta:pm_position|wp_title}</p>
-				<div class="article-hashtags" n:ifcontent>
-					<span class="article-hashtags-item" n:foreach="$hashtags as $hashtag">{$hashtag}</span>
-				</div>
-			</header>
+		<artitcle class="article">
+				<header class="article-header yeah-12 yeah-m-8">
+					<h1 class="article-title" n:ifcontent>{$Post|wp_title}</h1>
+					<p class="article-subtitle">{$Post|daterange}, {$Post|wp_meta:pm_position|wp_title}</p>
+					<div class="article-hashtags" n:ifcontent>
+						<span class="article-hashtags-item hashtag" n:foreach="$hashtags as $hashtag">{$hashtag}</span>
+					</div>
+				</header>
 
 			{if has_post_thumbnail()}
-				<div class="invitation-image box">
-					<a href="{get_the_post_thumbnail_url($Post, 'full')}" class="invitation-link">
-						{get_the_post_thumbnail($Post, "blog", array("class" => "img-responsive"))|noescape}
+				<figure class="yeah-12 yeah-m-10">
+					<a data-lightbox="inviation" href="{get_the_post_thumbnail_url($Post, 'full')}">
+						{get_the_post_thumbnail($Post, 'blog', [class => 'box article-invitation'])|noescape}
 					</a>
-				</div>
+				</figure>
 			{/if}
-			{$Post|wp_meta:pm_article|noescape}
-		</article>
-		<section class="feed" n:if="!empty($fb_posts)">
-			<figure class="feed-item" n:foreach="$fb_posts as $post">
-				<img class="box" src="{$post|wp_meta:fptc_image}" alt="">
-				<figcaption class="feed-caption">{$post|wp_meta:fptc_message}</figcaption>
-			</figure>
-		</section>
-		<article class="article" n:if="!empty(($Post|wp_content))">
-			<h1 class="article-title">Informace</h1>
-			{$Post|wp_content}
+			<section class="article-section yeah-12 yeah-m-8" n:ifcontent>
+				<h2 class="article-title title view-article">O akci</h2>
+				{$Post|wp_meta:pm_article|noescape}
+			</section>
+			<section class="feed  yeah-12 yeah-m-8" n:if="!empty($fb_posts)">
+				<h2 class="article-title title view-article">Z našeho facebooku</h2>
+				{foreach $fb_posts as $post}
+					{if meta($post->ID, 'fptc_image')}
+							<figure class="feed-item">
+								<a href="$post|wp_meta:fptc_image" data-lightbox="facebook" data-title="{$post|wp_meta:fptc_message}">
+									<img class="box feed-image" src="{$post|wp_meta:fptc_image}" alt="">
+								</a>
+								<figcaption class="feed-caption">{$post|wp_meta:fptc_message|hashtags|noescape}</figcaption>
+							</figure>
+					{else}
+						<div class="feed-item">{$post|wp_meta:fptc_message|hashtags|noescape}</div>
+					{/if}
+				{/foreach}
+			</section>
+			<section class="article-section  yeah-12 yeah-m-8" n:if="!empty(($Post|wp_content))">
+				<h2 class="article-title title view-article">Informace</h2>
+				{$Post|wp_content}
+			</section>
 		</article>
 	{/each}
 {/block}

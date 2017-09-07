@@ -42,27 +42,11 @@
 
 	<input type="checkbox" class="burger-check" id="burger-check">
 
-	<div class="container">
-		<div class="row">
-
-			<div class="yeah-0 yeah-m-2">
-				{include parts/menu.latte}
-			</div>
-
-			<main class="yeah-12 yeah-m-6 invitation main">
-				{block content}{/block}
-			</main>
-
-			<aside class="yeah-12 yeah-m-4">
-				{block aside}{/block}
-			</aside>
-		</div>
-		<div class="row">
-			{block bottom}{/block}
-		</div>
 	<div class="site-background">
 		<img class="site-background-img" src="{wp_get_attachment_image_src($site_background)|noescape}" srcset="{wp_get_attachment_image_srcset($site_background)|noescape}" sizes="{wp_get_attachment_image_srcset($row[image][0])|noescape}" alt="{$row[image_caption]}">
 	</div>
+
+	{block content}{/block}
 
 	{block scripts}
 		{analytics()}

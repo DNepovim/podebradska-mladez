@@ -1,0 +1,19 @@
+{extends ../@layout.latte}
+
+{block #content}
+	<div class="container">
+		<div class="row">
+
+			<div class="yeah-0 yeah-m-2">
+				{include ../parts/menu.latte}
+			</div>
+
+			<div class="yeah-12 yeah-m-10">
+				{block main}{/block}
+			</div>
+
+		</div>
+		<div class="row">
+			{block bottom}{/block}
+		</div>
+	</div>
