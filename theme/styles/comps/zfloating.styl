@@ -1,0 +1,25 @@
+.floating
+	position relative
+	margin-bottom 1rem
+
+	&-input
+		margin 0
+		padding 0.7em 0.7em 0.3em
+
+		&:focus
+		&:valid
+			& + label
+				top 2px
+				transform none
+				color $brand
+				font-size 0.6rem
+				margin-left 0.3em
+
+
+
+	&-label
+		absolute top 50% left 1em
+		transform translateY(-50%)
+		margin 0
+		transition top 300ms, transform 300ms, font-size 300ms, margin 300ms, color 300ms
+		cursor text

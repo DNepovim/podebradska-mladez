@@ -7,11 +7,14 @@
 	margin 1rem 0
 	padding 0.5em 1em
 	border-radius $radius
-	transition background 300ms
+	transition background 300ms, box-shdow 300ms, color 300ms, border 300ms
+	text-decoration none
 
 	&:hover
 		color $blank
 		background $black
+		box-shadow 0 0 0.4em 0.2em #c3c3c3
+		text-decoration underline
 
 	&:visited
 		color $blank
@@ -31,6 +34,20 @@
 		&:hover
 			color $blank
 			background $brand
+
+	&.view-light
+		display inline-block
+		color $black
+		background-color $transparent-box
+		border solid 1px $light-gray
+		width auto
+		clear both
+
+		&:hover
+			background-color $blank
+			border-color $black
+			box-shadow 0 0 0.4em 0.2em rgba(195, 195, 195, 0.28)
+
 
 
 

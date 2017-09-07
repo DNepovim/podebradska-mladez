@@ -4,8 +4,8 @@ require __DIR__ . '/theme-init.php';
 
 add_theme_support('menus');
 register_nav_menu('main_menu', 'Hlavní menu');
-register_nav_menu('contacts_menu', 'Kontakty');
 register_nav_menu('links_menu', 'Odkazy');
+register_nav_menu('footer_menu', 'Patička');
 
 function get_menu_items($menuName) {
 	if ($locations = get_nav_menu_locations()) {
@@ -21,8 +21,11 @@ function get_menu_items($menuName) {
 }
 
 $View->main_menu = get_menu_items('main_menu');
-$View->contacts_menu = get_menu_items('contacts_menu');
 $View->links_menu = get_menu_items('links_menu');
+$View->footer_menu = get_menu_items('footer_menu');
+
+$bgs = get_option('appearance-settings')['pm_bg_images'];
+$View->site_background = $bgs[rand(0, count($bgs)-1)];
 
 function get_daterange($event){
 	$start = strtotime(meta($event->ID, 'pm_start_date'));
@@ -74,7 +77,8 @@ function get_event_fb_posts($postID){
 		$args = [
 			'post_type'  => 'fb',
 			'meta_key'   => 'fptc_hashtag',
-			'meta_value' => $hashtag
+			'meta_value' => $hashtag,
+			'order'      => 'ASC'
 		];
 		$fb_posts = get_posts($args);
 		return $fb_posts;

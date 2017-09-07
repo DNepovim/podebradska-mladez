@@ -44,3 +44,7 @@ MangoFilters::$set['gpsizes'] = function($url, $width = null, $height = null){
 	}
 	return $url;
 };
+
+MangoFilters::$set['hashtags'] = function($string){
+	return preg_replace('/#([^\s]+)/', '<span class="hashtag">#\1</span>', $string);
+};
