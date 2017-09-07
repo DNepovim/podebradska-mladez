@@ -10,10 +10,18 @@
 		text-align center
 
 	&-title
-		font-size 2rem
+		font-size 1.4rem
 
 	&-subtitle
 		font-size 0.7rem
+		margin-bottom 0.2em
+
+	&-desc
+		margin: 0.2em 0 0.7rem
+		line-height 1em
+		font-size 0.5rem
+		padding 0 3em
+		text-align center
 
 	&-img
 		padding-left 10px
@@ -27,22 +35,10 @@
 	&-link
 		transition background-color 0.25s ease-in-out
 		background-color $blank
-
-		&
-		&:hover
-		&:active
-		&:visited
-			text-decoration none
+		text-decoration none
 
 	.view-secret &
 		background-color $secret
-
-	&-burger
-		absolute top 0 right 3%
-		size 15% 100%
-		display flex
-		align-items center
-		display none
 
 	&-menu
 		margin 0
@@ -57,7 +53,7 @@
 
 				a
 					display block
-					color $brand
+					color $text-color
 					font-size 20px
 					font-variant small-caps
 					text-decoration none
@@ -65,12 +61,10 @@
 					border solid 1px $border
 					transition color 300ms, background 300ms
 
-					&[rel='home']
-						display none
-
-
 					&:hover
-						background $brandHover
+						color $brand
+						background-color $blank
+						text-decoration underline
 
 				&:last-of-type
 					a
@@ -83,11 +77,13 @@
 			color $brand
 			font-size 0.8rem
 			margin 0
+			list-style none
 
 		&-item
 			text-align center
 			border solid $border 1px
 			border-bottom none
+			overflow hidden
 
 			&:first-of-type
 				border-radius $radius $radius 0 0
@@ -100,33 +96,46 @@
 				display block
 				color $black
 				background-color $text-background
+				font-size 0.8rem
 				font-variant small-caps
-				font-weight bold
 				line-height 1.5em
 				transition background-color 0.25s ease-in-out
+				text-decoration none
 
 				&:hover
-					background-color $brandHover
+					color $brand
+					background-color $blank
+					text-decoration underline
 
 	&-footer
+		text-align center
+		line-height 1em
+
 		&-link
 			font-size 0.5rem
-			color $brand
-			text-align center
-			position relative
-			margin 0.2rem
+			color $black
+			margin 0.2em
+			transition color 300ms
+			text-decoration none
 
-			a
-				margin 0 0.2rem
-				padding 0.1em 0.5rem
-				border-radius 1em
-				transition background-color 300ms
+			&:hover
+				color $brand
+				text-decoration underline
 
-				&:hover
-					color $gray
-					background-color fade($brand, 50)
+	@media $breakM.l
+		&-burger
+			absolute top 0 right 3%
+			size 15% 100%
+			display flex
+			align-items center
 
-	@media $breakM.m
+		&-menu
+			&-list
+				li
+					a
+						padding 0.5em
+
+
 		&-img
 			absolute top 0 left 3%
 			size 15%
@@ -151,18 +160,24 @@
 			z-index 50
 			width 100vw
 			padding 0.5rem
-			background-color $brand
+			background-color $blank
 			box-shadow 0 2px 4px 0 rgba(0,0,0,0.08)
 
 
 
-	@media $break.m
+	@media $break.l
+		&-burger
+			display none
+
 		&-top
-			border solid 1px $brand
+			border solid 1px $border
 			border-radius $radius $radius 0 0
+			transition background 300ms
+
+			&:hover
+				background-color $blank
 
 		&-title
 		&-subtitle
-			padding 0.7rem 0
-			margin 0
+			margin 0.5em 0
 			width 100%

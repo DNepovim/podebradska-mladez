@@ -9,6 +9,7 @@
 						</svg>
 					</span>
 					<h2 class="navigation-subtitle" n:ifcontent>{bloginfo("description")}</h2>
+					<p class="navigation-desc">Českobratrské církve evangelické</p>
 					<label for="burger-check" class="navigation-burger">
 						<span class="burger">
 							<span class="burger-spin view-one"></span>
@@ -22,7 +23,7 @@
 				<nav class="navigation-menu-container">
 					<ul class="navigation-menu-list">
 						<li class="navigation-menu-item" n:foreach="$main_menu as $item">
-							<a href="{$item|wp_permalink}">{$item|wp_title}</a>
+							<a href="{$item->url}">{$item|wp_title}</a>
 						</li>
 					</ul>
 				</nav>
@@ -30,26 +31,13 @@
 		</div>
 		<div class="navigation-links">
 			<ul class="navigation-links-list" n:if="$links_menu">
-				E-mail:
-				<li class="navigation-links-item" n:foreach="$contacts_menu as $item">
-					<a href="{$item|wp_permalink}" target="_blank">{$item|wp_title}</a>
-				</li>
-			</ul>
-			<ul class="navigation-links-list" n:if="$links_menu">
-				Odkazy:
 				<li class="navigation-links-item" n:foreach="$links_menu as $item">
-					<a href="{$item|wp_permalink}" target="_blank">{$item|wp_title}</a>
+				{dump $item}
+					<a href="{$item->url}" target="_blank">{$item|wp_title}</a>
 				</li>
 			</ul>
-			<div class="navigation-footer">
-				<p class="navigation-footer-link">
-					<a href="http://podebradska-mladez.evangnet.cz/wp-login.php">Login</a>
-					<a href="http://podebradska-mladez.evangnet.cz/?page_id=1242">Secure</a>
-				</p>
-				<p class="navigation-footer-link">
-					<a href="http://www.dombl.cz" target="_blank">Dominik Bláha</a>
-					<a href="https://www.github.com/DNepovim/podebradska-mladez" target="_blank">Github</a>
-				</p>
+			<div class="navigation-footer" n:if="$footer_menu">
+					<a class="navigation-footer-link" href="{$item->url}" target="_blank"  n:foreach="$footer_menu as $item">{$item|wp_title}</a>
 			</div>
 		</div>
 	</div>

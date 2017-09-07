@@ -6,9 +6,6 @@ $gap = 1rem
 // yeah, you can set count of columns
 $columns = 12
 
-// yeah, you can set where may grid turn to fluid layout
-$turnToFluid = 600px
-
 // yeah, if you use Tracy (mostly with Nette framework), you can use breakpoints debug mode
 $debug = true
 
@@ -16,11 +13,13 @@ $debug = true
 $breakpoints = {
 	xs  : 300px
 	s   : 500px
-	m   : 600px
+	m   : 700px
 	l   : 900px
 	xl  : 1080px
 }
 
+// yeah, you can set where may grid turn to fluid layout
+$turnToFluid = $breakpoints.xl
 
 // this is just a clearfix
 clearfix()
@@ -39,7 +38,7 @@ clearfix()
 	margin-right auto
 	margin-left auto
 	margin-top $gap * 2
-	padding  $gap / 2 $gap
+	padding  ($gap / 2) $gap
 	clearfix()
 
 // do you need fluid layout? here it is
