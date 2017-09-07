@@ -62,6 +62,8 @@
 		<div class="row">
 			{block bottom}{/block}
 		</div>
+	<div class="site-background">
+		<img class="site-background-img" src="{wp_get_attachment_image_src($site_background)|noescape}" srcset="{wp_get_attachment_image_srcset($site_background)|noescape}" sizes="{wp_get_attachment_image_srcset($row[image][0])|noescape}" alt="{$row[image_caption]}">
 	</div>
 
 	{block scripts}

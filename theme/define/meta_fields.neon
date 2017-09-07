@@ -80,3 +80,11 @@ register:
 				name: Page ID
 			fb_access_token:
 				name: Access Token
+
+	site-background:
+		title: Pozadí stránky
+		settings_pages:
+			- appearance-settings
+		fields:
+			bg_images:
+				type: image_advanced
