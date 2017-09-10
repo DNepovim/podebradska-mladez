@@ -15,7 +15,7 @@ if(DEBUG) console.time('Components initialization')
 //
 // Components declarations
 var components = {
-	'example': require('./components/example'),
+	'parallax': require('./components/parallax'),
 	'shapes': require('./components/shapes')
 }
 var instances = []
