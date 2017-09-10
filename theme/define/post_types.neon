@@ -55,6 +55,8 @@ register:
 		public: true
 		has_archive: true
 		menu_icon: dashicons-businessman
+		rewrite:
+			slug: som-items
 		supports:
 			- title
 			- editor
