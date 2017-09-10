@@ -15,6 +15,8 @@ if(DEBUG) console.time('Components initialization')
 //
 // Components declarations
 var components = {
+	'input-add-symbol': require('./components/input-add-symbol'),
+	'form': require('./components/form'),
 	'parallax': require('./components/parallax'),
 	'shapes': require('./components/shapes')
 }

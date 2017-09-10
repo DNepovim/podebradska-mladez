@@ -1,4 +1,5 @@
 .form
+	position relative
 	padding 0.9rem 1rem 0.6rem
 	margin 0
 	background-color $transparent-box
@@ -26,6 +27,7 @@
 
 		&:hover
 			border-color $black
+			box-shadow $box-shadow
 
 		&:focus
 			outline none
@@ -33,12 +35,30 @@
 			background-color $blank
 
 		&:valid
+		&.is-filled
 			background-color $blank
 
 	&-label
 		display block
 		font-size 0.8rem
 		color $gray
+
+	&-add-symbol
+		absolute top 0 right 0 bottom 0
+		size 2rem 100%
+		display flex
+		justify-content center
+		align-items center
+		cursor pointer
+		border-radius  0 $radius $radius 0
+		border solid 1px transparent
+		border-left-color $light-gray
+		color $text-color-light
+		transition color 300ms
+
+		&:hover
+			color $brand
+
 
 	&-button
 		display block
@@ -105,10 +125,11 @@
 			border-radius $radius
 			border solid 1px $light-gray
 			background-color rgba(255, 255, 255, 0.7)
-			transition background 300ms, border 300ms
+			transition background 300ms, border 300ms, box-shadow 300ms
 
 			&:hover
 				border-color $black
+				box-shadow $box-shadow
 
 			&:focus
 				border-color $brand
@@ -116,6 +137,7 @@
 				background-color $blank
 
 			&:valid
+			&.is-filled
 				background-color $blank
 
 		&-button
@@ -136,5 +158,43 @@
 				text-decoration underline
 				border-color $black
 
+	&-loader
+		display none
+		absolute top 0 right 0 bottom 0 left 0
+		size 100%
+		background-color rgba(255, 255, 255, 0.9)
+
+		&:after
+			content ''
+			display block
+			background url(../images/loader.svg) center center / contain no-repeat
+			size 3rem
+			absolute top 50% left 50%
+			transform translate(-50%, -50%)
+
+		&-content
+			display none
+			absolute top 50% left 50%
+			transform translate(-50%, -50%)
+
+		&-message
+			color $brand
+			font-weight bold
+			text-align center
+
 	&.view-border
 		border solid $brand 1px
+
+	.is-in-process &
+		&-loader
+			display block
+
+	.is-success &
+		&-loader
+			display block
+
+			&:after
+				display none
+
+			&-content
+				display block

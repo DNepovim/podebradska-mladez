@@ -100,3 +100,23 @@ function get_event_hashtags($postID) {
 		return false;
 	}
 }
+
+function process_registration_form($values) {
+	$full_name = wp_strip_all_tags($values['firstname']) . ' ' . wp_strip_all_tags($values['surname']);
+	$meta_input = [
+		'event_id' => $values['postID'],
+		'participant_date' => current_time( 'Y-m-d H:i' ),
+		'participant_type' => 'web',
+		'participant_name' => $values['firstname'],
+		'participant_surname' => $values['surname'],
+		'participant_mail' => $values['email']
+	];
+
+	$post_data = [
+		'post_title'  => $full_name,
+		'post_type'   => 'participants',
+		'post_status' => 'private',
+		'meta_input'  => $meta_input
+	];
+	return wp_insert_post($post_data);
+}

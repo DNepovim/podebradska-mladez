@@ -1,14 +1,35 @@
-{form $Forms[register], class=> 'form box view-border'}
+{form $Forms[register], id => register-form, class=> 'form box view-border', novalidate => ''}
 	{var $inputs = ['firstname', 'surname', 'email']}
 	{foreach $inputs as $component}
 		<fieldset class="form-fieldset floating">
 			{input $component class => 'form-input floating-input'}
 			{label $component class => 'form-label floating-label'}
+			<label class="form-add-symbol" n:name="$component" n:if="$component==email">@</label>
+			<span class="form-error" data-for="frm-{$component}">{inputError $component}</span>
 		</fieldset>
 		<span class="form-error" n:ifcontent>{inputError $component}</span>
 	{/foreach}
+	{input postID , value => $event->ID}
 	{input register class => 'button form-button', value => 'Přihlaš mě na ' . ($event|wp_title)}
 
-	<span class="form-message view-success" n:if="$_GET['status'] && $_GET['status'] == 'success'">Byl jsi úspěšně přihlášen.</span>
-	<span class="form-message view-error"  n:if="$_GET['status'] && $_GET['status'] == 'error'">Něco se pokazilo.<br>Zkus to znovu, nebo nám napiš.</span>
+	<div class="form-loader">
+		<div class="form-loader-content">
+			<svg class="form-loader-checkmark checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+			<p class="form-loader-message">Úspěšně jsem tě přihlásil na <br>{$event|wp_title}	</p>
+		</div>
+	</div>
 {/form}
+
+<script>
+	initComponents.push(
+		{
+			name: 'input-add-symbol',
+			place: '#register-form'
+		},
+		{
+			name: 'form',
+			place: '#register-form',
+			data: { endpoint: '/api/register' }
+		}
+	)
+</script>

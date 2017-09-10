@@ -13,6 +13,9 @@ switch($ApiRequest[0]) {
 	case 'load-google-photos':
 		$payload['status'] = load_google_photos($ApiRequest[1]);
 		break;
+	case 'register':
+		$payload['status'] = process_registration_form($Req->getPost());
+		break;
 }
 
 sendPayload($payload);
