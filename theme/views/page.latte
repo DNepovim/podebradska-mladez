@@ -1,1 +1,28 @@
-{extends single.latte}
+{extends layouts/simple.latte}
+
+{block main}
+	{each}
+
+		<article class="article box view-white view-article">
+			<h1 class="article-title" n:ifcontent>{$Post|wp_title}</h1>
+
+			{if has_post_thumbnail()}
+				<figure class="yeah-12 yeah-m-10">
+					<a data-lightbox="inviation" href="{get_the_post_thumbnail_url($Post, 'full')}">
+						{get_the_post_thumbnail($Post, 'blog', [class => 'box article-invitation'])|noescape}
+					</a>
+				</figure>
+			{/if}
+
+			{$Post|wp_content}
+		</article>
+	{/each}
+	<div class="post-thumb article box view-white view-article" n:foreach="$posts as $post">
+		<div class="post-thumb-image">
+			{get_the_post_thumbnail($post, 'person', ['class' => 'box'])|noescape}
+		</div>
+		<div class="post-thumb-content">
+			<h1 class="post-thumb-title title view-medium">{$post|wp_title}</h1>
+			<div class="post-thumb-conent">{$post|wp_content}</div>
+		</div>
+	</div>

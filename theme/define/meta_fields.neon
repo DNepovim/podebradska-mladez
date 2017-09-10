@@ -88,3 +88,13 @@ register:
 		fields:
 			bg_images:
 				type: image_advanced
+
+	page:
+		title: Příspěvky
+		post_types:
+			- page
+		context: side
+		fields:
+			page_posts:
+				type: type
+

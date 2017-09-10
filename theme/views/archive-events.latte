@@ -1,15 +1,15 @@
 {extends layouts/simple.latte}
 
 {block main}
-	<div class="event-thumb" n:foreach="$events as $event">
-		<a href="{$event|wp_permalink}" class="event-thumb-image">
+	<div class="post-thumb" n:foreach="$events as $event">
+		<a href="{$event|wp_permalink}" class="post-thumb-image">
 			{get_the_post_thumbnail($event, 'wrapper', ['class' => 'box'])|noescape}
 		</a>
-		<div class="event-thumb-content">
-			<h1 class="event-thumb-title title view-medium"><a href="{$event|wp_permalink}">{$event|wp_title}</a></h1>
-			<p class="event-thumb-subtitle">{$event|daterange}, {$event|wp_meta:pm_position|wp_title}</p>
-			<div class="event-thumb-hashtags" n:ifcontent>
-				<span class="event-thumb-hashtags-item hashtag" n:foreach="get_event_hashtags($event->ID) as $hashtag">{$hashtag}</span>
+		<div class="post-thumb-content">
+			<h1 class="post-thumb-title title view-medium"><a href="{$event|wp_permalink}">{$event|wp_title}</a></h1>
+			<p class="post-thumb-subtitle">{$event|daterange}, {$event|wp_meta:pm_position|wp_title}</p>
+			<div class="post-thumb-hashtags" n:ifcontent>
+				<span class="post-thumb-hashtags-item hashtag" n:foreach="get_event_hashtags($event->ID) as $hashtag">{$hashtag}</span>
 			</div>
 		</div>
 	</div>
