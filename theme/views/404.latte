@@ -1,6 +1,10 @@
-{extends layouts/sidebar.latte}
-
-{var $title = '404 - File not found'}
+{extends layouts/simple.latte}
 
 {block #main}
-	<h1>{$title}</h1>
+	<div class="invitation-image view-empty box">
+		<h1 class="invition-subtitle">Stránka, kterou hledáš tu není…</h1>
+		<p class="invitation-text">Možná hledáš informaca o naší další akci:</p>
+		<h2 class="invitation-title"><a href="/">{$nextEvent|wp_title}</a></h2>
+		<p class="invitation-text">{$nextEvent|daterange}</p>
+		<p class="invitation-text">určitě nic nezkazíš, když budeš sledovat náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a>.</p>
+	</div
