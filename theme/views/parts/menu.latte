@@ -32,7 +32,6 @@
 		<div class="navigation-links">
 			<ul class="navigation-links-list" n:if="$links_menu">
 				<li class="navigation-links-item" n:foreach="$links_menu as $item">
-				{dump $item}
 					<a href="{$item->url}" target="_blank">{$item|wp_title}</a>
 				</li>
 			</ul>
