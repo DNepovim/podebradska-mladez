@@ -10,7 +10,7 @@
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
 					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
-						{get_the_post_thumbnail($nextEvent, "blog", array("class" => "img-responsive"))|noescape}
+						{get_the_post_thumbnail($nextEvent, 'invitation')|noescape}
 					</a>
 				</div>
 			{else}

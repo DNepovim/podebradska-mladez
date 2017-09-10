@@ -3,7 +3,7 @@
 {block main}
 	<div class="event-thumb" n:foreach="$events as $event">
 		<a href="{$event|wp_permalink}" class="event-thumb-image">
-			{get_the_post_thumbnail($event, 'xs', ['class' => 'box'])|noescape}
+			{get_the_post_thumbnail($event, 'wrapper', ['class' => 'box'])|noescape}
 		</a>
 		<div class="event-thumb-content">
 			<h1 class="event-thumb-title title view-medium"><a href="{$event|wp_permalink}">{$event|wp_title}</a></h1>
