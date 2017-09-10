@@ -11,7 +11,7 @@
     "wpackagist-plugin/meta-box": "^4.12.3",
     "wpackagist-plugin/blue-admin": "^16.10",
     "wpackagist-plugin/html-editor-syntax-highlighter": "^2.2.0",
-    "facebook/graph-sdk": "^5.2"
+    "wpackagist-plugin/regenerate-thumbnails": "^2.2.6"
 	},
 	"require-dev": {
 		"nette/tester": "^1.7.0"
