@@ -6,6 +6,8 @@ hide:
 	editor:
 		templates:
 			- front-page
+			- template-registerlist
 	thumbnail:
 		templates:
 			- front-page
+			- template-registerlist

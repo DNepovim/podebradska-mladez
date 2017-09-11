@@ -1,0 +1,23 @@
+{extends layouts/simple.latte}
+
+{block #main}
+	{dump $participants}
+	<article class="article box view-white view-article">
+		{if $nextEvent}
+			<h1 class="article-title" n:ifcontent>{$nextEvent|wp_title}</h1>
+			{if $participants}
+				<table class="list">
+					<tr class="list-item view-{$participant|wp_meta:participant_type}" n:foreach="$participants as $participant">
+						<td class="list-col list-date">{$participant|wp_meta:participant_date|date:'j. n. Y'}</td>
+						<td class="list-col list-surname">{$participant|wp_meta:participant_surname}</td>
+						<td class="list-col list-name">{$participant|wp_meta:participant_name}</td>
+						<td class="list-col list-name">{$participant|wp_meta:participant_mail}</td>
+					</tr>
+				</table>
+			{else}
+				Zatím nejsou žádní přihlášení
+			{/if}
+		{else}
+			Žádná akce není k dispozici
+		{/if}
+	</article>
