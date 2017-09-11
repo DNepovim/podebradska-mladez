@@ -26,6 +26,7 @@ $View->footer_menu = get_menu_items('footer_menu');
 
 $bgs = get_option('appearance-settings')['pm_bg_images'];
 $View->site_background = $bgs[rand(0, count($bgs)-1)];
+$View->gtm_code = $App->parameters['GTM'];
 
 function get_daterange($event){
 	$start = strtotime(meta($event->ID, 'pm_start_date'));
