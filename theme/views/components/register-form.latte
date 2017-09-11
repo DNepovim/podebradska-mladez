@@ -7,10 +7,18 @@
 			<label class="form-add-symbol" n:name="$component" n:if="$component==email">@</label>
 			<span class="form-error" data-for="frm-{$component}">{inputError $component}</span>
 		</fieldset>
-		<span class="form-error" n:ifcontent>{inputError $component}</span>
 	{/foreach}
 	{input postID , value => $event->ID}
 	{input register class => 'button form-button', value => 'Přihlaš mě na ' . ($event|wp_title)}
+
+	<div n:class="message, $_GET['success'] ? 'view-success' : 'view-error'" n:if="isset($_GET['success'])">
+		{if $_GET['success']}
+			Úspěšně jsem tě přihlásil na <br>{$event|wp_title}
+		{else}
+		 Něco se pokazilo.<br> Zkusto znovu, nebo mi napiš na mali <a href="mailto:nik@skaut.cz">nik@skaut.cz</a>.
+			{wpml_string('Někde se stala chyba. Zkuste to znovu.','form')}
+		{/if}
+	</div>
 
 	<div class="form-loader">
 		<div class="form-loader-content">
