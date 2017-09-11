@@ -16,6 +16,15 @@ switch($ApiRequest[0]) {
 	case 'register':
 		$payload['status'] = process_registration_form($Req->getPost());
 		break;
+	case 'messengerbot':
+		messengerbot_process();
+		break;
+	case 'messengerbot-set':
+		messengerbot_set_thread();
+		break;
+	case 'messengerbot-verify':
+		messengerbot_process();
+		break;
 }
 
 sendPayload($payload);
