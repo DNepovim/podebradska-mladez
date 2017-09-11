@@ -24,7 +24,14 @@ $form->addSubmit('register', 'Přihlásit se')
 	->setAttribute('class', 'button form-button');
 
 if(isFormValid($form, __FILE__)) {
-	dump($c->getValues());
+	$values = $form->getValues();
+	try {
+		process_registration_form($values);
+		wp_redirect(add_query_arg('success', true, remove_query_arg('do')));
+		die;
+	} catch (SendException $e) {
+		wp_redirect(add_query_arg('success', false, remove_query_arg('do')));
+	}
 }
 
 return $form;
