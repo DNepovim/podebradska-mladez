@@ -5,9 +5,10 @@
 use Nette\Forms\Form;
 
 $form = new Form;
+$form->setMethod('GET');
 
 $form->addProtection('Detected robot activity.');
-$form->setAction('http://jizdnirady.idnes.cz/vlakyautobusy/spojeni');
+$form->setAction('http://jizdnirady.idnes.cz/vlakyautobusy/spojeni?submit=true');
 
 $form->addHidden('date');
 $form->addHidden('time');
