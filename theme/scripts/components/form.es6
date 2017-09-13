@@ -18,6 +18,7 @@ class Form extends Component {
 	get listeners() {
 		return {
 			'focusout input': 'handleVerified',
+			'keydown input': 'handleChange',
 			'click input[type="submit"]': 'handleSubmit',
 			'click .form-loader': 'handleHideMessage'
 		}
@@ -43,6 +44,12 @@ class Form extends Component {
 				})
 			}
 		})
+	}
+
+	handleChange(e, self) {
+		const $input = $(e.currentTarget)
+		const $messageField = $('[data-for="' + $input.attr('id') + '"]')
+		$messageField.text('')
 	}
 
 	handleSubmit(e, self) {
