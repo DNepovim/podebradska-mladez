@@ -7,21 +7,27 @@
 		clear both
 
 	&-image
-		float left
-		margin-right 1rem
-		width 35%
-		min-height 1rem
+		margin-bottom 1rem
 
 		img
 			max-width 100%
+			width 100%
 			height auto
-
-	&-content
-		display inline-block
-		width 60%
+			margin 0
 
 	&-subtitle
 		margin 0
 
 	&-hashtags
 		max-width 27rem
+
+	@media $break.s
+		&-image
+			float left
+			margin-right 1rem
+			margin-bottom 0.5rem
+			width 35%
+			min-height 1rem
+
+			img
+				max-width 100%
