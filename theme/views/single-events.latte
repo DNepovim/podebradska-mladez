@@ -23,7 +23,7 @@
 					</a>
 				</figure>
 			{/if}
-			<section class="article-section yeah-12 yeah-m-8" n:ifcontent>
+			<section class="article-section yeah-12 yeah-m-8" n:if="($Post|wp_meta:pm_article)">
 				<h2 class="article-title title view-article">O akci</h2>
 				{$Post|wp_meta:pm_article|noescape}
 			</section>
