@@ -19,7 +19,7 @@ class Form extends Component {
 		return {
 			'focusout input': 'handleVerified',
 			'keydown input': 'handleChange',
-			'click input[type="submit"]': 'handleSubmit',
+			'click button': 'handleSubmit',
 			'click .form-loader': 'handleHideMessage'
 		}
 	}

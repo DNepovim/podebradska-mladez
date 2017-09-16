@@ -19,7 +19,7 @@
 					<h1 class="invitation-title">{$nextEvent|wp_title}</h1>
 					<h2 class="invitation-subtitle">{$nextEvent|daterange}</h2>
 					<p class="invitation-text text view-hight">více informací brzy</p>
-					<p class="invitation-text text textview-hight">sledujte náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a></p>
+					<p class="invitation-text text textview-hight">sleduj náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a></p>
 				</div>
 			{/if}
 			<div class="article box view-white view-article">
@@ -34,12 +34,24 @@
 	{/if}
 {/block}
 {block #aside}
-	<div class="map box">{$map|noescape}</div>
+	<div class="map box" n:if="$map">{$map|noescape}</div>
 
-	<div class="form-container" n:if="!empty($registerTo)">
-		<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$registerTo|date:"j. n. Y"}</strong>:</div>
-		{include components/register-form.latte event => $nextEvent}
-	</div>
+	{if $registerTo}
+		{if $registerTo == -1}
+			<div class="form-container">
+				<div class="form-text">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> jsme ještě nespustili.</div>
+			</div>
+		{elseif $registerTo == -2}
+			<div class="form-container">
+				<div class="form-text">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> je už uzavřeno.</div>
+			</div>
+		{else}
+			<div class="form-container">
+				<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$registerTo|date:"j. n. Y"}</strong>:</div>
+				{include components/register-form.latte event => $nextEvent}
+			</div>
+		{/if}
+	{/if}
 
 	<div n:if="!empty($map)">
 		<div class="form-text">Najdi si spoj:</div>
@@ -57,7 +69,7 @@
 	</div>
 	<div>
 		<a class="button view-light" href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank">
-			Google kalendář
+			<i class="fa fa-calendar icon" aria-hidden="true"></i> Google kalendář
 		</a>
 	</div>
 {/block}
