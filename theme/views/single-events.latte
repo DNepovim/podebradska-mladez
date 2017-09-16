@@ -32,8 +32,8 @@
 				{foreach $fb_posts as $post}
 					{if meta($post->ID, 'fptc_image')}
 							<figure class="feed-item">
-								<a href="$post|wp_meta:fptc_image" data-lightbox="facebook" data-title="{$post|wp_meta:fptc_message}">
-									<img class="box feed-image" src="{$post|wp_meta:fptc_image}" alt="">
+								<a href="{$post|wp_meta:fptc_image|noescape}" data-lightbox="facebook" data-title="{$post|wp_meta:fptc_message}">
+									<img class="box feed-image" src="{$post|wp_meta:fptc_image|noescape}" alt="">
 								</a>
 								<figcaption class="feed-caption">{$post|wp_meta:fptc_message|hashtags|noescape}</figcaption>
 							</figure>
