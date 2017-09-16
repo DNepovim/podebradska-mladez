@@ -2,6 +2,7 @@
 	"name": "mangoweb/mangopress",
 	"description": "ManGoweb's WordPress project boilerplate.",
 	"require": {
+    "facebook/graph-sdk": "^5.2",
 		"wordpress/wordpress": "*",
 		"nette/nette": "^2.4.0",
 		"mangoweb/mangopress-sql-panel": "dev-master",
