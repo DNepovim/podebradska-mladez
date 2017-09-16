@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/messengerbot/functions.php';
+
 function messengerbot_process() {
 	messengerbot_verify ();
 	$input = json_decode( file_get_contents( 'php://input' ), true );
