@@ -2,9 +2,7 @@
 
 // $ApiRequest = [ 'param1', 'param2', ... ]
 
-$payload = [
-	'status' => 'hello'
-];
+$payload = [];
 
 switch($ApiRequest[0]) {
 	case 'load-fb-posts':
@@ -17,7 +15,7 @@ switch($ApiRequest[0]) {
 		$payload['status'] = process_registration_form($Req->getPost());
 		break;
 	case 'messengerbot':
-		messengerbot_process();
+		messengerResp();
 		break;
 	case 'messengerbot-set':
 		messengerbot_set_thread();

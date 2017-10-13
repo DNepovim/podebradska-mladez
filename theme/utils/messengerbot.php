@@ -1,5 +1,17 @@
 <?php
 
+use juno_okyo\Chatfuel;
+
+function messengerResp() {
+	$chatfuel = new Chatfuel(TRUE);
+	$chatfuel->sendText('Hello, World!');
+}
+
+
+
+
+
+require_once __DIR__ . '/../../public/wp-core/wp-load.php';
 require_once __DIR__ . '/messengerbot/functions.php';
 
 function messengerbot_process() {

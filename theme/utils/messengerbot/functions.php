@@ -126,7 +126,8 @@ function sendImage( $sender, $image ) {
 	send( $jsonData );
 }
 
-function sendInvitationCard( $sender, $event ) {
+function sendInvitationCard( $sender) {
+	$event = getNextEvent();
 	$thumb_id  = get_post_thumbnail_id( $event->ID );
 	$thumb_url = wp_get_attachment_image_src( $thumb_id, 'invitation' )[0];
 

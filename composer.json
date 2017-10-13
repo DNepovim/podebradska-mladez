@@ -12,7 +12,8 @@
 		"wpackagist-plugin/meta-box": "^4.12.3",
 		"wpackagist-plugin/blue-admin": "^16.10",
 		"wpackagist-plugin/html-editor-syntax-highlighter": "^2.2.0",
-		"wpackagist-plugin/regenerate-thumbnails": "^2.2.6"
+		"wpackagist-plugin/regenerate-thumbnails": "^2.2.6",
+		"juno_okyo/php-chatfuel-class": "^1.0"
 	},
 	"require-dev": {
 		"nette/tester": "^1.7.0"

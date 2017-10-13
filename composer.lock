@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2925405a14bf53536886941600f1271b",
+    "content-hash": "aaba3d9fcf83d4c14d80759226dbfdb3",
     "packages": [
         {
             "name": "composer/installers",
@@ -222,6 +222,52 @@
             "description": "A composer installer for libraries that live in an application webroot.",
             "homepage": "http://fancyguy.github.com/webroot-installer/",
             "time": "2013-03-15T17:51:14+00:00"
+        },
+        {
+            "name": "juno_okyo/php-chatfuel-class",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/J2TeaM/php-chatfuel-class.git",
+                "reference": "ce0405a7fd698c7ff30b7ba1b1de187ec2dcea23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/J2TeaM/php-chatfuel-class/zipball/ce0405a7fd698c7ff30b7ba1b1de187ec2dcea23",
+                "reference": "ce0405a7fd698c7ff30b7ba1b1de187ec2dcea23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "juno_okyo\\": "src/juno_okyo/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Manh Tuan",
+                    "email": "junookyo@gmail.com",
+                    "homepage": "https://junookyo.blogspot.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP class to generate JSON output for your chatbot (build with Chatfuel)",
+            "homepage": "https://github.com/J2TeaM/php-chatfuel-class",
+            "keywords": [
+                "chatbot",
+                "chatfuel",
+                "facebook bot",
+                "json api",
+                "messenger bot"
+            ],
+            "time": "2017-03-10T05:54:23+00:00"
         },
         {
             "name": "latte/latte",
@@ -2013,7 +2059,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/blue-admin.zip?timestamp=1484850942",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -2033,7 +2079,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.2.zip",
-                "reference": null,
+                "reference": "tags/2.2.2",
                 "shasum": null
             },
             "require": {
@@ -2053,7 +2099,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/meta-box.zip?timestamp=1503385380",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -2073,7 +2119,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
-                "reference": null,
+                "reference": "tags/2.2.6",
                 "shasum": null
             },
             "require": {
