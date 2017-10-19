@@ -178,3 +178,13 @@ function isUserRegistered( $userID, $eventID ) {
 		return false;
 	};
 }
+
+function getEventParticipants($eventID) {
+	return get_posts([
+		'post_type'  => 'participants',
+		'post_status' => 'private',
+		'numberposts'     => -1,
+		'meta_key'   => 'event_id',
+		'meta_value' => $eventID
+	]);
+}

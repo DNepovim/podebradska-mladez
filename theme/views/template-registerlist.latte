@@ -1,11 +1,11 @@
 {extends layouts/simple.latte}
 
 {block #main}
-	{dump $participants}
-	<article class="article box view-white view-article">
-		{if $nextEvent}
-			<h1 class="article-title" n:ifcontent>{$nextEvent|wp_title}</h1>
-			{if $participants}
+	<a href="{get_permalink()}?archiv" n:if="!isset($_GET[archiv])">Archiv přihlašování</a>
+	<article class="article box view-white view-article" n:foreach="$events as $event">
+		{if $event}
+			<h1 class="article-title" n:ifcontent>{$event|wp_title} {$event|wp_meta:pm_start_date|date:Y}</h1>
+			{if $participants = getEventParticipants($event->ID)}
 				<table class="list">
 					<tr class="list-item view-{$participant|wp_meta:participant_type}" n:foreach="$participants as $participant">
 						<td class="list-col list-date">{$participant|wp_meta:participant_date|date:'j. n. Y'}</td>
