@@ -15,11 +15,6 @@ parameters:
 
 	# forceDebug: on # off
 
-	messengerbot:
-		access_token:
-		verify_token:
-		hub_verify_token:
-
 	# change salting on production!
 	# use https://configenerator.surge.sh/
 	wp:

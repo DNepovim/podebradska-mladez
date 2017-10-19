@@ -102,16 +102,32 @@ function get_event_hashtags($postID) {
 	}
 }
 
-function process_registration_form($values) {
-	$full_name = wp_strip_all_tags($values['firstname']) . ' ' . wp_strip_all_tags($values['surname']);
-	$meta_input = [
-		'event_id' => $values['postID'],
-		'participant_date' => current_time( 'Y-m-d H:i' ),
-		'participant_type' => 'web',
-		'participant_name' => $values['firstname'],
-		'participant_surname' => $values['surname'],
-		'participant_mail' => $values['email']
-	];
+function process_registration_form($values, $postID = false) {
+	if ($postID) {
+		$full_name = wp_strip_all_tags($values['first_name']) . ' ' . wp_strip_all_tags($values['last_name']);
+		$meta_input = [
+			'event_id' => $postID,
+			'participant_date' => current_time( 'Y-m-d H:i' ),
+			'participant_type' => 'facebook',
+			'participant_name' => $values['first_name'],
+			'participant_surname' => $values['last_name'],
+			'participant_chatfuel_user_id' => $values['chatfuel_user_id'],
+			'participant_messenger_user_id' => $values['messenger_user_id'],
+			'participant_profile_pic_url' => $values['profile_pic_url']
+		];
+	} else {
+		$full_name = wp_strip_all_tags($values['firstname']) . ' ' . wp_strip_all_tags($values['surname']);
+		$meta_input = [
+			'event_id' => $values['postID'],
+			'participant_date' => current_time( 'Y-m-d H:i' ),
+			'participant_type' => 'web',
+			'participant_name' => $values['firstname'],
+			'participant_surname' => $values['surname'],
+			'participant_mail' => $values['email']
+		];
+	}
+
+	$meta_input['participant_json'] = json_encode($values);
 
 	$post_data = [
 		'post_title'  => $full_name,
@@ -120,4 +136,45 @@ function process_registration_form($values) {
 		'meta_input'  => $meta_input
 	];
 	return wp_insert_post($post_data);
+}
+
+function getNextEvent() {
+	$args   = [
+		'post_type'  => 'events',
+		'offset'     => 0,
+		'order'      => 'ASC',
+		'meta_query' => [
+			[
+				'key'     => 'pm_end_date',
+				'value'   => date( 'Y-m-d h:m' ),
+				'compare' => '>',
+			]
+		]
+	];
+	$events = get_posts( $args );
+
+	return $events[0];
+}
+
+function isUserRegistered( $userID, $eventID ) {
+
+	$args = [
+		'post_type'   => 'participants',
+		'post_status' => 'private',
+		'meta_query'  => [
+			[
+				'key'   => 'participant_fb_id',
+				'value' => $userID,
+			],
+			[
+				'key'   => 'event_id',
+				'value' => $eventID,
+			]
+		]
+	];
+	if ( ! empty( sizeof( get_posts( $args ) ) ) ) {
+		return true;
+	} else {
+		return false;
+	};
 }

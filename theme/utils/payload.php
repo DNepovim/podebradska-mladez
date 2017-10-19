@@ -7,5 +7,9 @@ function sendPayload($params = array()) {
 	$payloadArray = (array) $Payload;
 	Tracy\Debugger::$productionMode = TRUE;
 	header('Content-Type:application/json;charset=utf-8');
-	print(json_encode($params + $payloadArray)) and die();
+	if (empty($params)) {
+		print('') and die();
+	} else {
+		print(json_encode($params + $payloadArray)) and die();
+	}
 }
