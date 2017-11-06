@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aaba3d9fcf83d4c14d80759226dbfdb3",
+    "content-hash": "71e58d10aa835b41db10c04b017c7acb",
     "packages": [
         {
             "name": "composer/installers",
@@ -386,12 +386,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/manGoweb/MangoPressTemplating.git",
-                "reference": "33709a17cc06cacdacfa04c1295c17abb87627b3"
+                "reference": "6af7509391d0747b89324a13b81fc3afe18fee38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/manGoweb/MangoPressTemplating/zipball/33709a17cc06cacdacfa04c1295c17abb87627b3",
-                "reference": "33709a17cc06cacdacfa04c1295c17abb87627b3",
+                "url": "https://api.github.com/repos/manGoweb/MangoPressTemplating/zipball/6af7509391d0747b89324a13b81fc3afe18fee38",
+                "reference": "6af7509391d0747b89324a13b81fc3afe18fee38",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +418,7 @@
             ],
             "description": "Prepared templating workflow with filters and macros.",
             "homepage": "https://github.com/mangoweb/MangoPressTemplating",
-            "time": "2017-02-02T23:50:15+00:00"
+            "time": "2017-10-17T08:56:06+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1969,16 +1969,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.4.9",
+            "version": "v2.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "efe45da0aa3a50ce5356be39f2168d7925d94f3d"
+                "reference": "5b302790edd71924dfe4ec44f499ef61df3f53a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/efe45da0aa3a50ce5356be39f2168d7925d94f3d",
-                "reference": "efe45da0aa3a50ce5356be39f2168d7925d94f3d",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/5b302790edd71924dfe4ec44f499ef61df3f53a2",
+                "reference": "5b302790edd71924dfe4ec44f499ef61df3f53a2",
                 "shasum": ""
             },
             "require": {
@@ -2032,14 +2032,14 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2017-08-16T17:13:36+00:00"
+            "time": "2017-10-04T18:43:42+00:00"
         },
         {
             "name": "wordpress/wordpress",
-            "version": "4.8.1",
+            "version": "4.8.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.8.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2090,16 +2090,16 @@
         },
         {
             "name": "wpackagist-plugin/meta-box",
-            "version": "4.12.3",
+            "version": "4.12.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/meta-box/",
-                "reference": "trunk"
+                "reference": "tags/4.12.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box.zip?timestamp=1503385380",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/meta-box.4.12.4.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -2110,16 +2110,16 @@
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "2.2.6",
+            "version": "2.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/2.2.6"
+                "reference": "tags/2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
-                "reference": "tags/2.2.6",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.3.1.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
