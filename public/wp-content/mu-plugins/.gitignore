@@ -3,8 +3,10 @@
 !.gitignore
 !bedrock-autoloader.php
 !register-theme-directory.php
-!/mb-settings-page/
-!mb-settings-page/
-!/mb-settings-page
-!mb-settings-page
 !mb-settings-page/**/*
+!mb-settings-page/
+!meta-box-group/**/*
+!meta-box-group/
+!meta-box-conditional-logic/**/*
+!meta-box-conditional-logic/
+
