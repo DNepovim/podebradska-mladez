@@ -10,6 +10,8 @@ $args = [
 	'post_type'  => 'events',
 	'numberposts'     => -1,
 	'order' => 'ASC',
+	'orderby' => 'meta_value',
+	'meta_key' => 'pm_start_date',
 	'meta_query' => [
 		[
 			'key'     => 'pm_end_date',

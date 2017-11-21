@@ -54,7 +54,7 @@ function pm_post_row_actions($actions, $post){
 // Sort events in admin by start date
 function custom_post_order($query){
 	if($query->get('post_type') === 'events' && $query->get('orderby') == ''){
-		$query->set('order', 'desc');
+		$query->set('order', 'ASC');
 		$query->set('orderby', 'meta_value');
 		$query->set('meta_key', 'pm_start_date');
 	}
