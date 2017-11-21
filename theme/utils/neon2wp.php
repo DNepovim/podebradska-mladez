@@ -15,6 +15,11 @@ function transformFields($fields, $prefix = NULL) {
 		if(empty($result[$field_name]['id'])) {
 			$result[$field_name]['id'] = $prefix.$field_name;
 		}
+		if($result[$field_name]['type'] === 'repeater') {
+			$result[$field_name]['type'] = 'group';
+			$result[$field_name]['clone'] = true;
+			$result[$field_name]['sort_clone'] = true;
+		}
 		if($result[$field_name]['type'] === 'editor') {
 			$result[$field_name]['type'] = 'wysiwyg';
 		}
