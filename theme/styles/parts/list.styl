@@ -1,7 +1,18 @@
 .list
+	border-collapse collapse
+
+	&-container
+		overflow-x scroll
+
+	&-head
+		&-col
+			white-space nowrap
+
 	&-item
 		position relative
 		width 100%
+		vertical-align top
+		line-height 1.2em
 
 		&.view-facebook .list-date:before
 			content ''
@@ -11,8 +22,19 @@
 			background url('../images/messenger.svg') center center / contain no-repeat
 			transform translate(-0.5rem, -50%)
 
+		&:nth-of-type(odd)
+			background-color alpha($brand, 0.2)
+
 	&-col
 		position relative
 		padding 0.2em 1em
+
+	&-number
+		color $brand
+		font-weight bold
+
+	&-date
+		white-space nowrap
+		font-size 0.8rem
 
 
