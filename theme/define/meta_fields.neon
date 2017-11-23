@@ -26,7 +26,7 @@ register:
 		post_types: events
 		fields:
 			register_to:
-				name:  Uzávěrka
+				name: Uzávěrka
 				type: date
 
 	three:
