@@ -123,7 +123,8 @@ function process_registration_form($values, $postID = false) {
 			'participant_type' => 'web',
 			'participant_name' => $values['firstname'],
 			'participant_surname' => $values['surname'],
-			'participant_mail' => $values['email']
+			'participant_mail' => $values['email'],
+			'participant_additional' => $values['additional']
 		];
 	}
 

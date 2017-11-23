@@ -28,6 +28,31 @@ register:
 			register_to:
 				name: Uzávěrka
 				type: date
+			additional_fields:
+				name: Další pole formuláře
+				type: repeater
+				fields:
+					label:
+						name: popisek
+					type:
+						name: typ
+						type: select
+						options:
+							text: text
+							textarea: textarea
+							radio: radio
+							checkboxlist: checkboxlist
+					message:
+						name: Chybová zpráva
+						desc: Pouze pokud má být pole povinné.
+					options:
+						name: Možnosti
+						type: repeater
+						desc: Pouze u radio a checkboxlistu.
+						fields:
+							value:
+								type: text
+
 
 	three:
 		title: Kronika

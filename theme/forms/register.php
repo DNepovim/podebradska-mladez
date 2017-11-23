@@ -25,6 +25,8 @@ $form->addSubmit('register', 'Přihlásit se')
 
 if(isFormValid($form, __FILE__)) {
 	$values = $form->getValues();
+	$values['additional'] = $form->getHttpData()['additional'];
+
 	try {
 		process_registration_form($values);
 		wp_redirect(add_query_arg('success', true, remove_query_arg('do')));
