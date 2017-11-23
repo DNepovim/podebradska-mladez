@@ -1,35 +1,61 @@
 <?php
 /* Template Name: Přihlašování */
 
-if (isset($_GET['archiv'])) {
-	$events = get_posts([
-		'post_type'  => 'events',
-		'numberposts'     => -1,
-		'order' => 'DESC',
-		'meta_query' => [
-			[
-				'key'     => 'pm_end_date',
-				'value'   => current_time( 'Y-m-d H:i' ),
-				'compare' => '<',
-			]
+$eventsArgs= [
+	'post_type'  => 'events',
+	'orderby' => 'meta_value',
+	'meta_key' => 'pm_start_date',
+	'meta_query' => [
+		[
+			'key'     => 'pm_end_date',
+			'value'   => current_time( 'Y-m-d H:i' )
 		]
-	]);
+	]
+];
+
+if (isset($_GET['archiv'])) {
+	$eventsArgs['numberposts'] = -1;
+	$eventsArgs['order'] = 'DESC';
+	$eventsArgs['meta_query'][0]['compare'] = '<';
 } else {
-	$events = get_posts([
-		'post_type'  => 'events',
-		'offset'     => 1,
-		'order' => 'DESC',
-			'meta_query' => [
-				[
-							'key'     => 'pm_end_date',
-							'value'   => current_time( 'Y-m-d H:i' ),
-							'compare' => '>',
-					]
-			]
-		]);
+	$eventsArgs['numberposts'] = 1;
+	$eventsArgs['order'] = 'ASC';
+	$eventsArgs['meta_query'][0]['compare'] = '>';
 }
+
+$events = get_posts($eventsArgs);
 
 $args['events'] = $events;
 
+foreach ($events as $i => $event) {
+	$args['events'][$i]->additional_fields = get_post_meta($event->ID, 'pm_additional_fields')[0];
+	$args['events'][$i]->participants = getEventParticipants($event->ID);
+
+	$keys = [];
+	foreach ($args['events'][$i]->additional_fields as $key => $field) {
+		if (in_array($field['pm_type'], ['radio', 'checkboxlist'])) {
+			$keys[$key + 1] = $field;
+		}
+	}
+
+	$stats = [];
+	foreach ($args['events'][$i]->participants as $participant) {
+		$mails[] = meta($participant->id, 'participant_mail', true);
+		$additional_answers = meta($participant->ID, 'participant_additional');
+
+		foreach ($keys as $key => $value) {
+			if (is_array($additional_answers[$key])) {
+				foreach ($additional_answers[$key] as $label) {
+					$stats[$value['pm_label']][$label]++;
+				}
+			} else {
+				$stats[$value['pm_label']][$additional_answers[$key]]++;
+			}
+		}
+	}
+
+	$args['events'][$i]->mails = $mails;
+	$args['events'][$i]->stats = $stats;
+}
 
 view($args);

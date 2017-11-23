@@ -1,23 +1,69 @@
-{extends layouts/simple.latte}
+{extends layouts/fluid.latte}
 
 {block #main}
 	<a href="{get_permalink()}?archiv" n:if="!isset($_GET[archiv])">Archiv přihlašování</a>
-	<article class="article box view-white view-article" n:foreach="$events as $event">
-		{if $event}
-			<h1 class="article-title" n:ifcontent>{$event|wp_title} {$event|wp_meta:pm_start_date|date:Y}</h1>
-			{if $participants = getEventParticipants($event->ID)}
-				<table class="list">
-					<tr class="list-item view-{$participant|wp_meta:participant_type}" n:foreach="$participants as $participant">
-						<td class="list-col list-date">{$participant|wp_meta:participant_date|date:'j. n. Y'}</td>
-						<td class="list-col list-surname">{$participant|wp_meta:participant_surname}</td>
-						<td class="list-col list-name">{$participant|wp_meta:participant_name}</td>
-						<td class="list-col list-name">{$participant|wp_meta:participant_mail}</td>
-					</tr>
-				</table>
-			{else}
-				Zatím nejsou žádní přihlášení
-			{/if}
+	{if $events}
+		<article class="article box view-white view-article" n:foreach="$events as $event">
+				<h1 class="article-title" n:ifcontent>{$event|wp_title} {$event|wp_meta:pm_start_date|date:Y}</h1>
+				{if $event->participants}
+					<table class="summary">
+						<tr class="summary-row">
+							<th class="smaurry-head">Uzávěrka</th>
+							<td n:class="summary-cell, strtotime(($event|wp_meta:pm_register_to)) => strtotime('now') ? view-success : view-error">{$event|wp_meta:pm_register_to|date:'j. n. Y'}</td>
+						</tr>
+						<tr class="summary-row">
+							<th class="smaurry-head">Počet přihlášených</th>
+							<td class="summary-cell">{count($event->participants)}</td>
+						</tr>
+					</table>
+					<table class="summary">
+						{foreach $event->stats as $question => $value}
+							<tr class="summary-row" n:foreach="$value as $answer => $count">
+								<th class="smaurry-head" rowspan="{count($value)}" n:if="$iterator->isFirst()">{$question}</th>
+								<th class="smaurry-head">{$answer}</th>
+								<td class="summary-cell">{$count}</td>
+							</tr>
+						{/foreach}
+					</table>
+					<a href="#">Napsat všem přihlášeným</a>
+					<div class="list-container">
+						<table class="list">
+							<thead class="list-head">
+								<th class="list-col list-head-col"></th>
+								<th class="list-col list-head-col">Přihlášen</th>
+								<th class="list-col list-head-col">Jméno</th>
+								<th class="list-col list-head-col">Příjmení</th>
+								<th class="list-col list-head-col">E-mail</th>
+								<th class="list-col list-head-col" n:foreach="($event->additional_fields) as $field">{$field[pm_label]}</th>
+							</thead>
+							<tbody class="list-body">
+								<tr class="list-item view-{$participant|wp_meta:participant_type}" n:foreach="$event->participants as $participant">
+									<td class="list-col list-number">{$iterator->getCounter()}.</td>
+									<td class="list-col list-date">{$participant|wp_meta:participant_date|date:'j. n. y'}</td>
+									<td class="list-col list-name">{$participant|wp_meta:participant_name}</td>
+									<td class="list-col list-surname">{$participant|wp_meta:participant_surname}</td>
+									<td class="list-col list-name">{$participant|wp_meta:participant_mail}</td>
+									{var $additionals = ($participant|wp_meta:participant_additional)}
+									<td class="list-col list-name" n:foreach="$event->additional_fields as $key => $field">
+										{var $value = $additionals[$key + 1]}
+										{if is_array($value)}
+											<ul>
+												<li n:foreach="$value as $li">{$li}</li>
+											</ul>
+										{else}
+											{$value}
+										{/if}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				{else}
+					Zatím nejsou žádní přihlášení
+				{/if}
+			</article>
 		{else}
-			Žádná akce není k dispozici
+			<article class="article box view-white view-article">
+				Žádná akce není k dispozici
+			</article
 		{/if}
-	</article>
