@@ -88,7 +88,7 @@ class Form extends Component {
 
 	handleHideMessage(e, self) {
 		self.$el.removeClass('is-success')
-		self.$formInputs.val('')
+		self.el.reset()
 	}
 }
 
