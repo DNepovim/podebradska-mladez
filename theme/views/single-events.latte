@@ -52,11 +52,7 @@
 
 {block #bottom}
 	<section class="yeah-12">
-		<div class="gallery">
-			<a class="gallery-item" href="{$photo|gpsizes:1500|noescape}" data-lightbox="gallery" target="_blank" n:foreach="$photos as $photo">
-				<img class="gallery-item-img" src="{$photo|gpsizes:300|noescape}" alt="">
-			</a>
-		</div>
+		{include components/gallery.latte photos => $photos}
 	</section>
 {/block}
 

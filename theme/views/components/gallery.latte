@@ -1,0 +1,16 @@
+
+<div class="gallery">
+	<a n:class="gallery-item, ($iterator->getCounter() - 1) % 9 == 0 ? 'view-large', ($iterator->getCounter()+2) % 9 == 0 ? 'view-large view-right'" href="{$photo|gpsizes:1500|noescape}" data-lightbox="gallery" target="_blank" n:foreach="$photos as $photo">
+		<div class="gallery-item-content">
+			<img class="gallery-item-img"  alt="" src="{$photo|gpsizes:300|noescape}"
+			{if ($iterator->getCounter() - 1) % 9 == 0 || ($iterator->getCounter()+2) % 9 == 0}
+				srcset="
+					{$photo|gpsizes:600|noescape} 600w,
+					{$photo|gpsizes:300|noescape} 300w"
+				sizes="(max-width: 500px) 300px, 100vw"
+			{/if}
+			>
+
+		</div>
+	</a>
+</div>

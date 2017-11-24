@@ -70,6 +70,15 @@
 			</a>
 		</div>
 	</div>
+{/block}
+{block #middle}
+	<div class="yeah-12">
+		<hr class="divider">
+	</div>
+	<div class="yeah-12" n:if="$lastEventPhotos">
+		<p class="gallery-text">Mrkni na fotky z minulé akce</p>
+		<h2 class="gallery-title">{$lastEvent|wp_title} <span class="gallery-subtitle-date">{$lastEvent|daterange}</span></h2>
+		{include components/gallery.latte photos => $lastEventPhotos}
 	</div>
 {/block}
 
