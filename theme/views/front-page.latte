@@ -6,7 +6,7 @@
 
 {block #main}
 	{if $nextEvent}
-		<article class="invitation-text text box" n:ifcontent>
+		<article class="invitation-text box" n:ifcontent>
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
 					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
@@ -15,14 +15,14 @@
 				</div>
 			{else}
 				<div class="invitation-image view-empty box">
-					<p class="invitation-text text view-hight">naše příští akce je</p>
+					<p class="invitation-text text">Příští akce pro mládež<br>poděbradského seniorátu je</p>
 					<h1 class="invitation-title">{$nextEvent|wp_title}</h1>
 					<h2 class="invitation-subtitle">{$nextEvent|daterange}</h2>
-					<p class="invitation-text text view-hight">více informací brzy</p>
-					<p class="invitation-text text textview-hight">sleduj náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a></p>
+					<p class="invitation-text text view-low">Brzo se se dozvíš víc informací.</p>
+					<p class="invitation-text text text view-low">Zatím hoď voko na náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">Facebook</a>.</p>
 				</div>
 			{/if}
-			<div class="article box view-white view-article">
+			<div class="article box text view-white view-article" n:if="has_post_thumbnail($nextEvent)">
 				{$nextEvent|wp_content}
 			</div>
 		</article>
@@ -34,9 +34,9 @@
 	{/if}
 {/block}
 {block #aside}
-	<div class="map box" n:if="$map">{$map|noescape}</div>
+	<div class="map box" n:if="$map && has_post_thumbnail($nextEvent)">{$map|noescape}</div>
 
-	{if $registerTo}
+	{if $registerTo && has_post_thumbnail($nextEvent)}
 		{if $registerTo == -1}
 			<div class="form-container">
 				<div class="form-text">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> jsme ještě nespustili.</div>
@@ -65,12 +65,11 @@
 				<div class="calendar-name">{$item|wp_title}</div>
 				<div class="calendar-date">{$item|daterange}{if ($item|wp_meta:pm_position)}, {$Post|wp_meta:pm_position|wp_title}{/if}</div>
 			{/foreach}
+			<a class="button view-light" href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank">
+				<i class="fa fa-calendar icon" aria-hidden="true"></i> Google kalendář
+			</a>
 		</div>
 	</div>
-	<div>
-		<a class="button view-light" href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank">
-			<i class="fa fa-calendar icon" aria-hidden="true"></i> Google kalendář
-		</a>
 	</div>
 {/block}
 
