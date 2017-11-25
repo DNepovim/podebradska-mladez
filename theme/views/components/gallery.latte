@@ -1,5 +1,5 @@
 
-<div class="gallery">
+<div class="gallery" n:if="$photos">
 	<a n:class="gallery-item, ($iterator->getCounter() - 1) % 9 == 0 ? 'view-large', ($iterator->getCounter()+2) % 9 == 0 ? 'view-large view-right'" href="{$photo|gpsizes:1500|noescape}" data-lightbox="gallery" target="_blank" n:foreach="$photos as $photo">
 		<div class="gallery-item-content">
 			<img class="gallery-item-img"  alt="" src="{$photo|gpsizes:300|noescape}"
