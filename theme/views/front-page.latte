@@ -23,6 +23,7 @@
 				</div>
 			{/if}
 			<div class="article box text view-white view-article" n:if="has_post_thumbnail($nextEvent)">
+				<h2>{$nextEvent|wp_title}</h2>
 				{$nextEvent|wp_content}
 			</div>
 		</article>
