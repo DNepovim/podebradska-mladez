@@ -24,19 +24,21 @@ $args['nextEvent'] = $events ? $events[0] : false;
 
 $args['futureEvents'] = array_slice($events, 1);
 
-$args['map'] = $nextEvent ? get_post_meta(meta($nextEvent->ID,'pm_position'), 'pm_position', true) : false;
+$args['map'] = $args['nextEvent'] ? get_post_meta(meta($args['nextEvent']->ID,'pm_position'), 'pm_position', true) : false;
 
-if ($registerTo = meta($nextEvent->ID, 'pm_register_to')) {
-	if ($registerTo >= current_time('Y-m-d')) {
+if ($registerTo = meta($args['nextEvent']->ID, 'pm_register_to')) {
+	if (strtotime($registerTo) >= strtotime(current_time('Y-m-d'))) {
 		$registerTo = -1;
 	}
 } else {
 	$registerTo = -1;
 }
 
+$registerTo = meta($args['nextEvent']->ID, 'pm_register_to');
+
 $args['registerTo'] = $registerTo;
 
-if (!has_post_thumbnail($nextEvent->ID)) {
+if (!has_post_thumbnail($args['nextEvent']->ID)) {
 	$args['lastEvent'] = get_posts([
 		'post_type'  => 'events',
 		'numberposts'     => 1,
