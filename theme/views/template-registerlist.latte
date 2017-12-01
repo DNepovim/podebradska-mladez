@@ -1,31 +1,35 @@
 {extends layouts/fluid.latte}
 
 {block #main}
-	<a href="{get_permalink()}?archiv" n:if="!isset($_GET[archiv])">Archiv přihlašování</a>
+	<a href="{get_permalink()}?archive" n:if="!isset($_GET[archiv])">Archiv přihlašování</a>
 	{if $events}
 		<article class="article box view-white view-article" n:foreach="$events as $event">
 				<h1 class="article-title" n:ifcontent>{$event|wp_title} {$event|wp_meta:pm_start_date|date:Y}</h1>
 				{if $event->participants}
-					<table class="summary">
-						<tr class="summary-row">
-							<th class="smaurry-head">Uzávěrka</th>
-							<td n:class="summary-cell, strtotime(($event|wp_meta:pm_register_to)) => strtotime('now') ? view-success : view-error">{$event|wp_meta:pm_register_to|date:'j. n. Y'}</td>
-						</tr>
-						<tr class="summary-row">
-							<th class="smaurry-head">Počet přihlášených</th>
-							<td class="summary-cell">{count($event->participants)}</td>
-						</tr>
-					</table>
-					<table class="summary">
-						{foreach $event->stats as $question => $value}
-							<tr class="summary-row" n:foreach="$value as $answer => $count">
-								<th class="smaurry-head" rowspan="{count($value)}" n:if="$iterator->isFirst()">{$question}</th>
-								<th class="smaurry-head">{$answer}</th>
-								<td class="summary-cell">{$count}</td>
+					<div class="summary-container">
+						<table class="summary">
+							<tr class="summary-row">
+								<th class="smmaury-head"><i class="fa fa-calendar summary-head-icon" aria-hidden="true"></i>Uzávěrka:</th>
+								<td n:class="summary-cell, strtotime(($event|wp_meta:pm_register_to)) >= time() ? 'view-success' : 'view-error'">{$event|wp_meta:pm_register_to|date:'j. n. Y'}</td>
 							</tr>
-						{/foreach}
-					</table>
-					<a href="#">Napsat všem přihlášeným</a>
+							<tr class="summary-row">
+								<th class="smaurry-head"><i class="fa fa-users summary-head-icon" aria-hidden="true"></i>Přihlášených:</th>
+								<td class="summary-cell">{count($event->participants)}</td>
+							</tr>
+						</table>
+						<table class="summary">
+							{foreach $event->stats as $question => $value}
+								<tr class="summary-row" n:foreach="$value as $answer => $count">
+									<th class="summary-head" rowspan="{count($value)}" n:if="$iterator->isFirst()">{$question}</th>
+									<td class="summary-head">{$answer}</td>
+									<td class="summary-cell">{$count}</td>
+								</tr>
+							{/foreach}
+						</table>
+					</div>
+					<div class="button-line">
+						<a class="button view-inline view-ghost view-thin" href="mailto:{implode(',',$event->mails)}"><i class="fa fa-envelope button-icon" aria-hidden="true"></i>Napsat všem přihlášeným</a>
+					</div>
 					<div class="list-container">
 						<table class="list">
 							<thead class="list-head">

@@ -27,6 +27,9 @@
 		display block
 		font-size 1.2rem
 
+	&-icon
+		margin-right 0.6em
+
 	&.view-call
 		background-color $messenger
 
@@ -49,6 +52,16 @@
 			border-color $gray
 			box-shadow $box-shadow
 
+	&.view-ghost
+		color $brand
+		background-color $blank
+		border 1px solid $brand
 
+	&.view-inline
+		display inline-block
+		width auto
+		padding-right 1em
+		padding-left @padding-right
 
-
+	&.view-thin
+		font-size 0.8rem

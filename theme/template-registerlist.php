@@ -13,7 +13,7 @@ $eventsArgs= [
 	]
 ];
 
-if (isset($_GET['archiv'])) {
+if (isset($_GET['archive'])) {
 	$eventsArgs['numberposts'] = -1;
 	$eventsArgs['order'] = 'DESC';
 	$eventsArgs['meta_query'][0]['compare'] = '<';
@@ -40,7 +40,7 @@ foreach ($events as $i => $event) {
 
 	$stats = [];
 	foreach ($args['events'][$i]->participants as $participant) {
-		$mails[] = meta($participant->id, 'participant_mail', true);
+		$mails[] = meta($participant->ID, 'participant_mail', true);
 		$additional_answers = meta($participant->ID, 'participant_additional');
 
 		foreach ($keys as $key => $value) {
