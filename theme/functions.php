@@ -108,28 +108,28 @@ function process_registration_form($values, $postID = false) {
 		$full_name = wp_strip_all_tags($values['first_name']) . ' ' . wp_strip_all_tags($values['last_name']);
 		$meta_input = [
 			'event_id' => $postID,
-			'participant_date' => current_time( 'Y-m-d H:i' ),
-			'participant_type' => 'facebook',
-			'participant_name' => $values['first_name'],
-			'participant_surname' => $values['last_name'],
-			'participant_chatfuel_user_id' => $values['chatfuel_user_id'],
-			'participant_messenger_user_id' => $values['messenger_user_id'],
-			'participant_profile_pic_url' => $values['profile_pic_url']
+			$prefix . 'date' => current_time( 'Y-m-d H:i' ),
+			$prefix . 'type' => 'facebook',
+			$prefix . 'name' => $values['first_name'],
+			$prefix . 'surname' => $values['last_name'],
+			$prefix . 'chatfuel_user_id' => $values['chatfuel_user_id'],
+			$prefix . 'messenger_user_id' => $values['messenger_user_id'],
+			$prefix . 'profile_pic_url' => $values['profile_pic_url']
 		];
 	} else {
 		$full_name = wp_strip_all_tags($values['firstname']) . ' ' . wp_strip_all_tags($values['surname']);
 		$meta_input = [
 			'event_id' => $values['postID'],
-			'participant_date' => current_time( 'Y-m-d H:i' ),
-			'participant_type' => 'web',
-			'participant_name' => $values['firstname'],
-			'participant_surname' => $values['surname'],
-			'participant_mail' => $values['email'],
-			'participant_additional' => $values['additional']
+			$prefix . 'date' => current_time( 'Y-m-d H:i' ),
+			$prefix . 'type' => 'web',
+			$prefix . 'name' => $values['firstname'],
+			$prefix . 'surname' => $values['surname'],
+			$prefix . 'mail' => $values['email'],
+			$prefix . 'additional' => $values['additional']
 		];
 	}
 
-	$meta_input['participant_json'] = json_encode($values);
+	$meta_input[$prefix . 'json'] = json_encode($values);
 
 	$meta_input[$prefix . 'som'] = get_posts_by_title($full_name, 'som')[0];
 
