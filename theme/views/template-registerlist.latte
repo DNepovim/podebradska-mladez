@@ -46,7 +46,7 @@
 									<td class="list-col list-date">{$participant|wp_meta:participant_date|date:'j. n. y'}</td>
 									<td class="list-col list-name">{$participant|wp_meta:participant_name}</td>
 									<td class="list-col list-surname">{$participant|wp_meta:participant_surname}</td>
-									<td class="list-col list-name">{$participant|wp_meta:participant_mail}</td>
+									<td class="list-col list-name"><a target="_blank" href="mailto:{$participant|wp_meta:participant_mail}">{$participant|wp_meta:participant_mail}</a></td>
 									{var $additionals = ($participant|wp_meta:participant_additional)}
 									<td class="list-col list-name" n:foreach="$event->additional_fields as $key => $field">
 										{var $value = $additionals[$key + 1]}
