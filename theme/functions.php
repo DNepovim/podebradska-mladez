@@ -47,7 +47,9 @@ function get_daterange($event){
 // Show date in admin posts list
 add_filter('post_row_actions', 'pm_post_row_actions', 10, 2);
 function pm_post_row_actions($actions, $post){
-	echo get_daterange($post);
+	if (get_post_type($post) == 'events') {
+		echo get_daterange($post);
+	}
 	return $actions;
 }
 
