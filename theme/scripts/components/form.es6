@@ -72,10 +72,17 @@ class Form extends Component {
 		})
 		if (valid) {
 			self.$el.find('.form-error').remove()
-			$.post(self.data.endpoint, self.$el.serialize(), () => {
-				self.$el.removeClass('is-in-process')
-				self.$el.addClass('is-success')
-			})
+			$.post(self.data.endpoint, self.$el.serialize())
+				.done((data) => {
+					console.log(data)
+					if (data.status) {
+						self.showSuccess()
+					} else {
+						self.showError()
+					}
+				}).fail(() => [
+					self.showError()
+				])
 		} else {
 			self.$el.removeClass('is-in-process')
 			self.$el.find('.form-error').remove()
@@ -89,6 +96,16 @@ class Form extends Component {
 	handleHideMessage(e, self) {
 		self.$el.removeClass('is-success')
 		self.el.reset()
+	}
+
+	showSuccess() {
+		this.$el.removeClass('is-in-process')
+		this.$el.addClass('is-success')
+	}
+
+	showError(message = 'Něco se pokazilo, zkus to znova') {
+		this.$el.removeClass('is-in-process')
+		this.$el.append($('<span></span>').addClass('form-error').text(message))
 	}
 }
 
