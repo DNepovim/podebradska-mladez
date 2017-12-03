@@ -29,7 +29,7 @@ $args['events'] = $events;
 
 foreach ($events as $i => $event) {
 	$args['events'][$i]->additional_fields = get_post_meta($event->ID, 'pm_additional_fields')[0];
-	$args['events'][$i]->participants = getEventParticipants($event->ID);
+	$args['events'][$i]->participants = $participants = getEventParticipants($event->ID);
 
 	$keys = [];
 	foreach ($args['events'][$i]->additional_fields as $key => $field) {
@@ -39,9 +39,14 @@ foreach ($events as $i => $event) {
 	}
 
 	$stats = [];
-	foreach ($args['events'][$i]->participants as $participant) {
+	$som = 0;
+	foreach ($participants as $participant) {
 		$mails[] = meta($participant->ID, 'participant_mail', true);
 		$additional_answers = meta($participant->ID, 'participant_additional');
+
+		if (meta($participant->ID, 'participant_som')) {
+			$som++;
+		}
 
 		foreach ($keys as $key => $value) {
 			if (is_array($additional_answers[$key])) {
@@ -56,6 +61,8 @@ foreach ($events as $i => $event) {
 
 	$args['events'][$i]->mails = $mails;
 	$args['events'][$i]->stats = $stats;
+	$args['events'][$i]->participantsCountSom = $som;
+	$args['events'][$i]->participantsCountOthers = count($participants) - $som;
 }
 
 view($args);
