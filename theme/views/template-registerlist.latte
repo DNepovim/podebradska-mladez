@@ -37,16 +37,17 @@
 								<th class="list-col list-head-col">Přihlášen</th>
 								<th class="list-col list-head-col">Jméno</th>
 								<th class="list-col list-head-col">Příjmení</th>
+								<th class="list-col list-head-col"></th>
 								<th class="list-col list-head-col">E-mail</th>
 								<th class="list-col list-head-col" n:foreach="($event->additional_fields) as $field">{$field[pm_label]}</th>
 							</thead>
 							<tbody class="list-body">
-								<tr class="list-item view-{$participant|wp_meta:participant_type}" n:foreach="$event->participants as $participant">
+								<tr n:class="list-item, 'view-' . ($participant|wp_meta:participant_type), ($participant|wp_meta:participant_som) ? 'view-som'" n:foreach="$event->participants as $participant">
 									<td class="list-col list-number">{$iterator->getCounter()}.</td>
 									<td class="list-col list-date">{$participant|wp_meta:participant_date|date:'j. n. y'}</td>
 									<td class="list-col list-name">{$participant|wp_meta:participant_name}</td>
 									<td class="list-col list-surname">{$participant|wp_meta:participant_surname}</td>
-									<td class="list-col list-name"><a target="_blank" href="mailto:{$participant|wp_meta:participant_mail}">{$participant|wp_meta:participant_mail}</a></td>
+									<td class="list-col list-som"><a href="/som#{$participant|wp_meta:participant_som|wp_title|webalize}" n:if="($participant|wp_meta:participant_som)">SOM</a></td>
 									{var $additionals = ($participant|wp_meta:participant_additional)}
 									<td class="list-col list-name" n:foreach="$event->additional_fields as $key => $field">
 										{var $value = $additionals[$key + 1]}

@@ -17,7 +17,7 @@
 			{$Post|wp_content}
 		</article>
 	{/each}
-	<div class="post-thumb article box view-white view-article" n:foreach="$posts as $post">
+	<div id="{$post|wp_title|webalize}" class="post-thumb article box view-white view-article" n:foreach="$posts as $post">
 		<div class="post-thumb-image">
 			{get_the_post_thumbnail($post, 'person', ['class' => 'box'])|noescape}
 		</div>

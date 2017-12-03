@@ -103,6 +103,7 @@ function get_event_hashtags($postID) {
 }
 
 function process_registration_form($values, $postID = false) {
+	$prefix = 'participant_';
 	if ($postID) {
 		$full_name = wp_strip_all_tags($values['first_name']) . ' ' . wp_strip_all_tags($values['last_name']);
 		$meta_input = [
@@ -129,6 +130,8 @@ function process_registration_form($values, $postID = false) {
 	}
 
 	$meta_input['participant_json'] = json_encode($values);
+
+	$meta_input[$prefix . 'som'] = get_posts_by_title($full_name, 'som')[0];
 
 	$post_data = [
 		'post_title'  => $full_name,
@@ -188,4 +191,17 @@ function getEventParticipants($eventID) {
 		'meta_key'   => 'event_id',
 		'meta_value' => $eventID
 	]);
+}
+
+function get_posts_by_title($post_title, $post_type) {
+	global $wpdb;
+
+	$search_query = 'SELECT ID FROM wp_posts WHERE post_type = "' . $post_type . '" AND post_title = "' . $post_title . '"';
+	$results = $wpdb->get_results($search_query, ARRAY_N);
+
+	foreach($results as $key => $array){
+			$quote_ids[] = $array[0];
+	}
+
+	return $quote_ids;
 }
