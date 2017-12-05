@@ -27,14 +27,12 @@ $args['futureEvents'] = array_slice($events, 1);
 $args['map'] = $args['nextEvent'] ? get_post_meta(meta($args['nextEvent']->ID,'pm_position'), 'pm_position', true) : false;
 
 if ($registerTo = meta($args['nextEvent']->ID, 'pm_register_to')) {
-	if (strtotime($registerTo) >= strtotime(current_time('Y-m-d'))) {
-		$registerTo = -1;
+	if (strtotime($registerTo) < strtotime(current_time('Y-m-d'))) {
+		$registerTo = -2;
 	}
 } else {
 	$registerTo = -1;
 }
-
-$registerTo = meta($args['nextEvent']->ID, 'pm_register_to');
 
 $args['registerTo'] = $registerTo;
 
