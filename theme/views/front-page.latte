@@ -40,11 +40,15 @@
 	{if $registerTo && has_post_thumbnail($nextEvent)}
 		{if $registerTo == -1}
 			<div class="form-container">
-				<div class="form-text">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> jsme ještě nespustili.</div>
+				<div class="form box view-border">
+					<div class="form-text view-in">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> jsme ještě nespustili.</div>
+				</div>
 			</div>
 		{elseif $registerTo == -2}
 			<div class="form-container">
-				<div class="form-text">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> je už uzavřeno.</div>
+				<div class="form box view-border">
+				<div class="form-text view-in">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> je už uzavřeno.</div>
+			</div>
 			</div>
 		{else}
 			<div class="form-container">
