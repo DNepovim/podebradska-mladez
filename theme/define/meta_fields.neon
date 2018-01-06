@@ -131,3 +131,11 @@ register:
 			images:
 				type: image_advanced
 
+	description:
+		title: Description
+		post_types:
+			- page
+		fields:
+			page_descripiton:
+				type: textarea
+
