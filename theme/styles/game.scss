@@ -468,23 +468,9 @@ hr {
   $tile-border-radius: 3px;
   $game-container-margin-top: 17px;
 
-  html, body {
-    font-size: 15px;
-  }
-
-  body {
-    margin: 20px 0;
-    padding: 0 20px;
-  }
-
   h1.title {
     font-size: 27px;
     margin-top: 15px;
-  }
-
-  .container {
-    width: $field-width;
-    margin: 0 auto;
   }
 
   .score-container, .best-container {
@@ -503,14 +489,6 @@ hr {
     display: block;
     box-sizing: border-box;
     line-height: 1.65;
-  }
-
-  .restart-button {
-    width: 42%;
-    padding: 0;
-    display: block;
-    box-sizing: border-box;
-    margin-top: 2px;
   }
 
   // Render the game field at the right width
