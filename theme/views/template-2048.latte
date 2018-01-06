@@ -1,0 +1,85 @@
+{extends layouts/simple.latte}
+
+{block #head}
+	<link rel="stylesheet" href="{$assetsPath}/styles/{$buildstamp}game.css" media="screen">
+{/block}
+
+{block #main}
+	{each}
+	<style>
+		{foreach get_post_meta($Post->ID, pm_images) as $image}
+			.tile-{2**$iterator->getCounter()} .tile-inner {
+				background-image: url({$image|wp_image:tile|noescape});
+			}
+		{/foreach}
+	</style>
+  <div class="wrapper">
+    <div class="heading">
+      <h1 class="title">{$Post|wp_title}</h1>
+    </div>
+
+    <div class="above-game">
+      <p class="game-intro">{$Post|wp_content}</p>
+      <a class="restart-button">Nová hra</a>
+      <div class="scores-container">
+        <span class="score-container">0</span>
+        <span class="best-container">0</span>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button button view-inline">Pokračovat</a>
+          <a class="retry-button button view-inline">Hrát znovu</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+      </div>
+    </div>
+  </div>
+	{/each}
+{/block}
+
+{block #scripts}
+	{include #parent}
+  <script src="{$assetsPath}/scripts/libs/2048/bind_polyfill.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/classlist_polyfill.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/animframe_polyfill.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/keyboard_input_manager.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/html_actuator.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/grid.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/tile.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/local_storage_manager.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/game_manager.js"></script>
+  <script src="{$assetsPath}/scripts/libs/2048/application.js"></script>
+{/block}

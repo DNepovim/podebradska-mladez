@@ -6,7 +6,8 @@
     "theme/styles/oldie.styl",
     "theme/styles/print.styl",
     "theme/styles/wp-admin.styl",
-    "theme/styles/wp-editor.styl"
+    "theme/styles/wp-editor.styl",
+    "theme/styles/game.scss"
   ],
   "scripts": [
     "theme/scripts/index.es6",
@@ -22,7 +23,8 @@
     "node_modules/lt-ie-9/lt-ie-9.min.js",
     "node_modules/lightbox2/dist/js/lightbox.min.js",
     "node_modules/lightbox2/dist/css/lightbox.min.css",
-    "node_modules/lightbox2/dist/images/*"
+    "node_modules/lightbox2/dist/images/*",
+    "theme/scripts/libs/2048/*"
   ],
   "buildstamp": [
     "public/assets/styles/index.css",

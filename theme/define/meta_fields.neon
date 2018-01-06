@@ -123,3 +123,11 @@ register:
 			page_posts:
 				type: type
 
+	pf:
+		title: Fotky
+		templates:
+			- template-2048
+		fields:
+			images:
+				type: image_advanced
+
