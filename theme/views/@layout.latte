@@ -12,7 +12,7 @@
 
 	<title>{site_title()}</title>
 
-	<meta name="description" content="{get_bloginfo('description')|noescape}">
+	<meta name="description" content="{$Post|wp_meta:page_descripiton}">
 
 	{use_google_fonts([ 'Raleway:400,400i,500,500i&amp;subset=latin-ext'])}
 
