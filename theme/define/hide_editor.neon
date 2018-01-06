@@ -11,4 +11,3 @@ hide:
 		templates:
 			- front-page
 			- template-registerlist
-			- template-2048
