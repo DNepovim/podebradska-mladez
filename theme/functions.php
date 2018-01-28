@@ -241,7 +241,7 @@ function create_admin_menu() {
 		$adminNavigation[] = [
 			'title' => 'přihlašování',
 			'icon' => 'users',
-			'link' => '/tajne'
+			'link' => '/prihlasovani'
 		];
 	}
 
