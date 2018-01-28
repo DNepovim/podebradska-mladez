@@ -5,21 +5,21 @@ class Parallax extends Component {
 	constructor(element, data) {
 		super(element, data)
 
-		$(document).on('scroll', () => {
+		const $document = $(document)
+
+		this.parallax()
+
+		$document.on('scroll', () => {
 			this.parallax()
 		})
-
-
 	}
 
 	parallax() {
-		var $slider = $('#parallax')
-
-		// scroll amount / parallax speed
-		var yPos = -($(window).scrollTop() / $($slider).data('speed'))
-
-		// move background image
-		$($slider).find('img').css('object-position', 'center ' + yPos + 'px')
+		const $slider = $('#parallax')
+		const $window = $(window)
+		const $document = $(document)
+		let position = -20 * $window.scrollTop() / ($document.height() - $window.height())
+		$slider.css('top', position + 'vh')
 	}
 }
 
