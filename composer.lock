@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "deb2e78dc7680278e636bfed17b54c83",
+    "content-hash": "9407b9e5990c229ed4a879f48bc93313",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
+                "reference": "049797d727261bf27f2690430d935067710049c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
+                "reference": "049797d727261bf27f2690430d935067710049c2",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -100,15 +100,18 @@
                 "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
                 "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
                 "reindex",
                 "roundcube",
                 "shopware",
@@ -121,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-08-09T07:53:48+00:00"
+            "time": "2017-12-29T09:13:20+00:00"
         },
         {
             "name": "facebook/graph-sdk",
@@ -386,12 +389,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/manGoweb/MangoPressTemplating.git",
-                "reference": "6af7509391d0747b89324a13b81fc3afe18fee38"
+                "reference": "0696ebd5cfab1faf38c393945e91b5e5a1259b53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/manGoweb/MangoPressTemplating/zipball/6af7509391d0747b89324a13b81fc3afe18fee38",
-                "reference": "6af7509391d0747b89324a13b81fc3afe18fee38",
+                "url": "https://api.github.com/repos/manGoweb/MangoPressTemplating/zipball/0696ebd5cfab1faf38c393945e91b5e5a1259b53",
+                "reference": "0696ebd5cfab1faf38c393945e91b5e5a1259b53",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +421,7 @@
             ],
             "description": "Prepared templating workflow with filters and macros.",
             "homepage": "https://github.com/mangoweb/MangoPressTemplating",
-            "time": "2017-10-17T08:56:06+00:00"
+            "time": "2018-01-16T10:36:39+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1809,6 +1812,63 @@
             "time": "2017-08-20T17:32:29+00:00"
         },
         {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01T07:00:55+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -2036,10 +2096,10 @@
         },
         {
             "name": "wordpress/wordpress",
-            "version": "4.9.1",
+            "version": "4.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.9.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2090,16 +2150,16 @@
         },
         {
             "name": "wpackagist-plugin/html-editor-syntax-highlighter",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/html-editor-syntax-highlighter/",
-                "reference": "tags/2.2.2"
+                "reference": "tags/2.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.2.zip",
-                "reference": "tags/2.2.2",
+                "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.3.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -2110,15 +2170,15 @@
         },
         {
             "name": "wpackagist-plugin/meta-box",
-            "version": "4.12.5",
+            "version": "4.13.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/meta-box/",
-                "reference": "tags/4.12.5"
+                "reference": "tags/4.13.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box.4.12.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/meta-box.4.13.1.zip",
                 "reference": null,
                 "shasum": null
             },
