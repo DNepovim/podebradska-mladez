@@ -264,3 +264,11 @@ function admin_default_page() {
   return '/prihlasovani';
 }
 add_filter('login_redirect', 'admin_default_page');
+
+function show_google_photo_update_link() {
+	return '<a class="rwmb-button  button hide-if-no-js" href="/api/load-google-photos/' . $_GET['post'] . '">Nahrát fotky z google</a>';
+}
+
+function show_fb_update_link() {
+	return '<a class="rwmb-button  button hide-if-no-js" href="/api/load-fb-posts">Nahrát fotky z facebooku</a>';
+}

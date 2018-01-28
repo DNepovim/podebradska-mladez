@@ -61,8 +61,14 @@ register:
 			hashtag:
 				name: 'Facebook hashtag'
 				type: text
+			facebook_update:
+				type: custom_html
+				callback: 'show_fb_update_link'
 			google_photos_album:
 				name: Fotky google album
+			google_photos_update:
+				type: custom_html
+				callback: 'show_google_photo_update_link'
 			article:
 				name: Zápis
 				type: wysiwyg
