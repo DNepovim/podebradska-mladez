@@ -272,3 +272,10 @@ function show_google_photo_update_link() {
 function show_fb_update_link() {
 	return '<a class="rwmb-button  button hide-if-no-js" href="/api/load-fb-posts">Nahrát fotky z facebooku</a>';
 }
+
+function process_event_save($post_id) {
+	if (get_post_type($post_id) == 'events') {
+		load_google_photos($post_id);
+	}
+}
+add_action( 'save_post', 'process_event_save' );
