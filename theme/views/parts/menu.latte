@@ -36,7 +36,7 @@
 				</li>
 			</ul>
 			<div class="navigation-footer" n:if="$footer_menu">
-					<a class="navigation-footer-link" href="{$item->url}" target="_blank"  n:foreach="$footer_menu as $item">{$item|wp_title}</a>
+					<a class="navigation-footer-link" href="{$item->url}" n:foreach="$footer_menu as $item">{$item|wp_title}</a>
 			</div>
 		</div>
 	</div>
