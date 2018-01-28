@@ -1,0 +1,7 @@
+<nav class="navline" n:if="$nav">
+	<ul class="navline-list container">
+		<li class="navline-item" n:foreach="$nav as $item">
+			<a class="navline-link" href="{$item[link]}"><i class="fa fa-{$item[icon]} navline-icon" aria-hidden="true" n:if="$item[icon]"></i>{$item[title]}</a>
+		</li>
+	</ul>
+</nav>

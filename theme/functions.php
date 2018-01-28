@@ -56,7 +56,7 @@ function pm_post_row_actions($actions, $post){
 // Sort events in admin by start date
 function custom_post_order($query){
 	if($query->get('post_type') === 'events' && $query->get('orderby') == ''){
-		$query->set('order', 'ASC');
+		$query->set('order', 'DESC');
 		$query->set('orderby', 'meta_value');
 		$query->set('meta_key', 'pm_start_date');
 	}
@@ -207,3 +207,60 @@ function get_posts_by_title($post_title, $post_type) {
 
 	return $quote_ids;
 }
+
+show_admin_bar(false);
+
+add_action('pre_render_view', 'create_admin_menu');
+
+function create_admin_menu() {
+	global $View;
+
+	$adminNavigation = [];
+	if (get_page_template_slug() == 'template-registerlist.php') {
+		$adminNavigation = [
+			[
+				'title' => 'web',
+				'icon' => 'home',
+				'link' => get_home_url()
+			],
+		];
+		if (isset($_GET['archive'])) {
+			$adminNavigation[] = [
+				'title' => 'aktuální',
+				'icon' => 'users',
+				'link' => get_permalink()
+			];
+		} else {
+			$adminNavigation[] = [
+				'title' => 'archiv',
+				'icon' => 'th-list',
+				'link' => get_permalink() . '?archive'
+			];
+		}
+	} else {
+		$adminNavigation[] = [
+			'title' => 'přihlašování',
+			'icon' => 'users',
+			'link' => '/tajne'
+		];
+	}
+
+	$adminNavigation[] = [
+			'title' => 'administrace',
+			'icon' => 'wordpress',
+			'link' => get_admin_url()
+	];
+
+	$adminNavigation[] = [
+			'title' => 'odhlásit',
+			'icon' => 'sign-out',
+			'link' => wp_logout_url(get_home_url())
+	];
+
+	$View->admin_navigation = $adminNavigation;
+}
+
+function admin_default_page() {
+  return '/prihlasovani';
+}
+add_filter('login_redirect', 'admin_default_page');

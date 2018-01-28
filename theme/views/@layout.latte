@@ -53,6 +53,10 @@
 		<img class="site-background-img" src="{wp_get_attachment_image_src($site_background)|noescape}" srcset="{wp_get_attachment_image_srcset($site_background)|noescape}" sizes="{wp_get_attachment_image_srcset($row[image][0])|noescape}" alt="{$row[image_caption]}">
 	</div>
 
+	{if is_user_logged_in()}
+		{include components/admin-navigation.latte nav => $admin_navigation}
+	{/if}
+
 	{block content}{/block}
 
 	{block scripts}

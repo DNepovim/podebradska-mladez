@@ -1,7 +1,6 @@
 {extends layouts/fluid.latte}
 
 {block #main}
-	<a href="{get_permalink()}?archive" n:if="!isset($_GET[archiv])">Archiv přihlašování</a>
 	{if $events}
 		<article class="article box view-white view-article" n:foreach="$events as $event">
 				<h1 class="article-title" n:ifcontent>{$event|wp_title} {$event|wp_meta:pm_start_date|date:Y}</h1>
