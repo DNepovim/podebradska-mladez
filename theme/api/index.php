@@ -42,6 +42,9 @@ switch($ApiRequest[0]) {
 			$chatfuel->sendText('Něco se pokazilo. Zkus to znovu, nebo počkej, až si toho někdo všimne.');
 		}
 		break;
+	case 'participants-export':
+		pm_participants_export($ApiRequest[1]);
+		break;
 }
 
 sendPayload($payload);
