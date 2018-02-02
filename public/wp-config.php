@@ -35,6 +35,8 @@ define('DB_HOST', $db['host']);
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
+define('DISABLE_WP_CRON', true);
+
 $wpParams = $params['wp'];
 define('AUTH_KEY', $wpParams['AUTH_KEY']);
 define('SECURE_AUTH_KEY', $wpParams['SECURE_AUTH_KEY']);
