@@ -67,7 +67,7 @@ if(is_admin()){
 
 // Customize TinyMCE
 function format_TinyMCE( $in ) {
-		$in['block_formats'] = "Nadpis=h2; Podnadpis=h3; Odstavec=p";
+		$in['block_formats'] = "Nadpis=h3; Podnadpis=h4; Odstavec=p";
 		$in['toolbar1'] = 'formatselect,bold,underline,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,spellchecker,wp_fullscreen,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help  ';
 	$in['toolbar2'] = '';
 	return $in;
