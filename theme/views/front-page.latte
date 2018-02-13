@@ -37,25 +37,17 @@
 {block #aside}
 	<div class="map box" n:if="$map && has_post_thumbnail($nextEvent)">{$map|noescape}</div>
 
-	{if $registerTo && has_post_thumbnail($nextEvent)}
-		{if $registerTo == -1}
-			<div class="form-container">
-				<div class="form box view-border">
-					<div class="form-text view-in">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> jsme ještě nespustili.</div>
-				</div>
+	{if ($nextEvent|wp_meta:pm_register_to)}
+		<div class="form-container">
+			<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$nextEvent|wp_meta:pm_register_to|date:"j. n. Y"} za nižší cenu.</strong>:</div>
+			{include components/register-form.latte event => $nextEvent}
+		</div>
+	{else}
+		<div class="form-container">
+			<div class="form box view-border">
+				<div class="form-text view-in">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> spustíme cobydup.<br>Sleduj náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a>.</div>
 			</div>
-		{elseif $registerTo == -2}
-			<div class="form-container">
-				<div class="form box view-border">
-				<div class="form-text view-in">Přihlašování na <strong>{$nextEvent|wp_title}</strong></strong> je už uzavřeno.</div>
-			</div>
-			</div>
-		{else}
-			<div class="form-container">
-				<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$registerTo|date:"j. n. Y"}</strong>:</div>
-				{include components/register-form.latte event => $nextEvent}
-			</div>
-		{/if}
+		</div>
 	{/if}
 
 	<div n:if="!empty($map)">
