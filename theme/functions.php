@@ -191,7 +191,8 @@ function getEventParticipants($eventID) {
 		'post_status' => 'private',
 		'numberposts'     => -1,
 		'meta_key'   => 'event_id',
-		'meta_value' => $eventID
+		'meta_value' => $eventID,
+		'order' => 'ASC'
 	]);
 }
 
