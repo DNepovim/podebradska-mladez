@@ -54,6 +54,7 @@ class Form extends Component {
 
 	handleSubmit(e, self) {
 		e.preventDefault()
+		hj('vpv', '/register')
 		self.$el.addClass('is-in-process')
 		let valid = true
 		let errorMessages = []
