@@ -20,7 +20,7 @@ $events = get_posts([
 	]
 ]);
 
-$args['nextEvent'] = $events ? $events[0] : false;
+$args['nextEvent'] = !empty($nextEvent) ? $nextEvent : $events[0];
 
 $args['futureEvents'] = array_slice($events, 1);
 

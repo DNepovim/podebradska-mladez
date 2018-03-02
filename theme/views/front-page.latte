@@ -59,7 +59,13 @@
 		<div class="calendar-description form-text">Přijeď i na další akce:</div>
 		<div class="calendar box">
 			{foreach $futureEvents as $item}
-				<div class="calendar-name">{$item|wp_title}</div>
+				<div class="calendar-name">
+					{if ($item|wp_meta:pm_register_to)}
+						<a href="{$item|wp_permalink}">{$item|wp_title}</a>
+					{else}
+						{$item|wp_title}
+					{/if}
+				</div>
 				<div class="calendar-date">{$item|daterange}{if ($item|wp_meta:pm_position)}, {$Post|wp_meta:pm_position|wp_title}{/if}</div>
 			{/foreach}
 			<a class="button view-light" href="https://calendar.google.com/calendar/render?cid=skaut.cz_4e0n87fb8an928gsnosfoj0gns@group.calendar.google.com#main_7" target="_blank">
