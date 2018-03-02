@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9407b9e5990c229ed4a879f48bc93313",
+    "content-hash": "cba90af5069110b01a9068f375ca9cde",
     "packages": [
         {
             "name": "composer/installers",
@@ -128,16 +128,16 @@
         },
         {
             "name": "facebook/graph-sdk",
-            "version": "5.6.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-graph-sdk.git",
-                "reference": "2f9639c15ae043911f40ffe44080b32bac2c5280"
+                "reference": "030f8c5b9b1a6c09e71719fd638b66ea4daa2f10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/2f9639c15ae043911f40ffe44080b32bac2c5280",
-                "reference": "2f9639c15ae043911f40ffe44080b32bac2c5280",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/030f8c5b9b1a6c09e71719fd638b66ea4daa2f10",
+                "reference": "030f8c5b9b1a6c09e71719fd638b66ea4daa2f10",
                 "shasum": ""
             },
             "require": {
@@ -182,7 +182,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2017-08-16T17:28:07+00:00"
+            "time": "2018-02-14T23:24:51+00:00"
         },
         {
             "name": "fancyguy/webroot-installer",
@@ -274,16 +274,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.4.6",
+            "version": "v2.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "6d560edc49b052de6821acb48a1f438862d5b48b"
+                "reference": "f989b018ec12f9492132515cd47f83f98429c513"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/6d560edc49b052de6821acb48a1f438862d5b48b",
-                "reference": "6d560edc49b052de6821acb48a1f438862d5b48b",
+                "url": "https://api.github.com/repos/nette/latte/zipball/f989b018ec12f9492132515cd47f83f98429c513",
+                "reference": "f989b018ec12f9492132515cd47f83f98429c513",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "template",
                 "twig"
             ],
-            "time": "2017-08-29T08:24:52+00:00"
+            "time": "2018-02-06T14:42:33+00:00"
         },
         {
             "name": "mangoweb/mangopress-sql-panel",
@@ -389,19 +389,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/manGoweb/MangoPressTemplating.git",
-                "reference": "0696ebd5cfab1faf38c393945e91b5e5a1259b53"
+                "reference": "7ca48f3cf200473ae7c189fcab3a2abbad72514d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/manGoweb/MangoPressTemplating/zipball/0696ebd5cfab1faf38c393945e91b5e5a1259b53",
-                "reference": "0696ebd5cfab1faf38c393945e91b5e5a1259b53",
+                "url": "https://api.github.com/repos/manGoweb/MangoPressTemplating/zipball/7ca48f3cf200473ae7c189fcab3a2abbad72514d",
+                "reference": "7ca48f3cf200473ae7c189fcab3a2abbad72514d",
                 "shasum": ""
             },
             "require": {
                 "latte/latte": "^2.4",
                 "nette/http": "^2.4",
                 "nette/utils": "^2.4",
-                "php": ">=5.4.0"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -421,7 +421,7 @@
             ],
             "description": "Prepared templating workflow with filters and macros.",
             "homepage": "https://github.com/mangoweb/MangoPressTemplating",
-            "time": "2018-01-16T10:36:39+00:00"
+            "time": "2018-02-27T13:07:16+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -503,16 +503,16 @@
         },
         {
             "name": "nette/application",
-            "version": "v2.4.9",
+            "version": "v2.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/application.git",
-                "reference": "f69175cbe5cb9ea3db51dab01b6f0574dc6c94d5"
+                "reference": "c7fea54e04011fa3f9b808cd5513e53b76d621db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/application/zipball/f69175cbe5cb9ea3db51dab01b6f0574dc6c94d5",
-                "reference": "f69175cbe5cb9ea3db51dab01b6f0574dc6c94d5",
+                "url": "https://api.github.com/repos/nette/application/zipball/c7fea54e04011fa3f9b808cd5513e53b76d621db",
+                "reference": "c7fea54e04011fa3f9b808cd5513e53b76d621db",
                 "shasum": ""
             },
             "require": {
@@ -586,7 +586,7 @@
                 "routing",
                 "seo"
             ],
-            "time": "2017-08-24T21:30:36+00:00"
+            "time": "2018-02-05T18:42:29+00:00"
         },
         {
             "name": "nette/bootstrap",
@@ -792,16 +792,16 @@
         },
         {
             "name": "nette/database",
-            "version": "v2.4.4",
+            "version": "v2.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/database.git",
-                "reference": "9b16e3ea2d9c21579962a17d81e17e4f71f59d6b"
+                "reference": "c9b1963ee63273bb855e85fb62fa9c4154c616e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/database/zipball/9b16e3ea2d9c21579962a17d81e17e4f71f59d6b",
-                "reference": "9b16e3ea2d9c21579962a17d81e17e4f71f59d6b",
+                "url": "https://api.github.com/repos/nette/database/zipball/c9b1963ee63273bb855e85fb62fa9c4154c616e3",
+                "reference": "c9b1963ee63273bb855e85fb62fa9c4154c616e3",
                 "shasum": ""
             },
             "require": {
@@ -860,21 +860,24 @@
                 "queries",
                 "sqlite"
             ],
-            "time": "2017-07-27T10:58:17+00:00"
+            "time": "2018-02-05T18:46:36+00:00"
         },
         {
             "name": "nette/deprecated",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/deprecated.git",
-                "reference": "d03c5bfd679d15ddf39abf99dedf054b1078c7ff"
+                "reference": "348e284192f6f6451692b1763b6ed235c28b25ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/deprecated/zipball/d03c5bfd679d15ddf39abf99dedf054b1078c7ff",
-                "reference": "d03c5bfd679d15ddf39abf99dedf054b1078c7ff",
+                "url": "https://api.github.com/repos/nette/deprecated/zipball/348e284192f6f6451692b1763b6ed235c28b25ae",
+                "reference": "348e284192f6f6451692b1763b6ed235c28b25ae",
                 "shasum": ""
+            },
+            "require": {
+                "php": "<7.2"
             },
             "require-dev": {
                 "latte/latte": "^2.2",
@@ -920,7 +923,7 @@
             "keywords": [
                 "nette"
             ],
-            "time": "2017-07-14T07:25:32+00:00"
+            "time": "2018-02-06T16:29:40+00:00"
         },
         {
             "name": "nette/di",
@@ -1189,16 +1192,16 @@
         },
         {
             "name": "nette/mail",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/mail.git",
-                "reference": "2511b0cfa7c181c5fe333838152e308605594c53"
+                "reference": "fc651794923e0f44d6bd89afca4a16873c8f269c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/mail/zipball/2511b0cfa7c181c5fe333838152e308605594c53",
-                "reference": "2511b0cfa7c181c5fe333838152e308605594c53",
+                "url": "https://api.github.com/repos/nette/mail/zipball/fc651794923e0f44d6bd89afca4a16873c8f269c",
+                "reference": "fc651794923e0f44d6bd89afca4a16873c8f269c",
                 "shasum": ""
             },
             "require": {
@@ -1244,9 +1247,16 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "Nette Mail: Sending E-mails",
+            "description": "📧 Nette Mail: handy email creation and transfer library for PHP with both text and MIME-compliant support.",
             "homepage": "https://nette.org",
-            "time": "2017-07-13T16:51:28+00:00"
+            "keywords": [
+                "mail",
+                "mailer",
+                "mime",
+                "nette",
+                "smtp"
+            ],
+            "time": "2017-12-05T11:26:49+00:00"
         },
         {
             "name": "nette/neon",
@@ -1501,16 +1511,16 @@
         },
         {
             "name": "nette/robot-loader",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/robot-loader.git",
-                "reference": "73149b9724ca24c1215b5d53860b77f113bcf063"
+                "reference": "1f7f8792ce4d94162959e6b766822d6051623bca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/robot-loader/zipball/73149b9724ca24c1215b5d53860b77f113bcf063",
-                "reference": "73149b9724ca24c1215b5d53860b77f113bcf063",
+                "url": "https://api.github.com/repos/nette/robot-loader/zipball/1f7f8792ce4d94162959e6b766822d6051623bca",
+                "reference": "1f7f8792ce4d94162959e6b766822d6051623bca",
                 "shasum": ""
             },
             "require": {
@@ -1554,9 +1564,16 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "Nette RobotLoader: comfortable autoloading",
+            "description": "🍀 Nette RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
             "homepage": "https://nette.org",
-            "time": "2017-07-11T00:21:10+00:00"
+            "keywords": [
+                "autoload",
+                "class",
+                "interface",
+                "nette",
+                "trait"
+            ],
+            "time": "2017-08-14T20:23:02+00:00"
         },
         {
             "name": "nette/safe-stream",
@@ -1734,16 +1751,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v2.4.8",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "f1584033b5af945b470533b466b81a789d532034"
+                "reference": "8a85ce76298c8a8941f912b8fa3ee93ca17d2ebc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/f1584033b5af945b470533b466b81a789d532034",
-                "reference": "f1584033b5af945b470533b466b81a789d532034",
+                "url": "https://api.github.com/repos/nette/utils/zipball/8a85ce76298c8a8941f912b8fa3ee93ca17d2ebc",
+                "reference": "8a85ce76298c8a8941f912b8fa3ee93ca17d2ebc",
                 "shasum": ""
             },
             "require": {
@@ -1767,12 +1784,15 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
                 "classmap": [
                     "src/"
+                ],
+                "files": [
+                    "src/loader.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1809,7 +1829,7 @@
                 "utility",
                 "validation"
             ],
-            "time": "2017-08-20T17:32:29+00:00"
+            "time": "2018-02-19T14:42:42+00:00"
         },
         {
             "name": "phpoffice/phpexcel",
@@ -1866,6 +1886,7 @@
                 "xls",
                 "xlsx"
             ],
+            "abandoned": "phpoffice/phpspreadsheet",
             "time": "2015-05-01T07:00:55+00:00"
         },
         {
@@ -2029,16 +2050,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.4.10",
+            "version": "v2.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "5b302790edd71924dfe4ec44f499ef61df3f53a2"
+                "reference": "4182ce7b92f67002509b7fa2fc34bd84deea0b24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/5b302790edd71924dfe4ec44f499ef61df3f53a2",
-                "reference": "5b302790edd71924dfe4ec44f499ef61df3f53a2",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/4182ce7b92f67002509b7fa2fc34bd84deea0b24",
+                "reference": "4182ce7b92f67002509b7fa2fc34bd84deea0b24",
                 "shasum": ""
             },
             "require": {
@@ -2069,9 +2090,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause",
-                "GPL-2.0",
-                "GPL-3.0"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -2092,14 +2111,14 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2017-10-04T18:43:42+00:00"
+            "time": "2018-02-28T00:49:47+00:00"
         },
         {
             "name": "wordpress/wordpress",
-            "version": "4.9.2",
+            "version": "4.9.4",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.9.2.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.9.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2170,15 +2189,15 @@
         },
         {
             "name": "wpackagist-plugin/meta-box",
-            "version": "4.13.1",
+            "version": "4.13.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/meta-box/",
-                "reference": "tags/4.13.1"
+                "reference": "tags/4.13.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box.4.13.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/meta-box.4.13.4.zip",
                 "reference": null,
                 "shasum": null
             },
