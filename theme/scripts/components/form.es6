@@ -3,7 +3,6 @@ var Component = require('./component')
 class Form extends Component {
 	constructor(element, data) {
 		super(element, data)
-
 		this.valid = {}
 		this.$formInputs = this.$el.find('input:not([type=hidden]):not([type=submit])')
 		this.$formInputs.each( (i, v) => {
@@ -75,7 +74,6 @@ class Form extends Component {
 			self.$el.find('.form-error').remove()
 			$.post(self.data.endpoint, self.$el.serialize())
 				.done((data) => {
-					console.log(data)
 					if (data.status) {
 						self.showSuccess()
 					} else {
