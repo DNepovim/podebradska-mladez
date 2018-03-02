@@ -9,7 +9,7 @@
 						<table class="summary">
 							<tr class="summary-row">
 								<th class="smmaury-head"><i class="fa fa-calendar summary-head-icon" aria-hidden="true"></i>Uzávěrka:</th>
-								<td n:class="summary-cell, strtotime(($event|wp_meta:pm_register_to)) >= time() ? 'view-success' : 'view-error'">{$event|wp_meta:pm_register_to|date:'j. n. Y'}</td>
+								<td n:class="summary-cell, date('Ymd', strtotime(($event|wp_meta:pm_register_to))) >= date('Ymd') ? 'view-success' : 'view-error'">{$event|wp_meta:pm_register_to|date:'j. n. Y'}</td>
 							</tr>
 							<tr class="summary-row">
 								<th class="smaurry-head"><i class="fa fa-users summary-head-icon" aria-hidden="true"></i>Přihlášených:</th>
