@@ -26,7 +26,7 @@ switch($ApiRequest[0]) {
 				[
 					'type' => 'show_block',
 					'block_name' => 'Přihlásit',
-					'title' => 'Přihlásti'
+					'title' => 'Přihlásit'
 				]
 			]
 		]];
