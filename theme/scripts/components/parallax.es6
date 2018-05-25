@@ -7,19 +7,31 @@ class Parallax extends Component {
 
 		const $document = $(document)
 
-		this.parallax()
+		this.$container = $('#parallax-container')
+		this.$title = $('#parallax-title')
+		this.$image = $('#parallax-image')
 
-		$document.on('scroll', () => {
-			this.parallax()
-		})
+		this.$window = $(window)
+		this.$document = $(document)
+
+		this.parallax()
+	}
+
+	get listeners() {
+		return {
+			'scroll': 'handleScroll'
+		}
+	}
+
+	handleScroll(e, self) {
+		self.parallax()
 	}
 
 	parallax() {
-		const $slider = $('#parallax')
-		const $window = $(window)
-		const $document = $(document)
-		let position = -20 * $window.scrollTop() / ($document.height() - $window.height())
-		$slider.css('top', position + 'vh')
+		const position = this.$window.scrollTop()
+		this.$container.css('top', 0.01 * position + 'vh')
+		this.$title.css('top', 0.02 * position + 'vh')
+		this.$image.css('transform', 'translateY(' + 0.03 * position + 'vh)')
 	}
 }
 

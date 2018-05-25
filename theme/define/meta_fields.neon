@@ -121,7 +121,7 @@ register:
 		context: side
 		fields:
 			page_posts:
-				type: type
+				type: text
 
 	pf:
 		title: Fotky
@@ -131,11 +131,33 @@ register:
 			images:
 				type: image_advanced
 
-	description:
-		title: Description
+	seventh:
+		title: Podnadpis
 		post_types:
 			- page
+		context: side
 		fields:
-			page_descripiton:
-				type: textarea
+			subtitle:
+				type: text
+
+
+	six:
+		title: Cover
+		post_types:
+			- events
+			- page
+		context: side
+		fields:
+			cover_image:
+				type: image_advanced
+				max_file_uploads: 1
+			cover_position:
+				name: Zarovnat
+				type: button_group
+				std: middle
+				options:
+					top: Nahoru
+					middle: Do prostřed
+					bottom: Dolů
+
 

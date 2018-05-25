@@ -6,6 +6,3 @@
 register:
 	fb-settings:
 		title: Facebook API
-	appearance-settings:
-		title: Pozadí
-		parent: themes.php

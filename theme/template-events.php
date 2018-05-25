@@ -1,6 +1,5 @@
 <?php
-
-
+/* Template Name: Archiv */
 
 $args['events'] = get_posts([
 	'post_type' => 'events',
@@ -17,5 +16,4 @@ $args['events'] = get_posts([
 	]
 ]);
 
-// latte file has same name as this file
 view($args);

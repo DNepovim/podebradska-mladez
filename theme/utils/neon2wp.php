@@ -15,6 +15,9 @@ function transformFields($fields, $prefix = NULL) {
 		if(empty($result[$field_name]['id'])) {
 			$result[$field_name]['id'] = $prefix.$field_name;
 		}
+		if(empty($result[$field_name]['type'])) {
+			$result[$field_name]['type'] = 'text';
+		}
 		if($result[$field_name]['type'] === 'repeater') {
 			$result[$field_name]['type'] = 'group';
 			$result[$field_name]['clone'] = true;

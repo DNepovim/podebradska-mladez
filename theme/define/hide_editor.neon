@@ -7,7 +7,9 @@ hide:
 		templates:
 			- front-page
 			- template-registerlist
+			- page
 	thumbnail:
 		templates:
 			- front-page
 			- template-registerlist
+			- page

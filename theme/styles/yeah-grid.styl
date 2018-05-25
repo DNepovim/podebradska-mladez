@@ -30,17 +30,6 @@ clearfix()
 		height 0
 		clear both
 
-// basic sets for your layout container
-.container
-	position relative
-	right 0
-	transition right 300ms
-	margin-right auto
-	margin-left auto
-	margin-top $gap * 2
-	padding  ($gap / 2) $gap
-	clearfix()
-
 // do you need fluid layout? here it is
 .container-fluid
 	width 100%
@@ -114,6 +103,21 @@ for key, break in $breakpoints
 			.yeah-{key}-{i}
 				width (i / $columns * 100%)
 				column()
+
+// basic sets for your layout container
+.container
+	position relative
+	z-index 5
+	right 0
+	transition right 300ms
+	margin-right auto
+	margin-left auto
+	margin-top $gap * 2
+	padding  ($gap / 2) $gap
+	clearfix()
+
+	@media $break.s
+		margin-top -2rem
 
 .yeah-center
 	display block

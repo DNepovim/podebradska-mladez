@@ -4,16 +4,6 @@
 	{each}
 
 		<article class="article box view-white view-article view-page">
-			<h1 class="article-title title" n:ifcontent>{$Post|wp_title}</h1>
-
-			{if has_post_thumbnail()}
-				<figure class="yeah-12 yeah-m-10">
-					<a data-lightbox="inviation" href="{get_the_post_thumbnail_url($Post, 'full')}">
-						{get_the_post_thumbnail($Post, 'blog', [class => 'box article-invitation'])|noescape}
-					</a>
-				</figure>
-			{/if}
-
 			{$Post|wp_content}
 		</article>
 	{/each}

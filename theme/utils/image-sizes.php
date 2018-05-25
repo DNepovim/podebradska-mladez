@@ -7,4 +7,5 @@ function add_image_sizes() {
 	add_image_size('person', 450, 450, true);
 	add_image_size('tile', 150, 150, true);
 	add_image_size('graph', 1200, 630, true);
+	add_image_size('cover', 1440, 660, true);
 }

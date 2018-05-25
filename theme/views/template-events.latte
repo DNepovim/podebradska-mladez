@@ -1,7 +1,7 @@
 {extends layouts/simple.latte}
 
 {block main}
-	<div class="post-thumb" n:foreach="$events as $event">
+	<div class="post-thumb box" n:foreach="$events as $event">
 		<a href="{$event|wp_permalink}" class="post-thumb-image">
 			{get_the_post_thumbnail($event, 'wrapper', ['class' => 'box'])|noescape}
 		</a>
