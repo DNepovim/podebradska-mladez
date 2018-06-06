@@ -1,5 +1,7 @@
 <?php
 
+use Nette\Utils\Html;
+
 MangoPressTemplating::init();
 
 // czech number format
@@ -47,4 +49,19 @@ MangoFilters::$set['gpsizes'] = function($url, $width = null, $height = null){
 
 MangoFilters::$set['hashtags'] = function($string){
 	return preg_replace('/#([^\s]+)/', '<span class="hashtag">#\1</span>', $string);
+};
+
+MangoFilters::$set['wp_thumbnail_id'] = function($post){
+	return get_post_thumbnail_id($post);
+};
+
+MangoFilters::$set['imgsrcset'] = function($img, $sizes = '100%', $class = '', $alt = '') {
+	$el = Html::el('img', [
+		'src' => wp_get_attachment_image_src($img, 'fancybox')[0],
+		'srcset' => wp_get_attachment_image_srcset($img),
+		'sizes' => $sizes,
+		'class' => $class,
+		'alt' => $alt
+	]);
+	return $el;
 };

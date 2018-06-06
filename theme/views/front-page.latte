@@ -10,7 +10,12 @@
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
 					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
-						{get_the_post_thumbnail($nextEvent, 'invitation')|noescape}
+						{$nextEvent|wp_thumbnail_id|imgsrcset:'
+							(max-width: 700px) calc(100% - 2rem),
+							(max-width: 900px) calc(100% * 2 / 3 - 2rem),
+							(max-width: 1080px) calc(((50% - 2rem),
+							(max-width: 1260px) 570px,
+							670px'}
 					</a>
 				</div>
 			{else}

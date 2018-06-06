@@ -19,7 +19,12 @@
 			{if has_post_thumbnail()}
 				<figure class="yeah-12 yeah-m-10">
 					<a data-lightbox="inviation" href="{get_the_post_thumbnail_url($Post, 'full')}">
-						{get_the_post_thumbnail($Post, 'blog', [class => 'box article-invitation'])|noescape}
+						{$nextEvent|wp_thumbnail_id|imgsrcset:'
+							(max-width: 700px) calc(100% - 2rem),
+							(max-width: 900px) calc(100% * 2 / 3 - 2rem),
+							(max-width: 1080px) calc(((50% - 2rem),
+							(max-width: 1260px) 570px,
+							670px', 'box article-invitation'}
 					</a>
 				</figure>
 			{/if}
