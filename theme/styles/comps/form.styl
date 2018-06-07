@@ -14,6 +14,9 @@
 
 	&-container
 		max-width 15rem
+		background-color #fff
+		border-radius $radius
+		padding-top 0.1em
 
 	&-input
 		display block
@@ -82,7 +85,7 @@
 
 	&-error
 		display block
-		font-size 0.6rem
+		font-size 0.5rem
 		color $error
 		size 100% 0.6rem
 		margin 0.2em 0
@@ -114,7 +117,7 @@
 	&-text
 		color gray
 		font-size 0.7rem
-		margin 20px 0 0.2em
+		margin 0 0 0 0.2em
 
 		&.view-center
 			text-align center
@@ -122,6 +125,21 @@
 
 		&.view-in
 			margin 0
+
+	&-checkbox
+		font-size 0.7rem
+		margin 0 0.4em 0 0
+		line-height 1em
+
+		input
+			margin-right 0.2em
+
+	&-input
+		margin 0
+
+	&-fieldset
+		line-height 1.2em
+		margin-bottom 1rem
 
 	&-inline
 		position relative
