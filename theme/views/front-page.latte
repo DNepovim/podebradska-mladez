@@ -6,7 +6,7 @@
 
 {block #main}
 	{if $nextEvent}
-		<article class="invitation-text box" n:ifcontent>
+		<article class="invitation-text box view-white view-article" n:ifcontent>
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
 					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
