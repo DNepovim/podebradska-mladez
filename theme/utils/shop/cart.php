@@ -19,7 +19,7 @@ class Delivery {
 	const PPL = 'PPL';
 }
 
-class Cart extends Nette\Object {
+class Cart extends Nette\SmartObject {
 
 	const OPTION_DELIVERY = 'delivery';
 	const OPTION_PAYMENT = 'payment';
