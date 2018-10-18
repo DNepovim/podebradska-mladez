@@ -1,5 +1,6 @@
 {form $Forms[register], id => register-form, class=> 'form box view-border', novalidate => ''}
 	{var $inputs = ['firstname', 'surname', 'email']}
+	<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$nextEvent|wp_meta:pm_register_to|date:"j. n. Y"} za nižší cenu.</strong>:</div>
 	{foreach $inputs as $component}
 		<fieldset class="form-fieldset floating">
 			{input $component class => 'form-input floating-input'}

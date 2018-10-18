@@ -44,7 +44,6 @@
 
 	{if ($nextEvent|wp_meta:pm_register_to)}
 		<div class="form-container">
-			<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$nextEvent|wp_meta:pm_register_to|date:"j. n. Y"} za nižší cenu.</strong>:</div>
 			{include components/register-form.latte event => $nextEvent}
 		</div>
 	{else}
