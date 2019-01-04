@@ -2,7 +2,9 @@
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-# RewriteBase /
+
+	RewriteCond %{HTTP_HOST} ^podebradska-mladez.dombl.cz
+	RewriteRule (.*) http://podebradska-mladez.evangnet.cz/$1 [R=301,L]
 
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
