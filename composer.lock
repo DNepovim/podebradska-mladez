@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfdab0953d94a0835f07f977c19ac267",
+    "content-hash": "7940776b6bac63c35ce4f51f43114f5f",
     "packages": [
         {
             "name": "composer/installers",
@@ -2141,6 +2141,24 @@
             "homepage": "https://wordpress.org/plugins/bugsnag/"
         },
         {
+            "name": "wpackagist-plugin/disable-gutenberg",
+            "version": "2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/disable-gutenberg/",
+                "reference": "tags/2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-gutenberg.2.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/disable-gutenberg/"
+        },
+        {
             "name": "wpackagist-plugin/html-editor-syntax-highlighter",
             "version": "2.4.2",
             "source": {
@@ -2175,6 +2193,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/meta-box/"
+        },
+        {
+            "name": "wpackagist-plugin/post-types-order",
+            "version": "1.9.4.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/post-types-order/",
+                "reference": "tags/1.9.4.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/post-types-order.1.9.4.3.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/post-types-order/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
