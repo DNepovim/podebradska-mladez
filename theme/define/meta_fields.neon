@@ -20,6 +20,7 @@ register:
 				name: Mapa
 				type: post
 				post_type: maps
+				placeholder: Vyber místo
 
 	two:
 		title: Přihlašování
@@ -28,27 +29,30 @@ register:
 			register_to:
 				name: Uzávěrka
 				type: date
+			show_additional_fields:
+				name: Další pole
+				type: switch
+				default: false
 			additional_fields:
-				name: Další pole formuláře
 				type: repeater
+				add_button: Přidat pole
+				visible: [show_additional_fields, true]
 				fields:
 					label:
 						name: popisek
 					type:
 						name: typ
-						type: select
+						type: button_group
 						options:
-							text: text
-							textarea: textarea
-							radio: radio
-							checkboxlist: checkboxlist
-					message:
-						name: Chybová zpráva
-						desc: Pouze pokud má být pole povinné.
+							text: '<span class="dashicons dashicons-editor-textcolor"></span> text'
+							textarea: '<span class="dashicons dashicons-text"></span> area'
+							radio: '<span class="dashicons dashicons-marker"></span> radio'
+							checkboxlist: '<span class="dashicons dashicons-yes"></span> checks'
 					options:
 						name: Možnosti
 						type: repeater
 						desc: Pouze u radio a checkboxlistu.
+						add_button: Přidat možnost
 						fields:
 							value:
 								type: text

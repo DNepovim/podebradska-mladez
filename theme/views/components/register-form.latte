@@ -9,9 +9,11 @@
 			<span class="form-error" data-for="frm-{$component}">{inputError $component}</span>
 		</fieldset>
 	{/foreach}
-	{foreach ($event|wp_meta:pm_additional_fields) as $item}
-		{include 'form/' . $item[pm_type] . '.latte', 'input' => $item, 'name' => 'additional[' . $iterator->getCounter() . ']'}
-	{/foreach}
+	{if ($event|wp_meta:pm_show_additional_fields)}
+		{foreach ($event|wp_meta:pm_additional_fields) as $item}
+			{include 'form/' . $item[pm_type] . '.latte', 'input' => $item, 'name' => 'additional[' . $iterator->getCounter() . ']'}
+		{/foreach}
+	{/if}
 	{input postID , value => $event->ID}
 	<button n:name="register" type="submit" class="button form-button">
 		Přihlaš mě

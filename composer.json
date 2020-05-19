@@ -9,7 +9,7 @@
 		"mangoweb/mangopress-templating": "dev-master",
 		"sentry/sentry": "^0.16.0",
 		"roots/wp-password-bcrypt": "^1.0",
-		"wpackagist-plugin/meta-box": "^4.12.3",
+		"wpackagist-plugin/meta-box":"^5.2.9",
 		"wpackagist-plugin/blue-admin": "^16.10",
 		"wpackagist-plugin/disable-gutenberg":"^2.1",
 		"wpackagist-plugin/html-editor-syntax-highlighter": "^2.2.0",
