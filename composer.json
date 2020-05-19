@@ -41,10 +41,10 @@
 			"package": {
 				"name": "wordpress/wordpress",
 				"type": "webroot",
-				"version": "4.9.6",
+				"version": "5.4.1",
 				"dist": {
 					"type": "zip",
-					"url": "https://github.com/WordPress/WordPress/archive/4.9.6.zip"
+					"url": "https://github.com/WordPress/WordPress/archive/5.4.1.zip"
 				},
 				"require": {
 					"fancyguy/webroot-installer": "1.1.0"
