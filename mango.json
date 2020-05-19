@@ -32,12 +32,6 @@
     "public/assets/styles/print.css",
     "public/assets/scripts/index.js"
   ],
-  "dependencies": [
-    "bootstrap-styl",
-    "jquery",
-    "lt-ie-9",
-    "lightbox2"
-  ],
   "watch": [
     "theme/**/*.{latte,php}"
   ],

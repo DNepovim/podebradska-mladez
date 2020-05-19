@@ -1,0 +1,9 @@
+{
+  "resolutions": {
+    "@babel/preset-env": "7.5.5"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "lightbox2": "^2.11.1"
+  }
+}
