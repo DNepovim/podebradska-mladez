@@ -2,18 +2,26 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-10-23 12:39:21+0000\n"
+"PO-Revision-Date: 2020-04-01 14:05:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: cs_CZ\n"
 "Project-Id-Version: Themes - Twenty Twenty\n"
+
+#. Description of the theme
+msgid "Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors."
+msgstr "Šablona Twenty Twenty (2020) je navržena tak, aby plně využila flexibilitu blokového editoru. Organizace a firmy mají možnost vytvářet dynamické vstupní stránky s nekonečnými možnostmi rozložení s pomocí bloků skupin a sloupců. Díky centrovanému sloupci pro obsah a pečlivě vyladěná typografii je tato šablona perfektní také pro tradiční blogy. Kompletní styly editoru vám zobrazí finální vzhled vašeho obsahu ještě než jej publikujete. Web můžete také upravit dle vašich preferencí pomocí úpravy barev pozadí a  zvýraznění v nabídce Přizpůsobení. Barvy částí stránky se nastavují automaticky dle barev, které vyberete a zajistí tak vysoký kontrast pro vaše návštěvníky."
 
 #. Theme Name of the theme
 msgid "Twenty Twenty"
 msgstr "Twenty Twenty"
+
+#: classes/class-twentytwenty-customize.php:246
+msgid "Show author bio"
+msgstr "Zobrazit autorův životopis"
 
 #: inc/starter-content.php:38
 msgctxt "Theme starter content"
@@ -24,7 +32,7 @@ msgstr "Otevírá se nové UMoMA"
 msgid "View Archive <span aria-hidden=\"true\">&rarr;</span>"
 msgstr "Zobrazit archiv <span aria-hidden=\"true\">&rarr;</span>"
 
-#: inc/template-tags.php:387
+#: inc/template-tags.php:393
 msgctxt "A string that is output before one or more categories"
 msgid "In"
 msgstr "V"
@@ -65,15 +73,15 @@ msgstr "Členové získají přístup k exkluzivním exponátům a nabídkám. N
 msgid "October 1 -- December 1"
 msgstr "1. října – 1. prosince"
 
-#: classes/class-twentytwenty-customize.php:331
+#: classes/class-twentytwenty-customize.php:352
 msgid "Overlay Background Color"
 msgstr "Překrytí barvou pozadí"
 
-#: classes/class-twentytwenty-customize.php:374
+#: classes/class-twentytwenty-customize.php:395
 msgid "Overlay Opacity"
 msgstr "Míra průhlednosti"
 
-#: classes/class-twentytwenty-customize.php:353
+#: classes/class-twentytwenty-customize.php:374
 msgid "Overlay Text Color"
 msgstr "Barva překryvu textu"
 
@@ -86,7 +94,7 @@ msgstr "Základní barva"
 msgid "Read More"
 msgstr "Více"
 
-#: classes/class-twentytwenty-customize.php:262
+#: classes/class-twentytwenty-customize.php:283
 msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
 msgstr "Nastavení pro šablonu stránky „titulní šablona“. Přidejte náhledový obrázek, který bude použit jako pozadí."
 
@@ -98,11 +106,11 @@ msgstr "Život, který si zasloužím"
 msgid "The New UMoMA Opens its Doors"
 msgstr "Otevírá se nové UMoMA"
 
-#: classes/class-twentytwenty-customize.php:332
+#: classes/class-twentytwenty-customize.php:353
 msgid "The color used for the overlay. Defaults to the accent color."
 msgstr "Barva použitá pro překrytí. Standardně se použije barva zvýraznění."
 
-#: classes/class-twentytwenty-customize.php:354
+#: classes/class-twentytwenty-customize.php:375
 msgid "The color used for the text in the overlay."
 msgstr "Barva použitá pro text v překrytí."
 
@@ -127,7 +135,7 @@ msgid "Works and Days"
 msgstr "Práce a dny"
 
 #: inc/starter-content.php:129
-msgid "”Cyborgs, as the philosopher Donna Haraway established, are not reverent. They do not remember the cosmos.”"
+msgid "&#8220;Cyborgs, as the philosopher Donna Haraway established, are not reverent. They do not remember the cosmos.&#8221;"
 msgstr "„Cyborgové, jak ustanovila filozofka Donna Haraway, nejsou důstojní. Nepamatují si vesmír.“"
 
 #: 404.php:24
@@ -138,17 +146,17 @@ msgstr "Chyba 404 - nenalezeno"
 msgid "Search for:"
 msgstr "Výsledky vyhledávání:"
 
-#. translators: %s: HTML character for up arrow
+#. translators: %s: HTML character for up arrow.
 #: footer.php:43
 msgid "To the top %s"
 msgstr "Nahoru %s"
 
-#. translators: %s: HTML character for up arrow
+#. translators: %s: HTML character for up arrow.
 #: footer.php:49
 msgid "Up %s"
 msgstr "Nahoru %s"
 
-#. translators: %s: Number of search results
+#. translators: %s: Number of search results.
 #: index.php:39
 msgid "We found %s result for your search."
 msgid_plural "We found %s results for your search."
@@ -156,7 +164,7 @@ msgstr[0] "Byl nalezen %s výsledek."
 msgstr[1] "Byly nalezeny %s výsledky."
 msgstr[2] "Bylo nalezeno %s výsledků."
 
-#. translators: Copyright date format, see https://secure.php.net/date
+#. translators: Copyright date format, see https://www.php.net/date
 #: footer.php:25
 msgctxt "copyright date format"
 msgid "Y"
@@ -166,7 +174,7 @@ msgstr "Y"
 msgid "search again"
 msgstr "hledat znovu"
 
-#. Translators: 1 = comment date, 2 = comment time
+#. translators: 1: Comment date, 2: Comment time.
 #: classes/class-twentytwenty-walker-comment.php:69
 msgid "%1$s at %2$s"
 msgstr "%1$s (%2$s)"
@@ -183,13 +191,13 @@ msgstr "Komentář čeká na schválení."
 msgid "Leave a comment"
 msgstr "Napsat komentář"
 
-#. translators: %s: post title
+#. translators: %s: Post title.
 #: comments.php:37
 msgctxt "comments title"
 msgid "One reply on &ldquo;%s&rdquo;"
 msgstr "1 komentář u &bdquo;%s&ldquo;"
 
-#. translators: 1: number of comments, 2: post title
+#. translators: 1: Number of comments, 2: Post title.
 #: comments.php:41
 msgctxt "comments title"
 msgid "%1$s reply on &ldquo;%2$s&rdquo;"
@@ -206,7 +214,7 @@ msgstr "Komentáře"
 msgid "Comments are closed."
 msgstr "Komentáře nejsou povoleny."
 
-#: inc/starter-content.php:176 inc/starter-content.php:186 functions.php:491
+#: functions.php:492 inc/starter-content.php:176 inc/starter-content.php:186
 msgid "Primary"
 msgstr "Primární"
 
@@ -219,7 +227,7 @@ msgstr "Menu pro sociální sítě"
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "Upravit <span class=\"screen-reader-text\">%s</span>"
 
-#: functions.php:258
+#: functions.php:261
 msgid "Footer Menu"
 msgstr "Menu v zápatí"
 
@@ -235,7 +243,7 @@ msgstr "Zápatí"
 msgid "Page"
 msgstr "Stránka"
 
-#: functions.php:496
+#: functions.php:497
 msgid "Secondary"
 msgstr "Sekundární"
 
@@ -243,21 +251,21 @@ msgstr "Sekundární"
 msgid "Page Not Found"
 msgstr "Stránka nebyla nalezena"
 
-#. translators: %d: ID of a post
-#: classes/class-twentytwenty-walker-page.php:82
+#. translators: %d: ID of a post.
+#: classes/class-twentytwenty-walker-page.php:70
 msgid "#%d (no title)"
 msgstr "č.%d (bez názvu)"
 
-#: functions.php:486
+#: functions.php:487
 msgid "Accent Color"
 msgstr "Barva zvýraznění"
 
-#: functions.php:514
+#: functions.php:515
 msgid "Background Color"
 msgstr "Barva pozadí"
 
-#. translators: %s: Author name
-#: template-parts/entry-author-bio.php:20 inc/template-tags.php:348
+#. translators: %s: Author name.
+#: inc/template-tags.php:354 template-parts/entry-author-bio.php:20
 msgid "By %s"
 msgstr "Autor: %s"
 
@@ -265,8 +273,8 @@ msgstr "Autor: %s"
 msgid "By Post Author"
 msgstr "Od autora příspěvku"
 
-#: template-parts/entry-header.php:36 template-parts/content-cover.php:70
-#: inc/template-tags.php:383
+#: inc/template-tags.php:389 template-parts/entry-header.php:36
+#: template-parts/content-cover.php:70
 msgid "Categories"
 msgstr "Rubriky"
 
@@ -283,19 +291,19 @@ msgid "Continue reading"
 msgstr "Pokračovat ve čtení"
 
 #. Template Name of the theme
-#: classes/class-twentytwenty-customize.php:260
+#: classes/class-twentytwenty-customize.php:281
 msgid "Cover Template"
 msgstr "Titulní šablona"
 
-#: classes/class-twentytwenty-customize.php:285
+#: classes/class-twentytwenty-customize.php:306
 msgid "Creates a parallax effect when the visitor scrolls."
 msgstr "Vytvoří paralaxní efekt, když bude návštěvník rolovat stránkou."
 
-#: functions.php:256
+#: functions.php:259
 msgid "Desktop Expanded Menu"
 msgstr "Rozšířené menu pro počítač"
 
-#: functions.php:255
+#: functions.php:258
 msgid "Desktop Horizontal Menu"
 msgstr "Vodorovné menu pro počítač"
 
@@ -307,15 +315,15 @@ msgstr "Rozbaleno"
 msgid "Expanded Social links"
 msgstr "Rozšířené odkazy sociálních sítí"
 
-#: classes/class-twentytwenty-customize.php:284
+#: classes/class-twentytwenty-customize.php:305
 msgid "Fixed Background Image"
 msgstr "Statický obrázek na pozadí"
 
-#: functions.php:363
+#: functions.php:366
 msgid "Footer #1"
 msgstr "Zápatí č. 1"
 
-#: functions.php:375
+#: functions.php:378
 msgid "Footer #2"
 msgstr "Zápatí č. 2"
 
@@ -323,7 +331,7 @@ msgstr "Zápatí č. 2"
 msgid "Full Width Template"
 msgstr "Šablona na celou šířku webu"
 
-#: classes/class-twentytwenty-customize.php:248
+#: classes/class-twentytwenty-customize.php:269
 msgid "Full text"
 msgstr "Celý text"
 
@@ -335,7 +343,7 @@ msgstr "Barva pozadí v záhlaví a v zápatí"
 msgid "Horizontal"
 msgstr "Vodorovně"
 
-#: classes/class-twentytwenty-customize.php:375
+#: classes/class-twentytwenty-customize.php:396
 msgid "Make sure that the contrast is high enough so that the text is readable."
 msgstr "Ujistěte se, že je dostatečně vysoký kontrast, aby byl text čitelný."
 
@@ -347,26 +355,26 @@ msgstr "Menu"
 msgid "Mobile"
 msgstr "Mobil"
 
-#: functions.php:257
+#: functions.php:260
 msgid "Mobile Menu"
 msgstr "Mobilní menu"
 
-#: functions.php:541
+#: functions.php:542
 msgctxt "Name of the large font size in the block editor"
 msgid "Large"
 msgstr "Velké"
 
-#: functions.php:547
+#: functions.php:548
 msgctxt "Name of the larger font size in the block editor"
 msgid "Larger"
 msgstr "Větší"
 
-#: functions.php:535
+#: functions.php:536
 msgctxt "Name of the regular font size in the block editor"
 msgid "Regular"
 msgstr "Běžné"
 
-#: functions.php:529
+#: functions.php:530
 msgctxt "Name of the small font size in the block editor"
 msgid "Small"
 msgstr "Malé"
@@ -387,7 +395,7 @@ msgstr "Starší <span class=\"nav-short\">příspěvky</span>"
 msgid "Older Comments"
 msgstr "Starší komentáře"
 
-#: classes/class-twentytwenty-customize.php:246
+#: classes/class-twentytwenty-customize.php:267
 msgid "On archive pages, posts show:"
 msgstr "V archivech zobrazovat příspěvkům:"
 
@@ -395,11 +403,11 @@ msgstr "V archivech zobrazovat příspěvkům:"
 msgid "Post"
 msgstr "Příspěvek"
 
-#: inc/template-tags.php:341
+#: inc/template-tags.php:347
 msgid "Post author"
 msgstr "Autor příspěvku"
 
-#: inc/template-tags.php:365
+#: inc/template-tags.php:371
 msgid "Post date"
 msgstr "Datum příspěvku"
 
@@ -427,22 +435,22 @@ msgstr "Hledat"
 msgid "Search:"
 msgstr "Vyhledávání:"
 
-#: functions.php:542
+#: functions.php:543
 msgctxt "Short name of the large font size in the block editor."
 msgid "L"
 msgstr "L"
 
-#: functions.php:548
+#: functions.php:549
 msgctxt "Short name of the larger font size in the block editor."
 msgid "XL"
 msgstr "XL"
 
-#: functions.php:536
+#: functions.php:537
 msgctxt "Short name of the regular font size in the block editor."
 msgid "M"
 msgstr "M"
 
-#: functions.php:530
+#: functions.php:531
 msgctxt "Short name of the small font size in the block editor."
 msgid "S"
 msgstr "S"
@@ -451,15 +459,15 @@ msgstr "S"
 msgid "Show search in header"
 msgstr "Zobrazit vyhledávání v záhlaví"
 
-#: classes/class-twentytwenty-walker-page.php:134 inc/template-tags.php:545
+#: classes/class-twentytwenty-walker-page.php:107 inc/template-tags.php:555
 msgid "Show sub menu"
 msgstr "Zobrazit podmenu"
 
-#: functions.php:338
+#: functions.php:341
 msgid "Skip to the content"
 msgstr "Přejít k obsahu"
 
-#: functions.php:259
+#: functions.php:262
 msgid "Social Menu"
 msgstr "Menu sociálních sítí"
 
@@ -467,19 +475,19 @@ msgstr "Menu sociálních sítí"
 msgid "Social links"
 msgstr "Odkazy sociálních sítí"
 
-#: inc/template-tags.php:439
+#: inc/template-tags.php:445
 msgid "Sticky post"
 msgstr "Zvýrazněný příspěvek"
 
-#: functions.php:501
+#: functions.php:502
 msgid "Subtle Background"
 msgstr "Jemné pozadí"
 
-#: classes/class-twentytwenty-customize.php:249
+#: classes/class-twentytwenty-customize.php:270
 msgid "Summary"
 msgstr "Shrnutí"
 
-#: inc/template-tags.php:401
+#: inc/template-tags.php:407
 msgid "Tags"
 msgstr "Štítky"
 
@@ -495,11 +503,11 @@ msgstr "Možnosti šablony"
 msgid "We could not find any results for your search. You can give it another try through the search form below."
 msgstr "Pro vámi zadaný text nebylo nic nalezeno. Můžete to zkusit znovu pomocí níže uvedeného vyhledávacího formuláře."
 
-#: functions.php:365
+#: functions.php:368
 msgid "Widgets in this area will be displayed in the first column in the footer."
 msgstr "Widgety v této oblasti se zobrazí v prvním sloupci zápatí."
 
-#: functions.php:377
+#: functions.php:380
 msgid "Widgets in this area will be displayed in the second column in the footer."
 msgstr "Widgety v této oblasti se zobrazí ve druhém sloupci zápatí."
 
