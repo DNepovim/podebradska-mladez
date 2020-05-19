@@ -35,7 +35,7 @@ function get_daterange($event){
 			$date = date('j. n. Y', $start);
 	} else {
 		if(date('m', $start) == date('m', $end)){
-			$date = date('j.', $start) . ' – ' . date('j. n. Y', $end);
+			$date = date('j.', $start) . '–' . date('j. n. Y', $end);
 		} else {
 			$date = date('j. n.', $start) . ' – ' . date('j. n. Y', $end);
 		}
