@@ -7,15 +7,7 @@
 
 {block #main}
 	{each}
-		<artitcle class="article">
-				<header class="article-header yeah-12 yeah-m-8">
-					<h1 class="article-title" n:ifcontent>{$Post|wp_title}</h1>
-					<p class="article-subtitle">{$Post|daterange}, {$Post|wp_meta:pm_position|wp_title}</p>
-					<div class="article-hashtags" n:ifcontent>
-						<span class="article-hashtags-item hashtag" n:foreach="$hashtags as $hashtag">{$hashtag}</span>
-					</div>
-				</header>
-
+		<article class="article">
 			{if has_post_thumbnail()}
 				<figure class="yeah-12 yeah-m-10">
 					<a data-lightbox="inviation" href="{get_the_post_thumbnail_url($Post, 'full')}">

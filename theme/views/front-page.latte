@@ -6,7 +6,7 @@
 
 {block #main}
 	{if $nextEvent}
-		<article class="invitation-text box view-white view-article" n:ifcontent>
+		<article class="invitation-text view-article" n:ifcontent>
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
 					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
@@ -19,7 +19,7 @@
 					</a>
 				</div>
 			{else}
-				<div class="invitation-image view-empty box">
+				<div class="invitation-image box view-empty view-border">
 					<p class="invitation-text text">Příští akce pro mládež<br>poděbradského seniorátu je</p>
 					<h1 class="invitation-title">{$nextEvent|wp_title}</h1>
 					<h2 class="invitation-subtitle">{$nextEvent|daterange}</h2>

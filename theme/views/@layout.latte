@@ -54,6 +54,7 @@
 				<h1 class="site-title site-cover-titles">
 					<span class="site-cover-title">{get_the_ID()|wp_title}</span><br>
 					<span class="site-cover-sub">{get_the_ID()|wp_meta:pm_subtitle}</span>
+					<span class="site-cover-sub" n:if="get_post_type(get_the_ID()) == 'events'">{get_the_ID()|daterange}{if (get_the_ID()|wp_meta:pm_position)}, {get_the_ID()|wp_meta:pm_position|wp_title}{/if}</span>
 				</h1>
 		</div>
 		<img id="parallax-image" n:class="site-cover-img, 'view-' . meta(get_the_ID(), pm_cover_position)" src="{get_the_ID()|wp_meta:pm_cover_image|wp_image:cover}" srcset="{wp_get_attachment_image_srcset((get_the_ID()|wp_meta:pm_cover_image))|noescape}" alt="">

@@ -7,9 +7,7 @@
 		</a>
 		<div class="post-thumb-content">
 			<h1 class="post-thumb-title title view-medium"><a href="{$event|wp_permalink}">{$event|wp_title}</a></h1>
-			<p class="post-thumb-subtitle">{$event|daterange}, {$event|wp_meta:pm_position|wp_title}</p>
-			<div class="post-thumb-hashtags" n:ifcontent>
-				<span class="post-thumb-hashtags-item hashtag" n:foreach="get_event_hashtags($event->ID) as $hashtag">{$hashtag}</span>
-			</div>
+			<p class="post-thumb-subtitle">{$event|daterange}{if ($event|wp_meta:pm_position)}, {$event|wp_meta:pm_position|wp_title}{/if}</p>
+			<span class="post-thumb-hashtag hashtag" n:foreach="get_event_hashtags($event->ID) as $hashtag">{$hashtag}</span>
 		</div>
 	</div>
