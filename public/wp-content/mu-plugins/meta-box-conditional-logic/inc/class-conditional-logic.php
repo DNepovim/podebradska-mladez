@@ -28,7 +28,7 @@ class MB_Conditional_Logic
 		// backward compatibility
 		$url = defined( 'MBC_JS_URL' ) ? MBC_JS_URL : $url . 'assets/js/';
 
-		wp_register_script( 'conditional-logic', $url . 'conditional-logic.js', array(), '1.4', true );
+		wp_register_script( 'conditional-logic', $url . 'conditional-logic.js', ['jquery'], '1.4', true );
 
 		wp_localize_script( 'conditional-logic', 'conditions', $conditions );
 

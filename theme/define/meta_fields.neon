@@ -32,7 +32,7 @@ register:
 			show_additional_fields:
 				name: Další pole
 				type: switch
-				default: false
+				std: false
 			additional_fields:
 				type: repeater
 				add_button: Přidat pole
@@ -43,6 +43,7 @@ register:
 					type:
 						name: typ
 						type: button_group
+						std: text
 						options:
 							text: '<span class="dashicons dashicons-editor-textcolor"></span> text'
 							textarea: '<span class="dashicons dashicons-text"></span> area'
@@ -53,6 +54,7 @@ register:
 						type: repeater
 						desc: Pouze u radio a checkboxlistu.
 						add_button: Přidat možnost
+						visible: ['pm_type', in, [radio, checkboxlist]]
 						fields:
 							value:
 								type: text

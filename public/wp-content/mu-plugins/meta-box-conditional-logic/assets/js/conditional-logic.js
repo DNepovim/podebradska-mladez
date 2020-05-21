@@ -432,7 +432,7 @@
 
 	// Listening eventSource apply conditional logic when eventSource is change
 	if (window.eventSource.length > 1) {
-		$(window.eventSource).on('change keyup click', function(event) {
+		$('#poststuff').on('change keyup click', window.eventSource, function(event) {
 			runConditionalLogic(conditions);
 		});
 	}
