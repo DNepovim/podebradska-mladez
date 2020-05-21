@@ -7,6 +7,10 @@ register_nav_menu('main_menu', 'Hlavní menu');
 register_nav_menu('links_menu', 'Odkazy');
 register_nav_menu('footer_menu', 'Patička');
 
+add_action('admin_init', function() {
+	remove_post_type_support('page', 'thumbnail');
+});
+
 function get_menu_items($menuName) {
 	if ($locations = get_nav_menu_locations()) {
 		if (!empty($locations[$menuName])) {
