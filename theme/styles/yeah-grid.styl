@@ -111,14 +111,15 @@ for key, break in $breakpoints
 	z-index 5
 	right 0
 	transition right 300ms
+	margin-top -16px
 	margin-right auto
 	margin-left auto
-	margin-top $gap * 2
-	padding  ($gap / 2) $gap
+	padding 0 ($gap / 2) $gap
 	clearfix()
 
-	@media $break.s
-		margin-top -2rem
+	@media $breakM.l
+		overflow hidden
+
 
 .yeah-center
 	display block

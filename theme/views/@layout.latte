@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {default $activeLang = get_active_lang_code()}
+{default $id = get_the_ID()}
 
 <html lang="{$activeLang}">
 <head>
@@ -46,18 +47,19 @@
 
 	{$mangoSnippet}
 
-
 	<input type="checkbox" class="burger-check" id="burger-check">
 
-	<div id="parallax-container" class="site-cover" n:if="get_page_template_slug() !== 'template-registerlist.php'">
+	{include components/burger.latte}
+
+	<div id="parallax-container" n:class="site-cover, !($id|wp_meta:pm_cover_image) ? 'view-no-image'" n:if="get_page_template_slug() !== 'template-registerlist.php'">
 		<div id="parallax-title" class="site-cover-in container">
 				<h1 class="site-title site-cover-titles">
-					<span class="site-cover-title">{get_the_ID()|wp_title}</span><br>
-					<span class="site-cover-sub">{get_the_ID()|wp_meta:pm_subtitle}</span>
-					<span class="site-cover-sub" n:if="get_post_type(get_the_ID()) == 'events'">{get_the_ID()|daterange}{if (get_the_ID()|wp_meta:pm_position)}, {get_the_ID()|wp_meta:pm_position|wp_title}{/if}</span>
+					<span class="site-cover-title">{$id|wp_title}</span><br>
+					<span class="site-cover-sub">{$id|wp_meta:pm_subtitle}</span>
+					<span class="site-cover-sub" n:if="get_post_type($id) == 'events'">{$id|daterange}{if ($id|wp_meta:pm_position)}, {$id|wp_meta:pm_position|wp_title}{/if}</span>
 				</h1>
 		</div>
-		<img id="parallax-image" n:class="site-cover-img, 'view-' . meta(get_the_ID(), pm_cover_position)" src="{get_the_ID()|wp_meta:pm_cover_image|wp_image:cover}" srcset="{wp_get_attachment_image_srcset((get_the_ID()|wp_meta:pm_cover_image))|noescape}" alt="">
+		<img n:if="($id|wp_meta:pm_cover_image)" id="parallax-image" n:class="site-cover-img, 'view-' . meta($id, pm_cover_position)" src="{$id|wp_meta:pm_cover_image|wp_image:cover}" srcset="{wp_get_attachment_image_srcset(($id|wp_meta:pm_cover_image))|noescape}" alt="">
 	</div>
 
 	{if is_user_logged_in()}

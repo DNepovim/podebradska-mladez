@@ -8,7 +8,9 @@
 		display block
 		clear both
 
-	&-title
+	.title
+		margin-top 0.6em
+
 		a
 			text-decoration none
 
@@ -25,6 +27,9 @@
 		margin 0
 
 	@media $break.s
+		.title
+			margin-top 0
+
 		&-image
 			float left
 			margin-right 1rem

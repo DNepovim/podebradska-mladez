@@ -4,35 +4,53 @@
 	overflow hidden
 
 	&-img
-		absolute right 0 left 0
+		absolute top 0 right 0 left 0
 		width 100%
 
-		&.view-top
-			top 0
-		&.view-middle
-			top -50%
-		&.view-bottom
-			bottom 0
-
 	&-titles
-		position absolute
-		z-index 10
 		margin 0
-		top 6rem
 
 	&-title
-		display inline-block
+		display inline
 		color $brand
 		background-color $blank
-		font-size 4rem
+		font-size 3rem
 		margin-bottom 0.4rem
 		text-decoration none
+		line-height 1.3em
 
 	&-sub
 		color $blank
 		background-color $brand
 		font-size 1.6rem
+		line-height 1.3em
 		text-decoration none
 
 	.container
 		margin-top 5rem
+
+	&.view-no-image
+		height auto
+
+	@media $breakM.l
+		&-img
+			height 100%
+			object-fit cover
+
+	@media $break.l
+		&-img
+			&.view-top
+				top 0
+			&.view-middle
+				top -50%
+			&.view-bottom
+				bottom 0
+
+		&-titles
+			position absolute
+			z-index 10
+			top 6rem
+
+		&-title
+			font-size 4rem
+

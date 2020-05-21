@@ -1,21 +1,29 @@
 .burger
 	display none
 
+	&-wrap
+		display none
+
 	&-check
 		display none
 
 	@media $breakM.l
 		display block
 		position relative
-		padding 10px 20px
-		margin-left auto
-		margin-right @margin-left
-		size 2rem 20px
+		height 0.8rem
+		padding 0 10px
+		margin-left 4px
+
+		&-text
+			display inline-block
+			color $brand
+			font-size 0.8rem
+			text-transform uppercase
 
 		&-spin
 			display block
 			absolute left 0 right 0
-			size 100% 3px
+			size 100% 2px
 			border-radius 1.5rem
 			background-color $brand
 			transition opacity 500ms, transform 300ms, top 300ms, bottom 300ms
@@ -32,35 +40,38 @@
 		&-nav
 			transition right 300ms, left 300ms
 
+		&-wrap
+			absolute top 8px right 8px
+			z-index 20
+			background-color $blank
+			padding 4px
+			border-radius $radius
+			display flex
+			align-items center
 
 		&-container
 			fixed top 0 left 100vw
 			z-index 60
 			size 80vw 100vh
 			padding 3rem 5%
-			box-shadow 0 2px 4px 0 rgba(0,0,0,0.08)
+			box-shadow -2px 0px 3px #80808038;
 			background-color $blank
 			transition left 300ms
 
-
-		&-check:checked ~ .container
-			right 80vw
-
+		&-check:checked ~ &-wrap
 			.burger
 				&-spin
 					&.view-one
-						top calc(50% - 1.5px)
+						top calc(50% - 1px)
 						transform rotate(-45deg)
 
 					&.view-two
 						opacity 0
 
 					&.view-three
-						bottom calc(50% - 1.5px)
+						bottom calc(50% - 0.5px)
 						transform rotate(45deg)
 
-				&-container
-					left 20vw
-
-				&-nav
-					left -80vw
+		&-check:checked ~ .container
+			.burger-container
+				left 20vw
