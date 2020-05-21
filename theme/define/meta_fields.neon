@@ -52,7 +52,6 @@ register:
 					options:
 						name: Možnosti
 						type: repeater
-						desc: Pouze u radio a checkboxlistu.
 						add_button: Přidat možnost
 						visible: ['pm_type', in, [radio, checkboxlist]]
 						fields:
