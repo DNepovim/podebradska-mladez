@@ -5,7 +5,7 @@
 	var conditions = window.conditions;
 	/**
 	 * Compare two variables
-	 * 
+	 *
 	 * @param Mixed needle Variable 1
 	 * @param Mixed haystack Variable 2
 	 * @param String Compare Operator
@@ -40,7 +40,7 @@
 
 			case 'contains':
 				if ( $.isArray(needle) )
-					return $.inArray( haystack, needle ) > -1;  
+					return $.inArray( haystack, needle ) > -1;
 				else if ( $.type(needle) == 'string')
 					return needle.indexOf( haystack ) > -1;
 
@@ -62,10 +62,10 @@
 
 			case 'start_with':
 				return needle.indexOf(haystack) === 0;
-			
+
 			case 'starts with':
 				return needle.indexOf(haystack) === 0;
-				
+
 			case 'end_with':
 				haystack = new RegExp(haystack + '$');
 				return haystack.test(needle);
@@ -83,12 +83,12 @@
 					return checkCompareStatement(needle, haystack[0], '>=') && checkCompareStatement(needle, haystack[1], '<=');
 		}
 	}
-	
+
 	/**
 	 * Put a selector, then retrieve values
-	 * 
+	 *
 	 * @param  Element selector Element Selector
-	 * 
+	 *
 	 * @return Mixed Selector values
 	 */
 	function getFieldValue(fieldName, $scope)
@@ -97,15 +97,15 @@
 		if ( checkCompareStatement( fieldName, '(', 'contains' ) )
 			return eval(fieldName);
 
-		if ($('#' + fieldName).length && $( '#' + fieldName).attr('type') !== 'checkbox' 
+		if ($('#' + fieldName).length && $( '#' + fieldName).attr('type') !== 'checkbox'
 			&& typeof $('#' + fieldName).val() != 'undefined' && $('#' + fieldName).val() != null && $scope == '')
 			fieldName = '#' + fieldName;
 
 		// If fieldName start with #. Then it's an ID, just return it values
-		if (checkCompareStatement( fieldName, '#', 'start_with') && $(fieldName).attr('type') !== 'checkbox' 
+		if (checkCompareStatement( fieldName, '#', 'start_with') && $(fieldName).attr('type') !== 'checkbox'
 			&& typeof $(fieldName).val() != 'undefined' && $(fieldName).val() != null && $scope == '' )
 		{
-			return $(fieldName).val();	
+			return $(fieldName).val();
 		}
 
 		var selector = null;
@@ -134,7 +134,7 @@
 				var arr 		= [],
 					elements 	= [];
 
-				if ( selectorType === 'hidden' && fieldName !== 'post_category' && 
+				if ( selectorType === 'hidden' && fieldName !== 'post_category' &&
 					! checkCompareStatement(selector, 'tax_input', 'contains') )
 					elements = ($scope != '') ? $scope.find(selector) : $(selector);
 				else
@@ -167,14 +167,14 @@
 
 		return 0;
 	}
-	
+
 	/**
 	 * Check if logics attached to fields is correct or not
-	 * 
+	 *
 	 * If a field is hidden by Conditional Logic, then all dependent fields are hidden also
-	 * 
+	 *
 	 * @param  Array  logics All logics applied to field
-	 * 
+	 *
 	 * @return {Boolean}
 	 */
 	function isLogicCorrect(logics, $field)
@@ -182,17 +182,17 @@
 		var relation 	= ( typeof logics.relation != 'undefined' ) ? logics.relation : 'and',
 			success 	= relation == 'and';
 
-		$.each( logics.when, function( index, logic ) 
+		$.each( logics.when, function( index, logic )
 		{
-			// Get scope of current field. Scope is only applied for Group field. 
+			// Get scope of current field. Scope is only applied for Group field.
 			// A scope is a group or whole meta box which contains event source and current field.
 			var $scope = getFieldScope($field, logic[0]);
-			
+
 			var dependentField = guessSelector(logic[0]);
 			dependentField = $scope != '' ? $scope.find(dependentField) : $(dependentField);
-			
+
 			var isDependentFieldVisible = dependentField.closest('.rwmb-field').attr('data-visible');
-			
+
 			if ( 'hidden' == isDependentFieldVisible ) {
 				success = 'hidden';
 			} else {
@@ -209,8 +209,8 @@
 				// Allows user using NOT statement.
 				if (checkCompareStatement(compare, 'not', 'contains') || checkCompareStatement(compare, '!', 'contains')) {
 					negative = true;
-					compare  = compare.replace( 'not', '' ); 
-					compare  = compare.replace( '!', '' ); 
+					compare  = compare.replace( 'not', '' );
+					compare  = compare.replace( '!', '' );
 				}
 
 				compare = compare.trim();
@@ -234,7 +234,7 @@
 	{
 		eventSource = guessSelector(eventSource);
 
-		var $scope = '', 
+		var $scope = '',
 			$wrapper = $(eventSource).closest('.rwmb-clone');
 
 		if ( ! $wrapper.length || $field == '')
@@ -251,9 +251,9 @@
 
 	/**
 	 * Run all conditional logic statements then show / hide fields or meta boxes
-	 * 
+	 *
 	 * @param  Array conditions All defined conditional
-	 * 
+	 *
 	 * @return void
 	 */
 	function runConditionalLogic(conditions)
@@ -289,10 +289,10 @@
 		});
 
 		// Outside Conditions
-		$.each(conditions, function(field, logics) {	
+		$.each(conditions, function(field, logics) {
 
 			$.each(logics, function(action, logic) {
-				
+
 				if (typeof logic.when == 'undefined') return;
 
 				var selector 		= guessSelector(field),
@@ -310,23 +310,23 @@
 					if ( ! checkCompareStatement( single_logic[0], '(', 'contains' ) )
 					{
 						var singleLogicSelector = guessSelector(single_logic[0]);
-						
+
 						if (($.inArray(singleLogicSelector, window.eventSource) < 0) && typeof singleLogicSelector != 'undefined')
 							window.eventSource.push(singleLogicSelector);
 					}
 				});
 			});
 		});
-		
+
 		window.eventSource.push('.add-clone');
 		window.eventSource = window.eventSource.join();
 	}
 
 	/**
 	 * Guess the selector by field name
-	 * 
+	 *
 	 * @param  String fieldName Field Name
-	 * 
+	 *
 	 * @return String selector Field Selector
 	 */
 	function guessSelector(fieldName)
@@ -339,10 +339,10 @@
 
 		// If field id exists. Then return it values
 		try {
-			if ( $('#' + fieldName).length 
-				&& $('#' + fieldName).attr('type') !== 'checkbox' 
+			if ( $('#' + fieldName).length
+				&& $('#' + fieldName).attr('type') !== 'checkbox'
 				&& ! $('#' + fieldName).attr('name')
-			)	
+			)
 				return '#' + fieldName;
 
 			if ($('[name="' + fieldName + '"]').length)
@@ -360,7 +360,7 @@
 
 	function isUserDefinedSelector(fieldName)
 	{
-		return checkCompareStatement(fieldName, '.', 'starts with') || 
+		return checkCompareStatement(fieldName, '.', 'starts with') ||
 			checkCompareStatement(fieldName, '#', 'starts with') ||
 			checkCompareStatement(fieldName, '[name', 'contains') ||
 			checkCompareStatement(fieldName, '>', 'contains') ||
@@ -381,10 +381,10 @@
 
 	/**
 	 * Visible field or entire meta box
-	 * 
+	 *
 	 * @param  Element element Element Selector
 	 * @param String toggleType 'visibility' or 'display'
-	 * 
+	 *
 	 * @return void
 	 */
 	function applyVisible($element)
@@ -407,7 +407,7 @@
 	/**
 	 * Hide field or entire meta box
      * @param String toggleType 'visibility' or 'display'
-	 * 
+	 *
 	 * @return void
 	 */
 	function applyHidden($element)
