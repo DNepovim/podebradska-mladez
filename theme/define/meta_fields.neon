@@ -21,6 +21,7 @@ register:
 				type: post
 				post_type: maps
 				placeholder: Vyber místo
+				desc: 'Název mapy musí odpovídat názvu zastávky, aby správně fungovalo vyhledávání spojů.'
 
 	two:
 		title: Přihlašování

@@ -18,7 +18,7 @@
 		width 100%
 		border-radius $radius
 		margin 0
-		padding 0.4em 0.7em
+		padding 0.4em 0.7em 0.4em
 		border solid 1px $light-gray
 		background-color rgba(255, 255, 255, 0.4)
 		transition background 300ms, border 300ms
@@ -38,12 +38,12 @@
 
 	&-label
 		display block
+		color $brand
 		font-size 0.8rem
-		color $gray
 
 	&-add-symbol
 		absolute top 0 right 0
-		size 2rem 2.7rem
+		size 2rem 100%
 		display flex
 		justify-content center
 		align-items center
@@ -82,7 +82,8 @@
 		display block
 		font-size 0.5rem
 		color $error
-		size 100% 0.6rem
+		width 100%
+		min-height 0.8rem
 		margin 0.2em 0
 
 	&-message
@@ -121,16 +122,15 @@
 			margin 0
 
 	&-checkbox
-		display block
+		display flex
 		font-size 0.7rem
 		margin 0.5em 0.4em
 		line-height 1em
 
 		input
-			margin-right 0.2em
+			margin-right 0.6em
 
 	&-fieldset
-		line-height 1.2em
 		margin-bottom 1rem
 
 	&-inline
@@ -163,10 +163,9 @@
 			absolute right 0 top 0
 			display inline-block
 			appearance none
-			width 25%
+			size 25% 100%
 			background-color $brand
 			color $blank
-			padding 0.5em 1em
 			border solid 1px $brand
 			border-radius  0 $radius $radius 0
 			transition background 300ms, color 300ms, border 300ms

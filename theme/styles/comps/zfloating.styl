@@ -1,12 +1,8 @@
 .floating
 	position relative
-	margin-bottom 0.5rem
 
 	&-input
-		margin 0
 		padding 0.7em 0.7em 0.1em
-		font-size 0.9em
-		line-height 1.7rem
 
 		&:focus
 		&:valid
@@ -16,10 +12,10 @@
 				transform none
 				color $brand
 				font-size 0.6rem
-				margin-left 0.3em
 
 	&-label
-		absolute top 1em left 1em
+		absolute top 50% left 1em
 		margin 0
+		transform translateY(-50%)
 		transition top 300ms, transform 300ms, font-size 300ms, margin 300ms, color 300ms
 		cursor text

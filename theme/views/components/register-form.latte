@@ -3,9 +3,11 @@
 	<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$nextEvent|wp_meta:pm_register_to|date:"j. n. Y"} za nižší cenu.</strong>:</div>
 	{foreach $inputs as $component}
 		<fieldset class="form-fieldset floating">
-			{input $component class => 'form-input floating-input'}
-			{label $component class => 'form-label floating-label'}
-			<label class="form-add-symbol" n:name="$component" n:if="$component==email">@</label>
+			<div class="form-item floating">
+				{input $component class => 'form-input floating-input'}
+				{label $component class => 'form-label floating-label'}
+				<label class="form-add-symbol" n:name="$component" n:if="$component==email">@</label>
+			</div>
 			<span class="form-error" data-for="frm-{$component}">{inputError $component}</span>
 		</fieldset>
 	{/foreach}
@@ -24,8 +26,7 @@
 		{if $_GET['success']}
 			Úspěšně jsem tě přihlásil na <br>{$event|wp_title}
 		{else}
-		 Něco se pokazilo.<br> Zkus to znovu, nebo mi napiš na mali <a href="mailto:nik@skaut.cz">nik@skaut.cz</a>.
-			{wpml_string('Někde se stala chyba. Zkuste to znovu.','form')}
+		 Něco se pokazilo.<br> Zkus to znovu, nebo mi napiš na mail <a href="mailto:dominik@evangnet.cz">dominik@evangnet.cz</a>.
 		{/if}
 	</div>
 
