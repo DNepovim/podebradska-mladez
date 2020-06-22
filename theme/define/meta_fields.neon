@@ -83,6 +83,7 @@ register:
 			position:
 				name: Mapa
 				type: textarea
+				sanitize_callback: none
 
 	five:
 		title: Pozice
