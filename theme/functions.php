@@ -32,13 +32,13 @@ $bgs = get_option('appearance-settings')['pm_bg_images'];
 $View->site_background = $bgs[rand(0, count($bgs)-1)];
 $View->gtm_code = $App->parameters['GTM'];
 
-function get_daterange($event){
+function get_daterange($event) {
 	$start = strtotime(meta($event->ID, 'pm_start_date'));
 	$end = strtotime(meta($event->ID, 'pm_end_date'));
 	if (date('dmy', $start) == date('dmy', $end)) {
 			$date = date('j. n. Y', $start);
 	} else {
-		if(date('m', $start) == date('m', $end)){
+		if (date('m', $start) == date('m', $end)) {
 			$date = date('j.', $start) . '–' . date('j. n. Y', $end);
 		} else {
 			$date = date('j. n.', $start) . ' – ' . date('j. n. Y', $end);
@@ -49,36 +49,35 @@ function get_daterange($event){
 };
 
 // Show date in admin posts list
-add_filter('post_row_actions', 'pm_post_row_actions', 10, 2);
-function pm_post_row_actions($actions, $post){
+add_filter('post_row_actions', function($actions, $post) {
 	if (get_post_type($post) == 'events') {
 		echo get_daterange($post);
 	}
 	return $actions;
-}
+}, 10, 2);
 
 // Sort events in admin by start date
-function custom_post_order($query){
-	if($query->get('post_type') === 'events' && $query->get('orderby') == ''){
+function custom_post_order($query) {
+	if ($query->get('post_type') === 'events' && $query->get('orderby') == '') {
 		$query->set('order', 'DESC');
 		$query->set('orderby', 'meta_value');
 		$query->set('meta_key', 'pm_start_date');
 	}
 }
-if(is_admin()){
-		add_action('pre_get_posts', 'custom_post_order');
+
+if (is_admin()) {
+	add_action('pre_get_posts', 'custom_post_order');
 }
 
 // Customize TinyMCE
-function format_TinyMCE( $in ) {
-		$in['block_formats'] = "Nadpis=h3; Podnadpis=h4; Odstavec=p";
-		$in['toolbar1'] = 'formatselect,bold,underline,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,spellchecker,wp_fullscreen,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help  ';
+add_filter('tiny_mce_before_init', function($in) {
+	$in['block_formats'] = "Nadpis=h3; Podnadpis=h4; Odstavec=p";
+	$in['toolbar1'] = 'formatselect,bold,underline,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,spellchecker,wp_fullscreen,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help  ';
 	$in['toolbar2'] = '';
 	return $in;
-}
-add_filter( 'tiny_mce_before_init', 'format_TinyMCE' );
+});
 
-function get_event_fb_posts($postID){
+function get_event_fb_posts($postID) {
 	$hashtag = meta($postID, 'pm_hashtag');
 	if (!empty($hashtag)) {
 		$args = [
@@ -145,6 +144,7 @@ function process_registration_form($values, $postID = false) {
 		'post_status' => 'private',
 		'meta_input'  => $meta_input
 	];
+
 	return wp_insert_post($post_data);
 }
 
@@ -161,13 +161,13 @@ function getNextEvent() {
 			]
 		]
 	];
+
 	$events = get_posts( $args );
 
 	return $events[0];
 }
 
-function isUserRegistered( $userID, $eventID ) {
-
+function isUserRegistered($userID, $eventID) {
 	$args = [
 		'post_type'   => 'participants',
 		'post_status' => 'private',
@@ -182,6 +182,7 @@ function isUserRegistered( $userID, $eventID ) {
 			]
 		]
 	];
+
 	if ( ! empty( sizeof( get_posts( $args ) ) ) ) {
 		return true;
 	} else {
@@ -207,7 +208,7 @@ function get_posts_by_title($post_title, $post_type) {
 	$results = $wpdb->get_results($search_query, ARRAY_N);
 
 	foreach($results as $key => $array){
-			$quote_ids[] = $array[0];
+		$quote_ids[] = $array[0];
 	}
 
 	return $quote_ids;
@@ -215,9 +216,7 @@ function get_posts_by_title($post_title, $post_type) {
 
 show_admin_bar(false);
 
-add_action('pre_render_view', 'create_admin_menu');
-
-function create_admin_menu() {
+add_action('pre_render_view', function() {
 	global $View;
 
 	$adminNavigation = [];
@@ -263,24 +262,14 @@ function create_admin_menu() {
 	];
 
 	$View->admin_navigation = $adminNavigation;
-}
+});
 
-function admin_default_page() {
+add_filter('login_redirect', function() {
   return '/prihlasovani';
-}
-add_filter('login_redirect', 'admin_default_page');
+});
 
-function show_google_photo_update_link() {
-	return '<a class="rwmb-button  button hide-if-no-js" href="/api/load-google-photos/' . $_GET['post'] . '">Nahrát fotky z google</a>';
-}
-
-function show_fb_update_link() {
-	return '<a class="rwmb-button  button hide-if-no-js" href="/api/load-fb-posts">Nahrát fotky z facebooku</a>';
-}
-
-function process_event_save($post_id) {
+add_action('save_post', function($post_id) {
 	if (get_post_type($post_id) == 'events') {
 		load_google_photos($post_id);
 	}
-}
-add_action( 'save_post', 'process_event_save' );
+});
