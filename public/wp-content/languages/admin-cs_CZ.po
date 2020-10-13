@@ -2,14 +2,22 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-11-28 17:09:47+0000\n"
+"PO-Revision-Date: 2020-06-02 07:40:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: cs_CZ\n"
 "Project-Id-Version: WordPress - 5.3.x - Administration\n"
+
+#: wp-admin/includes/theme.php:303
+msgid "Wide Blocks"
+msgstr "Široké bloky"
+
+#: wp-admin/includes/theme.php:280
+msgid "Block Editor Styles"
+msgstr "Styly blokového editoru"
 
 #: wp-admin/js/site-health.js:272
 msgid "All site health tests have finished running."
@@ -1307,7 +1315,7 @@ msgstr "Nahrát nový mediální soubor"
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:309
+#: wp-admin/about.php:314
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>WordPress %1$s</strong> opravuje bezpečnostní problém a %2$s další chybu."
@@ -1317,172 +1325,171 @@ msgstr[2] "<strong>WordPress %1$s</strong> opravuje bezpečnostní problém a %2
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:78 wp-admin/about.php:303
+#: wp-admin/about.php:83 wp-admin/about.php:308
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>WordPress %1$s</strong> opravuje %2$s chybu."
 msgstr[1] "<strong>WordPress %1$s</strong> opravuje %2$s chyby."
 msgstr[2] "<strong>WordPress %1$s</strong> opravuje %2$s chyb."
 
-#. translators: %s: WordPress version number
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:58 wp-admin/about.php:300
+#: wp-admin/about.php:305
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>WordPress %s</strong> opravuje několik bezpečnostních problémů."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:298
+#: wp-admin/about.php:303
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>WordPress %s</strong> opravuje bezpečnostní problém."
 
-#: wp-admin/about.php:294
+#: wp-admin/about.php:299
 msgid "Maintenance and Security Release"
 msgstr "Opravná a bezpečnostní verze"
 
-#: wp-admin/about.php:292
+#: wp-admin/about.php:297
 msgid "Security Releases"
 msgstr "Bezpečnostní verze"
 
-#: wp-admin/about.php:291
+#: wp-admin/about.php:296
 msgid "Security Release"
 msgstr "Bezpečnostní verze"
 
-#: wp-admin/about.php:289
+#: wp-admin/about.php:294
 msgid "Maintenance Releases"
 msgstr "Opravné verze"
 
-#: wp-admin/about.php:288
+#: wp-admin/about.php:293
 msgid "Maintenance Release"
 msgstr "Opravná verze"
 
-#: wp-admin/about.php:278
+#: wp-admin/about.php:283
 msgid "Go to Dashboard"
 msgstr "Přejít na úvodní stránku administrace sítě webů &rarr; Nástěnka"
 
-#: wp-admin/about.php:278
+#: wp-admin/about.php:283
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Přejít na úvodní stránku administrace &rarr; Nástěnka"
 
-#: wp-admin/about.php:275
+#: wp-admin/about.php:280
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Zpět na přehled aktualizací"
 
-#: wp-admin/about.php:275
+#: wp-admin/about.php:280
 msgid "Return to Updates"
 msgstr "Zpět na přehled aktualizací"
 
 #. translators: %s: Link to the PHP 7 developer notes.
-#: wp-admin/about.php:262
+#: wp-admin/about.php:267
 msgid "WordPress 5.3 aims to fully support PHP 7.4. This release contains <a href=\"%s\">multiple changes</a> to remove deprecated functionality and ensure compatibility. WordPress continues to encourage all users to run the latest and greatest versions of PHP."
 msgstr "WordPress 5.3 má za cíl plně podporovat PHP 7.4. Tato verze obsahuje <a href=\"%s\">spoustu změn</a> pro odebrání nepoužívaných funkcí a zajištění kompatibility. WordPress nadále vybízí všechny uživatele k používání nejnovějších a nejlepších verzí PHP."
 
-#: wp-admin/about.php:257
+#: wp-admin/about.php:262
 msgid "PHP 7.4 Compatibility"
 msgstr "Kompatibilita s PHP 7.4"
 
 #. translators: %s: Link to the date/time developer notes.
-#: wp-admin/about.php:250
+#: wp-admin/about.php:255
 msgid "Developers can now work with <a href=\"%s\">dates and timezones</a> in a more reliable way. Date and time functionality has received a number of new API functions for unified timezone retrieval and PHP interoperability, as well as many bug fixes."
 msgstr "Vývojáři mohou nyní pracovat s <a href=\"%s\">daty a s časovými zónami</a> spolehlivějším způsobem. Funkce data a času obdržela opravu spousty chyb, ale především řadu nových API funkcí, pro jednotné načítání časového pásma a pro vzájemnou funkční spolupráci s PHP."
 
-#: wp-admin/about.php:245
+#: wp-admin/about.php:250
 msgid "Date/Time Component Fixes"
 msgstr "Opravy komponenty data a času"
 
-#: wp-admin/about.php:242
+#: wp-admin/about.php:247
 msgid "For Developers"
 msgstr "Novinky pro vývojáře"
 
-#: wp-admin/about.php:227
+#: wp-admin/about.php:232
 msgid "You’ll now be periodically asked to confirm that your admin email address is up to date when you log in as an administrator. This reduces the chance of getting locked out of your site if you change your email address."
 msgstr "Nyní budete pravidelně vyzýváni, k potvrzení aktuálnosti administrační emailové adresy webu, jakmile se přihlásíte jako uživatel s nejvyšším oprávněním. Tím se sníží pravděpodobnost, že se při změně emailové adresy nebudete moci dostat na web."
 
-#: wp-admin/about.php:226
+#: wp-admin/about.php:231
 msgid "Admin Email Verification"
 msgstr "Ověření emailu administrátora"
 
-#: wp-admin/about.php:223
+#: wp-admin/about.php:228
 msgid "The improvements introduced in 5.3 make it even easier to identify issues. Expanded recommendations highlight areas that may need troubleshooting on your site from the Health Check screen."
 msgstr "Vylepšení přestavená ve verzi 5.3 ještě více usnadňují identifikaci problémů. Rozšířená doporučení poukazují na oblasti, které mohou potřebovat řešení potíží na webu na stránce stavu webu."
 
-#: wp-admin/about.php:222
+#: wp-admin/about.php:227
 msgid "Site Health Checks"
 msgstr "Kontrola stavu webu"
 
-#: wp-admin/about.php:219
+#: wp-admin/about.php:224
 msgid "Your images will be correctly rotated upon upload according to the embedded orientation data. This feature was first proposed nine years ago and made possible through the perserverance of many dedicated contributors."
 msgstr "Obrázky budou po nahrání správně natočeny, podle vložených dat. Tato funkce byla poprvé navržena před devíti lety a byla uskutečněna až nyní díky vytrvalosti spoustě nadšených přispěvatelů."
 
-#: wp-admin/about.php:218
+#: wp-admin/about.php:223
 msgid "Automatic Image Rotation"
 msgstr "Automatické otáčení obrázků"
 
-#: wp-admin/about.php:215
+#: wp-admin/about.php:220
 msgid "Improvements for Everyone"
 msgstr "Vylepšení pro každého"
 
 #. translators: %s: Link to the Inter font website.
-#: wp-admin/about.php:191
+#: wp-admin/about.php:196
 msgid "As befits a theme called Twenty Twenty, clarity and readability is also a big focus. The theme includes the typeface <a href=\"%s\">Inter</a>, designed by Rasmus Andersson. Inter comes in a Variable Font version, a first for default themes, which keeps load times short by containing all weights and styles of Inter in just two font files."
 msgstr "Stejně jako u šablony Twenty Twenty, jasnost a čitelnost je také hlavním středem pozornosti. Šablona obsahuje písmo <a href=\"%s\">Inter</a>, které navrhl Rasmus Andersson. Inter přichází ve verzi variabilního fontu, první pro výchozí šablony, které zkracuje dobu načítání tím, že obsahuje všechny tloušťky a styly pouze ve dvou souborech."
 
-#: wp-admin/about.php:185
+#: wp-admin/about.php:190
 msgid "As the block editor celebrates its first birthday, we are proud that Twenty Twenty is designed with flexibility at its core. Show off your services or products with a combination of columns, groups, and media blocks. Set your content to wide or full alignment for dynamic and engaging layouts. Or let your thoughts be the star with a centered content column!"
 msgstr "Vzhledem k tomu, že blokový editor slaví své první narozeniny, jsme hrdí, že Twenty Twenty je ve svém jádru navržena velice flexibilně. Předveďte své služby nebo produkty pomocí kombinace sloupců, skupin a mediálních bloků. Nastavte obsah na široké, nebo celostránkové zarovnání pro dynamické a poutavé rozvržení. Případně nechte své myšlenky být hvězdou středu sloupce!"
 
-#: wp-admin/about.php:184
+#: wp-admin/about.php:189
 msgid "Introducing Twenty Twenty"
 msgstr "Představujeme šablonu Twenty Twenty"
 
-#: wp-admin/about.php:172
+#: wp-admin/about.php:177
 msgid "Additional style options allow you to set your preferred style for any block that supports this feature"
 msgstr "Další možnosti stylu umožňují nastavit upřednostňovaný styl pro jakýkoliv blok, který tuto funkci podporuje."
 
-#: wp-admin/about.php:171
+#: wp-admin/about.php:176
 msgid "Heading blocks now offer controls for text color"
 msgstr "Bloky nadpisů nyní nabízejí ovládací prvky pro barvu textu."
 
-#: wp-admin/about.php:170
+#: wp-admin/about.php:175
 msgid "The new Predefined layouts make it a cinch to arrange content into advanced designs"
 msgstr "Nová předdefinovaná rozvržení usnadňují uspořádání obsahu do pokročilých vzhledů."
 
-#: wp-admin/about.php:169
+#: wp-admin/about.php:174
 msgid "The Columns block now supports fixed column widths"
 msgstr "Blok „Sloupce“ nyní podporuje pevné šířky sloupců."
 
-#: wp-admin/about.php:168
+#: wp-admin/about.php:173
 msgid "The new Group block lets you easily divide your page into colorful sections"
 msgstr "Nový blok „Skupina“ umožňuje snadno rozdělit stránku na barevné sekce."
 
 #. translators: %s: The current WordPress version number.
-#: wp-admin/about.php:162
+#: wp-admin/about.php:167
 msgid "WordPress %s adds even more robust tools for creating amazing designs."
 msgstr "WordPress %s přidává ještě robustnější nástroje pro vytváření úžasných designů."
 
-#: wp-admin/about.php:157
+#: wp-admin/about.php:162
 msgid "Expanded Design Flexibility"
 msgstr "Rozšířená flexibilita designu"
 
-#: wp-admin/about.php:150
+#: wp-admin/about.php:155
 msgid "Accessibility improvements include the integration of block editor styles in the admin interface. These improved styles fix many accessibility issues: color contrast on form fields and buttons, consistency between editor and admin interfaces, new snackbar notices, standardizing to the default WordPress color scheme, and the introduction of Motion to make interacting with your blocks feel swift and natural. For people who use a keyboard to navigate the dashboard, the block editor now has a Navigation mode. This lets you jump from block to block without tabbing through every part of the block controls."
 msgstr "Mezi vylepšení přístupnosti patří integrace stylů blokového editoru v administraci. Tyto vylepšené styly řeší mnoho problémů s usnadněním přístupu: barevný kontrast u polí formuláře a tlačítek, konzistence mezi rozhraním editoru a administrace, nová vyskakovací oznámení, standardizace výchozího barevného schématu WordPressu a zavedení pohybů při interakci s bloky. Pro uživatele, kteří používají klávesnici k navigaci na nástěnce, je nyní v blokovém editoru nový režim navigace. Ten umožňuje přeskakovat z bloku do bloku, aniž by bylo nutné procházet všechny ovládací prvky bloku."
 
-#: wp-admin/about.php:146
+#: wp-admin/about.php:151
 msgid "This enhancement-focused update introduces over 150 new features and usability improvements, including improved large image support for uploading non-optimized, high-resolution pictures taken from your smartphone or other high-quality cameras. Combined with larger default image sizes, pictures always look their best."
 msgstr "Tato aktualizace je zaměřena na různá vylepšení a zavádí více než 150 nových funkcí a zkvalitnění použitelnosti, včetně zdokonalené podpory velkých obrázků - nahrávání neoptimalizovaných obrázků s vysokým rozlišením, které jsou nahrávány z chytrých telefonů nebo fotoaparátů s vysokým rozlišením. V kombinaci s většími výchozími velikostmi obrázků vypadají vždy úžasně."
 
-#: wp-admin/about.php:144
+#: wp-admin/about.php:149
 msgid "Block Editor Improvements"
 msgstr "Vylepšení editoru bloků"
 
-#: wp-admin/about.php:131
+#: wp-admin/about.php:136
 msgid "5.3 expands and refines the block editor introduced in WordPress 5.0 with a new block, more intuitive interactions, and improved accessibility. New features in the editor increase design freedoms, provide additional layout options and style variations to allow designers complete control over the look of a site. This release also introduces the Twenty Twenty theme giving the user more design flexibility and integration with the block editor. Creating beautiful web pages and advanced layouts has never been easier."
 msgstr "WordPress 5.3 rozšiřuje a upravuje nový editor, představený ve WordPressu 5.0, novými bloky, intuitivnější interakcí a vylepšenou přístupností. Nové funkce v editoru zvyšují svobodu vzhledu, poskytují další možnosti rozvržení a varianty stylu umožňující designérům úplnou kontrolu nad vzhledem webu. Tato verze také představuje šablonu Twenty Twenty, která uživateli nabízí větší flexibilitu designu a integraci s blokovým editorem. Vytváření krásných webů a pokročilých rozvržení nebylo nikdy jednodušší."
 
 #. translators: %s: HelpHub URL
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:65 wp-admin/about.php:90 wp-admin/about.php:115
-#: wp-admin/about.php:321
+#: wp-admin/about.php:70 wp-admin/about.php:95 wp-admin/about.php:120
+#: wp-admin/about.php:326
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Podrobnější informace naleznete na oficiální <a href=\"%s\">stránce o této verzi</a> (anglicky)."
 
@@ -1490,14 +1497,14 @@ msgstr "Podrobnější informace naleznete na oficiální <a href=\"%s\">stránc
 #. than one security issue.
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:103 wp-admin/about.php:315
+#: wp-admin/about.php:58 wp-admin/about.php:108 wp-admin/about.php:320
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>WordPress %1$s</strong> opravuje několik bezpečnostních problémů a %2$s další chybu."
 msgstr[1] "<strong>WordPress %1$s</strong> opravuje několik bezpečnostních problémů a %2$s další chyby."
 msgstr[2] "<strong>WordPress %1$s</strong> opravuje několik bezpečnostních problémů a %2$s dalších chyb."
 
-#: wp-admin/about.php:53 wp-admin/about.php:295
+#: wp-admin/about.php:53 wp-admin/about.php:300
 msgid "Maintenance and Security Releases"
 msgstr "Opravné a bezpečnostní verze"
 
@@ -10133,10 +10140,6 @@ msgstr "Zvýraznit příspěvek na úvodní stránce"
 msgid "Edit visibility"
 msgstr "Upravit viditelnost"
 
-#: wp-admin/includes/meta-boxes.php:158 wp-admin/includes/meta-boxes.php:183
-msgid "Password protected"
-msgstr "Chráněno heslem"
-
 #: wp-admin/includes/meta-boxes.php:125
 msgid "Set status"
 msgstr "Nastavit stav"
@@ -10180,19 +10183,19 @@ msgid "WordPress is at the latest version."
 msgstr "Používáte nejnovější verzi WordPressu."
 
 #. translators: %s: Page title.
-#: wp-admin/includes/misc.php:1378
+#: wp-admin/includes/misc.php:1401
 msgid "%s (Draft)"
 msgstr "%s (Koncept)"
 
 #. translators: New admin email address notification email subject. %s: Site
 #. title.
-#: wp-admin/includes/misc.php:1352
+#: wp-admin/includes/misc.php:1375
 msgid "[%s] New Admin Email Address"
 msgstr "[%s] Nová emailová adresa administrátora"
 
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
-#: wp-admin/includes/misc.php:1299
+#: wp-admin/includes/misc.php:1322
 msgid ""
 "Howdy ###USERNAME###,\n"
 "\n"
@@ -10229,32 +10232,32 @@ msgstr ""
 "###SITEURL###"
 
 #. translators: %s: Date and time.
-#: wp-admin/includes/misc.php:1196
+#: wp-admin/includes/misc.php:1219
 msgid "Draft saved at %s."
 msgstr "Koncept byl uložen (%s)."
 
 #. translators: Draft saved date format, see https://secure.php.net/date
-#: wp-admin/includes/misc.php:1192
+#: wp-admin/includes/misc.php:1215
 msgid "g:i:s a"
 msgstr "G:i"
 
-#: wp-admin/includes/misc.php:1188 wp-admin/includes/post.php:1927
+#: wp-admin/includes/misc.php:1211 wp-admin/includes/post.php:1927
 #: wp-admin/widgets.php:378
 msgid "Error while saving."
 msgstr "Během ukládání změn se objevila nečekaná chyba."
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/misc.php:1068
+#: wp-admin/includes/misc.php:1091
 msgid "%s has taken over and is currently editing."
 msgstr "Uživatel %s převzal správu obsahu, a právě provádí úpravy."
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/misc.php:1018
+#: wp-admin/includes/misc.php:1041
 #: wp-admin/includes/class-wp-posts-list-table.php:1003
 msgid "%s is currently editing"
 msgstr "%s právě provádí úpravy"
 
-#: wp-admin/includes/misc.php:917 wp-admin/user-edit.php:295
+#: wp-admin/includes/misc.php:940 wp-admin/user-edit.php:295
 msgid "Admin Color Scheme"
 msgstr "Barevné schéma administrace"
 
@@ -11160,8 +11163,8 @@ msgstr "Je dostupný <a href=\"%1$s\">WordPress %2$s</a>! <a href=\"%3$s\" aria-
 #. translators: %s: WordPress version.
 #. translators: %s: WordPress version
 #: wp-admin/includes/update.php:280 wp-admin/install.php:239
-#: wp-admin/update-core.php:78 wp-admin/upgrade.php:83 wp-admin/about.php:68
-#: wp-admin/about.php:93 wp-admin/about.php:118
+#: wp-admin/update-core.php:78 wp-admin/upgrade.php:83 wp-admin/about.php:73
+#: wp-admin/about.php:98 wp-admin/about.php:123
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
@@ -11929,145 +11932,145 @@ msgstr "Zažádáno"
 msgid "Requester"
 msgstr "Žadatel"
 
-#: wp-admin/includes/theme.php:934
+#: wp-admin/includes/theme.php:936
 msgid "Go to the Themes screen"
 msgstr "Přejít na stránku šablon"
 
-#: wp-admin/includes/theme.php:932
+#: wp-admin/includes/theme.php:934
 msgid "You can find more details and make changes on the Themes screen."
 msgstr "Na stránce šablon se můžete dozvědět více informací a provést nezbytné změny."
 
-#: wp-admin/includes/theme.php:931
+#: wp-admin/includes/theme.php:933
 msgid "One or more themes failed to load properly."
 msgstr "Minimálně jednu šablonu se nepodařilo správně načíst."
 
-#: wp-admin/includes/theme.php:904
+#: wp-admin/includes/theme.php:906
 msgid "Could not resume the theme."
 msgstr "Šablonu se nepodařilo obnovit."
 
 #. translators: %s: Plugin name.
-#: wp-admin/includes/theme.php:792
+#: wp-admin/includes/theme.php:794
 #: wp-admin/includes/class-wp-theme-install-list-table.php:483
 #: wp-admin/includes/deprecated.php:1383 wp-admin/theme-install.php:300
 #: wp-admin/theme-install.php:320
 msgid "Install"
 msgstr "Instalovat"
 
-#: wp-admin/includes/theme.php:776 wp-admin/themes.php:590
+#: wp-admin/includes/theme.php:778 wp-admin/themes.php:590
 msgid "Tags:"
 msgstr "Vlastnosti:"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/theme.php:766 wp-admin/themes.php:584
+#: wp-admin/includes/theme.php:768 wp-admin/themes.php:584
 msgid "This is a child theme of %s."
 msgstr "Základní šablona: %s."
 
-#: wp-admin/includes/theme.php:756 wp-admin/themes.php:574
+#: wp-admin/includes/theme.php:758 wp-admin/themes.php:574
 msgid "Update Available"
 msgstr "Nová verze šablony je dostupná"
 
 #. translators: %s: Number of ratings.
-#: wp-admin/includes/theme.php:745 wp-admin/theme-install.php:342
+#: wp-admin/includes/theme.php:747 wp-admin/theme-install.php:342
 msgid "(%s ratings)"
 msgstr "(%s hodnocení)"
 
 #. translators: %s: Theme version.
-#: wp-admin/includes/theme.php:727 wp-admin/themes.php:562
+#: wp-admin/includes/theme.php:729 wp-admin/themes.php:562
 #: wp-admin/theme-install.php:352
 msgid "Version: %s"
 msgstr "Verze: %s"
 
-#: wp-admin/includes/theme.php:722 wp-admin/themes.php:557
+#: wp-admin/includes/theme.php:724 wp-admin/themes.php:557
 msgid "Current Theme"
 msgstr "Aktuální šablona"
 
-#: wp-admin/includes/theme.php:709 wp-admin/themes.php:544
+#: wp-admin/includes/theme.php:711 wp-admin/themes.php:544
 msgid "Close details dialog"
 msgstr "Zavřít rámec s podrobnostmi"
 
-#: wp-admin/includes/theme.php:708 wp-admin/themes.php:543
+#: wp-admin/includes/theme.php:710 wp-admin/themes.php:543
 msgid "Show next theme"
 msgstr "Zobrazit další šablonu"
 
-#: wp-admin/includes/theme.php:707 wp-admin/themes.php:542
+#: wp-admin/includes/theme.php:709 wp-admin/themes.php:542
 msgid "Show previous theme"
 msgstr "Zobrazit předchozí šablonu"
 
-#: wp-admin/includes/theme.php:301
+#: wp-admin/includes/theme.php:302
 msgid "Right Sidebar"
 msgstr "Postranní panel vpravo"
 
-#: wp-admin/includes/theme.php:300
+#: wp-admin/includes/theme.php:301
 msgid "Left Sidebar"
 msgstr "Postranní panel vlevo"
 
-#: wp-admin/includes/theme.php:299
+#: wp-admin/includes/theme.php:300
 msgid "Four Columns"
 msgstr "4 sloupce"
 
-#: wp-admin/includes/theme.php:298
+#: wp-admin/includes/theme.php:299
 msgid "Three Columns"
 msgstr "3 sloupce"
 
-#: wp-admin/includes/theme.php:297
+#: wp-admin/includes/theme.php:298
 msgid "Two Columns"
 msgstr "2 sloupce"
 
-#: wp-admin/includes/theme.php:296
+#: wp-admin/includes/theme.php:297
 msgid "One Column"
 msgstr "1 sloupec"
 
-#: wp-admin/includes/theme.php:295
+#: wp-admin/includes/theme.php:296
 msgid "Grid Layout"
 msgstr "Mřížkové rozvržení"
 
-#: wp-admin/includes/theme.php:294 wp-admin/includes/theme.php:329
+#: wp-admin/includes/theme.php:295 wp-admin/includes/theme.php:331
 #: wp-admin/includes/class-wp-screen.php:1164 wp-admin/index.php:68
 msgid "Layout"
 msgstr "Grafické rozvržení"
 
-#: wp-admin/includes/theme.php:291
+#: wp-admin/includes/theme.php:292
 msgid "Theme Options"
 msgstr "Rozšířené možnosti nastavení"
 
-#: wp-admin/includes/theme.php:290
+#: wp-admin/includes/theme.php:291
 msgid "Sticky Post"
 msgstr "Zvýrazněné příspěvky"
 
-#: wp-admin/includes/theme.php:289 wp-admin/includes/meta-boxes.php:472
+#: wp-admin/includes/theme.php:290 wp-admin/includes/meta-boxes.php:472
 msgid "Post Formats"
 msgstr "Formáty příspěvků"
 
-#: wp-admin/includes/theme.php:288
+#: wp-admin/includes/theme.php:289
 msgid "Full Width Template"
 msgstr "Šablona pro celou šířku webu"
 
-#: wp-admin/includes/theme.php:287
+#: wp-admin/includes/theme.php:288
 msgid "Footer Widgets"
 msgstr "Widgety v zápatí"
 
-#: wp-admin/includes/theme.php:286
+#: wp-admin/includes/theme.php:287
 msgid "Featured Images"
 msgstr "Náhledové obrázky"
 
-#: wp-admin/includes/theme.php:285
+#: wp-admin/includes/theme.php:286
 msgid "Featured Image Header"
 msgstr "Náhledový obrázek v záhlaví"
 
-#: wp-admin/includes/theme.php:284
+#: wp-admin/includes/theme.php:285
 msgid "Editor Style"
 msgstr "Stylování vizuálního editoru"
 
-#: wp-admin/includes/theme.php:283
+#: wp-admin/includes/theme.php:284
 msgid "Custom Logo"
 msgstr "Vlastní logo"
 
-#: wp-admin/includes/theme.php:282
+#: wp-admin/includes/theme.php:283
 #: wp-admin/includes/class-custom-image-header.php:475
 msgid "Custom Header"
 msgstr "Uživatelské nastavení záhlaví"
 
-#: wp-admin/includes/theme.php:281
+#: wp-admin/includes/theme.php:282
 msgid "Custom Colors"
 msgstr "Uživatelské nastavení barev"
 
@@ -12075,7 +12078,7 @@ msgstr "Uživatelské nastavení barev"
 msgid "Accessibility Ready"
 msgstr "Dodržování pravidel přístupnosti webu"
 
-#: wp-admin/includes/theme.php:278 wp-admin/includes/theme.php:330
+#: wp-admin/includes/theme.php:278 wp-admin/includes/theme.php:332
 msgid "Features"
 msgstr "Potřebné funkce"
 
@@ -12115,7 +12118,7 @@ msgstr "E-shop"
 msgid "Blog"
 msgstr "Blog"
 
-#: wp-admin/includes/theme.php:266 wp-admin/includes/theme.php:331
+#: wp-admin/includes/theme.php:266 wp-admin/includes/theme.php:333
 msgid "Subject"
 msgstr "Možnosti použití"
 
@@ -12264,7 +12267,7 @@ msgid "You can now manage and live-preview Custom Backgrounds in the <a href=\"%
 msgstr "Uživatelské nastavení pozadí můžete nyní snadno provádět v rámci <a href=\"%s\">aktuálního náhledu</a>."
 
 #: wp-admin/includes/class-custom-background.php:226
-#: wp-admin/includes/theme.php:280
+#: wp-admin/includes/theme.php:281
 msgid "Custom Background"
 msgstr "Uživatelské nastavení pozadí"
 
@@ -12491,7 +12494,7 @@ msgstr "Verze %s"
 #: wp-admin/includes/class-wp-debug-data.php:845
 #: wp-admin/includes/class-wp-debug-data.php:1038
 #: wp-admin/includes/class-wp-themes-list-table.php:263
-#: wp-admin/includes/theme.php:733
+#: wp-admin/includes/theme.php:735
 #: wp-admin/includes/class-wp-plugins-list-table.php:906
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:507
 #: wp-admin/includes/class-wp-theme-install-list-table.php:360
@@ -13073,7 +13076,7 @@ msgstr "Filtrovat podle rubriky"
 #: wp-admin/includes/class-wp-links-list-table.php:88
 #: wp-admin/includes/class-wp-links-list-table.php:333
 #: wp-admin/includes/class-wp-themes-list-table.php:233
-#: wp-admin/includes/theme.php:787
+#: wp-admin/includes/theme.php:789
 #: wp-admin/includes/class-wp-plugins-list-table.php:533
 #: wp-admin/includes/class-wp-plugins-list-table.php:701
 #: wp-admin/includes/class-wp-plugins-list-table.php:750

@@ -2,14 +2,18 @@
 # This file is distributed under the same license as the WordPress - 5.3.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-01-27 14:39:02+0000\n"
+"PO-Revision-Date: 2020-06-11 08:59:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: cs_CZ\n"
 "Project-Id-Version: WordPress - 5.3.x\n"
+
+#: wp-includes/comment-template.php:601
+msgid "Password protected"
+msgstr "Chráněno heslem"
 
 #: wp-includes/js/dist/nux.js:905
 msgid "Disable tips"
@@ -3797,33 +3801,33 @@ msgstr "Menu s názvem %s je v konfliktu s jiným názvem menu. Zkuste jej nazva
 msgid "Nav menu locations must be strings."
 msgstr "Pozice navigačního menu musí být řetězce."
 
-#: wp-includes/class-walker-comment.php:304
+#: wp-includes/class-walker-comment.php:343
 msgid "(Edit)"
 msgstr "(Upravit)"
 
 #. translators: 1: Comment date, 2: Comment time.
-#: wp-includes/class-walker-comment.php:300
-#: wp-includes/class-walker-comment.php:388
+#: wp-includes/class-walker-comment.php:339
+#: wp-includes/class-walker-comment.php:434
 msgid "%1$s at %2$s"
 msgstr "%1$s (%2$s)"
 
 #. translators: %s: Comment author link.
-#: wp-includes/class-walker-comment.php:287
-#: wp-includes/class-walker-comment.php:377
+#: wp-includes/class-walker-comment.php:326
+#: wp-includes/class-walker-comment.php:423
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">napsal:</span>"
 
-#: wp-includes/class-walker-comment.php:271
-#: wp-includes/class-walker-comment.php:361
+#: wp-includes/class-walker-comment.php:304
+#: wp-includes/class-walker-comment.php:402
 msgid "Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved."
 msgstr "Váš komentář čeká na schválení. Toto je náhled, váš komentář bude viditelný až po schválení."
 
-#: wp-includes/class-walker-comment.php:269
-#: wp-includes/class-walker-comment.php:359
+#: wp-includes/class-walker-comment.php:302
+#: wp-includes/class-walker-comment.php:400
 msgid "Your comment is awaiting moderation."
 msgstr "Komentář čeká na schválení."
 
-#: wp-includes/class-walker-comment.php:242
+#: wp-includes/class-walker-comment.php:250
 msgid "Pingback:"
 msgstr "Pingback:"
 
@@ -5037,8 +5041,8 @@ msgid "Paste URL or type to search"
 msgstr "Vložte URL adresu, nebo zadejte hledaný výraz"
 
 #: wp-includes/class-wp-editor.php:1291
-#: wp-includes/class-walker-comment.php:242
-#: wp-includes/class-walker-comment.php:392 wp-includes/js/dist/editor.js:11740
+#: wp-includes/class-walker-comment.php:250
+#: wp-includes/class-walker-comment.php:438 wp-includes/js/dist/editor.js:11740
 #: wp-includes/js/dist/block-editor.js:15685
 #: wp-includes/js/dist/block-library.js:15862
 msgid "Edit"
@@ -7019,92 +7023,92 @@ msgstr "Příspěvky od %s"
 msgid "Visit %s&#8217;s website"
 msgstr "Navštívit web %s"
 
-#: wp-includes/comment-template.php:2415
+#: wp-includes/comment-template.php:2420
 msgid "Post Comment"
 msgstr "Odeslat komentář"
 
-#: wp-includes/comment-template.php:2414
+#: wp-includes/comment-template.php:2419
 msgid "Cancel reply"
 msgstr "Zrušit odpověď na komentář"
 
-#: wp-includes/comment-template.php:2396
+#: wp-includes/comment-template.php:2401
 msgid "Your email address will not be published."
 msgstr "Vaše emailová adresa nebude zveřejněna."
 
 #. translators: %s: User name.
-#: wp-includes/comment-template.php:2386
+#: wp-includes/comment-template.php:2391
 msgid "Logged in as %s. Edit your profile."
 msgstr "Přihlášený uživatel: %s. Upravit profil."
 
 #. translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4:
 #. Logout URL.
-#: wp-includes/comment-template.php:2383
+#: wp-includes/comment-template.php:2388
 msgid "<a href=\"%1$s\" aria-label=\"%2$s\">Logged in as %3$s</a>. <a href=\"%4$s\">Log out?</a>"
 msgstr "<a href=\"%1$s\" aria-label=\"%2$s\">Přihlášený uživatel: %3$s</a>. <a href=\"%4$s\">Odhlásit se?</a>"
 
 #. translators: %s: Login URL.
-#: wp-includes/comment-template.php:2374
+#: wp-includes/comment-template.php:2379
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Pro přidávání komentářů se musíte nejdříve <a href=\"%s\">přihlásit</a>."
 
 #. translators: %s: Asterisk symbol (*).
-#: wp-includes/comment-template.php:2347
+#: wp-includes/comment-template.php:2352
 msgid "Required fields are marked %s"
 msgstr "Vyžadované informace jsou označeny %s"
 
-#: wp-includes/comment-template.php:2335
+#: wp-includes/comment-template.php:2340
 msgid "Save my name, email, and website in this browser for the next time I comment."
 msgstr "Uložit do prohlížeče jméno, email a webovou stránku pro budoucí komentáře."
 
-#: wp-includes/comment-template.php:2314
+#: wp-includes/comment-template.php:2319
 msgid "Website"
 msgstr "Webová stránka"
 
-#: wp-includes/comment-template.php:2287
+#: wp-includes/comment-template.php:2292
 msgid "Name"
 msgstr "Název"
 
 #. translators: %s: Author of the comment being replied to.
-#: wp-includes/comment-template.php:1943 wp-includes/comment-template.php:2409
+#: wp-includes/comment-template.php:1948 wp-includes/comment-template.php:2414
 msgid "Leave a Reply to %s"
 msgstr "Napsat komentář: %s"
 
-#: wp-includes/comment-template.php:1939 wp-includes/comment-template.php:2407
+#: wp-includes/comment-template.php:1944 wp-includes/comment-template.php:2412
 msgid "Leave a Reply"
 msgstr "Napsat komentář"
 
-#: wp-includes/comment-template.php:1844
+#: wp-includes/comment-template.php:1849
 msgid "Click here to cancel reply."
 msgstr "Odpověď na komentář zrušíte zde."
 
-#: wp-includes/comment-template.php:1772
+#: wp-includes/comment-template.php:1777
 msgid "Log in to leave a Comment"
 msgstr "Pro vložení komentáře se musíte přihlásit"
 
-#: wp-includes/comment-template.php:1771
+#: wp-includes/comment-template.php:1776
 msgid "Leave a Comment"
 msgstr "Napsat komentář"
 
-#: wp-includes/comment-template.php:1634
+#: wp-includes/comment-template.php:1639
 msgid "Log in to Reply"
 msgstr "Pro vložení odpovědi na komentář se musíte přihlásit"
 
 #. translators: Comment reply button text. %s: Comment author name.
-#: wp-includes/comment-template.php:1633
+#: wp-includes/comment-template.php:1638
 msgid "Reply to %s"
 msgstr "Odpovědět: %s"
 
-#: wp-includes/comment-template.php:1559
+#: wp-includes/comment-template.php:1564
 msgid "Enter your password to view comments."
 msgstr "Pro zobrazení komentářů zadejte heslo."
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1550
+#: wp-includes/comment-template.php:1555
 msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Komentáře nejsou povolené<span class=\"screen-reader-text\"> u textu s názvem %s</span>"
 
 #. translators: 1: Number of comments, 2: Post title.
-#: wp-includes/comment-template.php:1544
+#: wp-includes/comment-template.php:1549
 msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
 msgid_plural "%1$s Comments<span class=\"screen-reader-text\"> on %2$s</span>"
 msgstr[0] "%1$s komentář<span class=\"screen-reader-text\"> u textu s názvem %2$s</span>"
@@ -7112,49 +7116,49 @@ msgstr[1] "%1$s komentáře<span class=\"screen-reader-text\"> u textu s názvem
 msgstr[2] "%1$s komentářů <span class=\"screen-reader-text\"> u textu s názvem %2$s</span>"
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1539
+#: wp-includes/comment-template.php:1544
 msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "1 komentář<span class=\"screen-reader-text\"> u textu s názvem %s</span>"
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1534
+#: wp-includes/comment-template.php:1539
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Žádné komentáře<span class=\"screen-reader-text\"> u textu s názvem %s</span>"
 
 #. translators: %s: get_trackback_url()
 #. translators: %s: get_the_author()
-#: wp-includes/comment-template.php:1157 wp-includes/author-template.php:70
+#: wp-includes/comment-template.php:1162 wp-includes/author-template.php:70
 msgid "Use %s instead if you do not want the value echoed."
 msgstr "Místo toho použijte %s, pokud nechcete hodnotu opakovat."
 
-#: wp-includes/comment-template.php:1098
+#: wp-includes/comment-template.php:1103
 msgid "Pingback"
 msgstr "Pingback"
 
-#: wp-includes/comment-template.php:1095
+#: wp-includes/comment-template.php:1100
 msgid "Trackback"
 msgstr "Trackback"
 
-#: wp-includes/comment-template.php:1092 wp-includes/comment-template.php:2366
+#: wp-includes/comment-template.php:1097 wp-includes/comment-template.php:2371
 msgctxt "noun"
 msgid "Comment"
 msgstr "Komentář"
 
-#: wp-includes/comment-template.php:930
+#: wp-includes/comment-template.php:935
 msgid "1 Comment"
 msgstr "1 komentář"
 
-#: wp-includes/comment-template.php:928
+#: wp-includes/comment-template.php:933
 msgid "No Comments"
 msgstr "Žádné komentáře"
 
-#: wp-includes/comment-template.php:907
+#: wp-includes/comment-template.php:912
 msgctxt "Comment number declension: on or off"
 msgid "off"
 msgstr "on"
 
 #. translators: %s: Number of comments.
-#: wp-includes/comment-template.php:900 wp-includes/comment-template.php:915
+#: wp-includes/comment-template.php:905 wp-includes/comment-template.php:920
 msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] "%s komentář"
@@ -7162,7 +7166,7 @@ msgstr[1] "%s komentáře"
 msgstr[2] "%s komentářů"
 
 #. translators: Maximum number of words used in a comment excerpt.
-#: wp-includes/comment-template.php:600
+#: wp-includes/comment-template.php:605
 msgctxt "comment_excerpt_length"
 msgid "20"
 msgstr "20"
@@ -11200,36 +11204,36 @@ msgstr "Akce"
 msgid "<a href=\"%1$s\" %2$s>Describe the purpose of the image%3$s</a>. Leave empty if the image is purely decorative."
 msgstr "<a href=\"%1$s\" %2$s>Popište smysl obrázku%3$s</a>. Nevyplňujte jestli je obrázek čistě dekorativní."
 
-#: wp-includes/embed.php:1159
+#: wp-includes/embed.php:1172
 msgid "Close sharing dialog"
 msgstr "Zavřít okno pro sdílení"
 
-#: wp-includes/embed.php:1154
+#: wp-includes/embed.php:1167
 msgid "Copy and paste this code into your site to embed"
 msgstr "Pro vložení obsahu, zkopírujte a vložte tento kód na váš web"
 
-#: wp-includes/embed.php:1147
+#: wp-includes/embed.php:1160
 msgid "Copy and paste this URL into your WordPress site to embed"
 msgstr "Pro vložení na váš web používající WordPress, zkopírujte a vložte tuto adresu URL"
 
-#: wp-includes/embed.php:1140
+#: wp-includes/embed.php:1153
 msgid "HTML Embed"
 msgstr "Vložit do HTML"
 
-#: wp-includes/embed.php:1137
+#: wp-includes/embed.php:1150
 msgid "WordPress Embed"
 msgstr "WordPress vložení"
 
-#: wp-includes/embed.php:1132
+#: wp-includes/embed.php:1145
 msgid "Sharing options"
 msgstr "Možnosti sdílení obsahu"
 
-#: wp-includes/embed.php:1115
+#: wp-includes/embed.php:1128
 msgid "Open sharing dialog"
 msgstr "Otevřít okno pro sdílení"
 
 #. translators: %s: Number of comments.
-#: wp-includes/embed.php:1091
+#: wp-includes/embed.php:1104
 msgid "%s <span class=\"screen-reader-text\">Comment</span>"
 msgid_plural "%s <span class=\"screen-reader-text\">Comments</span>"
 msgstr[0] "%s <span class=\"screen-reader-text\">komentář</span>"
@@ -11237,7 +11241,7 @@ msgstr[1] "%s <span class=\"screen-reader-text\">komentáře</span>"
 msgstr[2] "%s <span class=\"screen-reader-text\">komentářů</span>"
 
 #. translators: %s: Post title.
-#: wp-includes/embed.php:933 wp-includes/post-template.php:296
+#: wp-includes/embed.php:946 wp-includes/post-template.php:296
 msgid "Continue reading %s"
 msgstr "Pokračování textu %s"
 
@@ -11640,77 +11644,77 @@ msgid "Installed"
 msgstr "Instalované"
 
 #. translators: %d: Comment ID.
-#: wp-includes/comment.php:3587
+#: wp-includes/comment.php:3592
 msgid "Comment %d contains personal data but could not be anonymized."
 msgstr "Komentář %d obsahuje osobní údaje, které nemohly být anonymizovány."
 
 #. translators: Name of a comment's author after being anonymized.
-#: wp-includes/comment.php:3556 wp-includes/class-wp-theme.php:886
+#: wp-includes/comment.php:3561 wp-includes/class-wp-theme.php:886
 #: wp-includes/comment-template.php:32
 msgid "Anonymous"
 msgstr "Anonym"
 
-#: wp-includes/comment.php:3486
+#: wp-includes/comment.php:3491
 msgid "User&#8217;s comment data."
 msgstr "Údaje o komentářích uživatele."
 
-#: wp-includes/comment.php:3442
+#: wp-includes/comment.php:3447
 msgid "Comment URL"
 msgstr "URL adresa komentáře"
 
-#: wp-includes/comment.php:3441
+#: wp-includes/comment.php:3446
 msgid "Comment Content"
 msgstr "Obsah komentáře"
 
-#: wp-includes/comment.php:3440
+#: wp-includes/comment.php:3445
 msgid "Comment Date"
 msgstr "Datum komentáře"
 
-#: wp-includes/comment.php:3439
+#: wp-includes/comment.php:3444
 msgid "Comment Author User Agent"
 msgstr "User agent autora komentáře"
 
-#: wp-includes/comment.php:3438
+#: wp-includes/comment.php:3443
 msgid "Comment Author IP"
 msgstr "IP adresa autora komentáře"
 
-#: wp-includes/comment.php:3437
+#: wp-includes/comment.php:3442
 msgid "Comment Author URL"
 msgstr "URL adresa autora komentáře"
 
-#: wp-includes/comment.php:3436
+#: wp-includes/comment.php:3441
 msgid "Comment Author Email"
 msgstr "Email autora komentáře"
 
-#: wp-includes/comment.php:3435
+#: wp-includes/comment.php:3440
 msgid "Comment Author"
 msgstr "Autor komentáře"
 
-#: wp-includes/comment.php:3400 wp-includes/comment.php:3510
+#: wp-includes/comment.php:3405 wp-includes/comment.php:3515
 msgid "WordPress Comments"
 msgstr "Komentáře WordPressu"
 
-#: wp-includes/comment.php:3384
+#: wp-includes/comment.php:3389
 msgid "<strong>ERROR</strong>: The comment could not be saved. Please try again later."
 msgstr "<strong>CHYBA</strong>: Komentář nemohl být bohužel uložen. Zkuste to prosím později."
 
-#: wp-includes/comment.php:3370
+#: wp-includes/comment.php:3375
 msgid "<strong>ERROR</strong>: please type a comment."
 msgstr "<strong>CHYBA</strong>: Zadejte prosím nějaký text komentáře."
 
-#: wp-includes/comment.php:3345
+#: wp-includes/comment.php:3350
 msgid "<strong>ERROR</strong>: please enter a valid email address."
 msgstr "<strong>CHYBA</strong>: Zadejte prosím platnou emailovou adresu."
 
-#: wp-includes/comment.php:3343
+#: wp-includes/comment.php:3348
 msgid "<strong>ERROR</strong>: please fill the required fields (name, email)."
 msgstr "<strong>CHYBA</strong>: Doplňte prosím všechny požadované informace (jméno, email)."
 
-#: wp-includes/comment.php:3283
+#: wp-includes/comment.php:3288
 msgid "Sorry, comments are not allowed for this item."
 msgstr "Komentáře k tomuto příspěvku nejsou bohužel povoleny."
 
-#: wp-includes/comment.php:2273
+#: wp-includes/comment.php:2278
 msgid "Could not update comment status"
 msgstr "Nepodařilo se aktualizovat stav komentáře"
 
@@ -13370,7 +13374,7 @@ msgstr "Nemáte dostatečné oprávnění pro úpravy „%s“ u komentářů."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:408
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:425
-#: wp-includes/comment.php:3335
+#: wp-includes/comment.php:3340
 msgid "Sorry, you must be logged in to comment."
 msgstr "Pro přidání komentáře se musíte nejdříve přihlásit."
 
@@ -14475,7 +14479,7 @@ msgstr "Je vyžadován komentář."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3869
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:481
-#: wp-includes/comment.php:3256
+#: wp-includes/comment.php:3261
 msgid "Sorry, comments are closed for this item."
 msgstr "Komentáře k tomuto příspěvku nejsou bohužel povoleny."
 
@@ -15711,7 +15715,7 @@ msgstr "Přesuňte sem nějaké prvky"
 msgid "Comments (%s)"
 msgstr "Komentáře (%s)"
 
-#: wp-includes/script-loader.php:1653 wp-includes/comment.php:3485
+#: wp-includes/script-loader.php:1653 wp-includes/comment.php:3490
 #: wp-includes/link-template.php:3042 wp-includes/link-template.php:3102
 msgid "Comments"
 msgstr "Komentáře"
@@ -15732,7 +15736,7 @@ msgstr ""
 "Opravdu chcete upravit tento komentář?\n"
 "Provedené změny budou nenávratně ztraceny."
 
-#: wp-includes/script-loader.php:1650 wp-includes/comment-template.php:1631
+#: wp-includes/script-loader.php:1650 wp-includes/comment-template.php:1636
 msgid "Reply"
 msgstr "Odpovědět"
 
@@ -17182,7 +17186,7 @@ msgstr "Zapomněli jste heslo?"
 msgid "Registration confirmation will be emailed to you."
 msgstr "Potvrzení o registraci bude zasláno emailem."
 
-#: wp-login.php:1078 wp-includes/comment-template.php:2300
+#: wp-login.php:1078 wp-includes/comment-template.php:2305
 msgid "Email"
 msgstr "Email"
 
