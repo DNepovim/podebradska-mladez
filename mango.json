@@ -10,8 +10,7 @@
     "theme/styles/game.scss"
   ],
   "scripts": [
-    "theme/scripts/index.es6",
-    "theme/scripts/wp-admin.es6"
+    "theme/scripts/index.ts"
   ],
   "images": [
     "theme/images/**/*.{jpg,png,gif}"
@@ -33,7 +32,7 @@
     "public/assets/scripts/index.js"
   ],
   "watch": [
-    "theme/**/*.{latte,php}"
+    "theme/**/*.{latte,php,ts}"
   ],
   "hooks": {
     "init": "mango install"

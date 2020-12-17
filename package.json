@@ -1,9 +1,27 @@
 {
+  "name": "podebradska-mladez",
+  "version": "1.0.0",
+  "repository": "git@github.com:DNepovim/podebradska-mladez.git",
+  "author": "Dominik Bláha <jsem@dominikblaha.cz>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --mode development --watch"
+  },
   "resolutions": {
     "@babel/preset-env": "7.5.5"
   },
   "dependencies": {
-    "jquery": "^3.5.1",
-    "lightbox2": "^2.11.1"
-  }
+    "@mangoweb/scripts-base": "^0.0.15",
+    "@types/node": "^14.11.8",
+    "babel-loader": "^8.1.0",
+    "lightbox2": "^2.11.1",
+    "moment": "^2.29.1",
+    "ts-loader": "^8.0.5",
+    "webpack": "^5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3",
+    "webpack-cli": "^4.0.0"
+  },
+  "typings": "lib"
 }
