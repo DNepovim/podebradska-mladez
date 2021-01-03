@@ -1,0 +1,5 @@
+{var $rules = (bool)$input[pm_required] ? json_encode([['op' => ':filled', 'msg' => 'Toto pole je nutné vyplnit.']]) : false}
+
+<fieldset class="form-fieldset">
+	{block input}{/block}
+</fieldset>

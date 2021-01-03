@@ -1,38 +1,50 @@
-{form $Forms[register], id => register-form, class=> 'form box view-border', novalidate => ''}
-	{var $inputs = ['firstname', 'surname', 'email']}
-	<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$nextEvent|wp_meta:pm_register_to|date:"j. n. Y"} za nižší cenu.</strong>:</div>
-	{foreach $inputs as $component}
+
+
+{form $Forms[register], id => register-form, class => 'form box view-border'}
+	<div class="form-text">Přihlaš se na <strong>{$nextEvent|wp_title}</strong> do <strong>{$nextEvent|wp_meta:pm_register_to|date:"j. n. Y"} za nižší cenu</strong>:</div>
+
+	{foreach ['firstname', 'surname', 'email'] as $component}
 		<fieldset class="form-fieldset floating">
 			<div class="form-item floating">
-				{input $component class => 'form-input floating-input'}
+				{input $component class => 'form-input form-field floating-input'}
 				{label $component class => 'form-label floating-label'}
 				<label class="form-add-symbol" n:name="$component" n:if="$component==email">@</label>
 			</div>
 			<span class="form-error" data-for="frm-{$component}">{inputError $component}</span>
 		</fieldset>
 	{/foreach}
+
 	{if ($event|wp_meta:pm_show_additional_fields)}
 		{foreach ($event|wp_meta:pm_additional_fields) as $item}
-			{include 'form/' . $item[pm_type] . '.latte', 'input' => $item, 'name' => 'additional[' . $iterator->getCounter() . ']'}
+			{include
+				'form/' . $item[pm_type] . '.latte',
+				'input' => $item,
+				'name' => 'additional[' . $iterator->getCounter() . ']',
+				'value' => $form->getHttpData()['additional'][$iterator->getCounter()]
+			}
 		{/foreach}
 	{/if}
+
 	{input postID , value => $event->ID}
-	<button n:name="register" type="submit" class="button form-button">
+
+	<button n:name="register" type="submit" class="button form-button" id="form-submit">
 		Přihlaš mě
 		<i class="fa fa-angle-right icon" aria-hidden="true"></i>
 	</button>
 
-	<div n:class="message, $_GET['success'] ? 'view-success' : 'view-error'" n:if="isset($_GET['success'])">
-		{if $_GET['success']}
-			Úspěšně jsem tě přihlásil na <br>{$event|wp_title}
-		{else}
-		 Něco se pokazilo.<br> Zkus to znovu, nebo mi napiš na mail <a href="mailto:dominik@evangnet.cz">dominik@evangnet.cz</a>.
-		{/if}
+	<div n:class="form-message, !$_GET['success'] ? 'is-hidden'" id="form-success-message">
+			Úspěšně jsem tě přihlásil na <br>{$event|wp_title}.
+	</div>
+
+	<div n:class="form-message, !$form->getErrors() ? 'is-hidden'" id="form-error-message">
+		 	Něco se pokazilo.<br> Zkus to znovu, nebo nám <a href="mailto:{get_option('admin_email', 'sompodebradskehosenioratu@gmail.com')}">napiš</a>.
 	</div>
 
 	<div class="form-loader">
 		<div class="form-loader-content">
-			<svg class="form-loader-checkmark checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+			<svg class="form-loader-checkmark checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+				<circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+			</svg>
 			<p class="form-loader-message">Úspěšně jsem tě přihlásil na <br>{$event|wp_title}	</p>
 		</div>
 	</div>
@@ -48,9 +60,11 @@
 			}
 		},
 		{
-			name: 'form',
+			name: 'Form',
 			place: '#register-form',
-			data: { endpoint: '/api/register' }
+			props: {
+				endpoint: '/api/register'
+			}
 		}
 	)
 </script>

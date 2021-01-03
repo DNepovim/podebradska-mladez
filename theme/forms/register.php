@@ -18,10 +18,9 @@ $form->addtext('surname', 'Příjmení')
 
 $form->addText('email', 'E-mail')
 	->setRequired('Napiš nám sem prosím svůj e-mail, ať ti můžeme když tak poslat další informace.')
-	->addRule($form::EMAIL, 'Udělal jsi asi nějakou chybku v e-mailu.');
+	->addRule($form::EMAIL, 'Udělal jsi asi nějakou chybu v e-mailu.');
 
-$form->addSubmit('register', 'Přihlásit se')
-	->setAttribute('class', 'button form-button');
+$form->addSubmit('register', 'Přihlásit se');
 
 if(isFormValid($form, __FILE__)) {
 	$values = $form->getValues();

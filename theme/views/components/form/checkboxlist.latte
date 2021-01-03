@@ -1,7 +1,19 @@
-<fieldset class="form-fieldset">
-	<span class="form-label">{$input[pm_label]}</span>
+{layout 'inputWrapper.latte'}
+
+{block input}
 	<label for="{$name}[{$iterator->getCounter()}]" class="form-checkbox" n:foreach="$input[pm_options] as $option">
-		<input id="{$name}[{$iterator->getCounter()}]" value="{$option[pm_value]}" name="{$name}[{$iterator->getCounter()}]" type="checkbox">
+		<input
+			id="{$name}[{$iterator->getCounter()}]"
+			class="form-field"
+			value="{$option[pm_value]}"
+			name="{$name}[{$iterator->getCounter()}]"
+			type="checkbox"
+			n:attr="
+				required => (bool)$rules,
+				data-nette-rules => $rules,
+				checked => in_array($option[pm_value], $value)
+			"
+		>
 		{$option[pm_value]}
 	</label>
-</fieldset>
+{/block}

@@ -50,6 +50,14 @@ register:
 							textarea: '<span class="dashicons dashicons-text"></span> area'
 							radio: '<span class="dashicons dashicons-marker"></span> radio'
 							checkboxlist: '<span class="dashicons dashicons-yes"></span> checks'
+					required:
+						name: Povinné
+						type: switch
+						visible: ['pm_type', in, [text, textarea]]
+					error_message:
+						name: Vlastní chybová hláška
+						type: text
+						visible: [required, true]
 					options:
 						name: Možnosti
 						type: repeater

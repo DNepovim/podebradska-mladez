@@ -1,4 +1,17 @@
-<fieldset class="form-fieldset">
+{layout 'inputWrapper.latte'}
+
+{block input}
 	<label for="{$name}" class="form-label">{$input[pm_label]}</label>
-	<input id="{$name}" name="{$name}" type="text" class="form-input" {if $input[message]}required{/if}>
-</fieldset>
+	<input
+		id="frm-{$name}"
+		class="form-input form-field"
+		name="{$name}"
+		value="{$value}"
+		type="text"
+		n:attr="
+			required => (bool)$rules,
+			data-nette-rules => $rules
+		"
+	>
+	<span class="form-error" data-for="frm-{$name}">{$error}</span>
+{/block}

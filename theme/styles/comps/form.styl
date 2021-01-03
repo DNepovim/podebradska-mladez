@@ -82,6 +82,7 @@
 		display block
 		font-size 0.5rem
 		color $error
+		white-space pre-wrap
 		width 100%
 		min-height 0.8rem
 		margin 0.2em 0
@@ -92,15 +93,9 @@
 		margin 1rem
 		padding 1rem 0.5rem
 
-		&.view-success
-			background-color fade($brand, 10)
-			color $brand
-			border solid 1px $brand
+		&.is-hidden
+			display none
 
-		&.view-error
-			background-color fade($error, 10)
-			color $error
-			border solid 1px $error
 
 	&-late
 		color $brand
