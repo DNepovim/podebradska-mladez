@@ -19,8 +19,11 @@ p { margin: 0 }
 <title>Site is temporarily down for maintenance</title>
 
 <div class="msg">
-	<h1>We're Sorry</h1>
-	<p>The site is temporarily down for maintenance.<br>Please try again in a few minutes.</p>
+            <h1>Stránka je dočasně mimo provoz kvůli údržbě.</h1>
+            <p>Prosím zkuste to znovu později.</p>
+            <p>Omlouváme se za za nepříjemnosti.</p>
+            <p>Sledujte náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a></p>
+            <p><a href="mailto:sompodebradskehosenioratu@gmail.com">sompodebradskehosenioratu@gmail.com</a></p>
 </div>
 
 <script type="text/javascript">
