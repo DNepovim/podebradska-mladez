@@ -1,7 +1,7 @@
 {extends layouts/sidebar.latte}
 
 {block #head}
-	<link href="{$assetsPath}/node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+	<link href="{$assetsPath}/node_modules/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 {/block}
 
 {block #main}
@@ -9,7 +9,7 @@
 		<article class="invitation-text view-article" n:ifcontent>
 			{if has_post_thumbnail($nextEvent)}
 				<div class="invitation-image box">
-					<a href="{get_the_post_thumbnail_url($nextEvent, 'full')}" data-lightbox="invitation" class="invitation-link">
+					<a class="invitation-link glightbox" href="{get_the_post_thumbnail_url($nextEvent, 'full')}">
 						{$nextEvent|wp_thumbnail_id|imgsrcset:'
 							(max-width: 700px) calc(100% - 2rem),
 							(max-width: 900px) calc(100% * 2 / 3 - 2rem),
@@ -91,5 +91,8 @@
 
 {block #scripts}
 	{include #parent}
-	<script src="{$assetsPath}/node_modules/lightbox2/dist/js/lightbox.min.js" defer></script>
+	<script src="{$assetsPath}/node_modules/glightbox/dist/js/glightbox.min.js"></script>
+	<script type="text/javascript">
+		const lightbox = GLightbox();
+	</script>
 {/block}

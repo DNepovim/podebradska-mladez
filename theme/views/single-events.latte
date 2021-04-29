@@ -2,7 +2,7 @@
 {extends layouts/simple.latte}
 
 {block #head}
-	<link href="{$assetsPath}/node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+	<link href="{$assetsPath}/node_modules/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 {/block}
 
 {block #main}
@@ -10,7 +10,7 @@
 		<article class="article">
 			{if has_post_thumbnail()}
 				<figure class="yeah-12 yeah-m-10">
-					<a data-lightbox="inviation" href="{get_the_post_thumbnail_url($Post, 'full')}">
+					<a class="glightbox" href="{get_the_post_thumbnail_url($Post, 'full')}">
 						{$nextEvent|wp_thumbnail_id|imgsrcset:'
 							(max-width: 700px) calc(100% - 2rem),
 							(max-width: 900px) calc(100% * 2 / 3 - 2rem),
@@ -29,7 +29,7 @@
 				{foreach $fb_posts as $post}
 					{if meta($post->ID, 'fptc_image')}
 							<figure class="feed-item">
-								<a href="{$post|wp_meta:fptc_image|noescape}" data-lightbox="facebook" data-title="{$post|wp_meta:fptc_message}">
+								<a class="glightbox" href="{$post|wp_meta:fptc_image|noescape}" data-title="{$post|wp_meta:fptc_message}">
 									<img class="box feed-image" src="{$post|wp_meta:fptc_image|noescape}" alt="">
 								</a>
 								<figcaption class="feed-caption">{$post|wp_meta:fptc_message|hashtags|noescape}</figcaption>
@@ -55,5 +55,10 @@
 
 {block #scripts}
 	{include #parent}
-	<script src="{$assetsPath}/node_modules/lightbox2/dist/js/lightbox.min.js" defer></script>
+	<script src="{$assetsPath}/node_modules/glightbox/dist/js/glightbox.min.js"></script>
+	<script type="text/javascript">
+		const lightbox = GLightbox({
+			zoomable: false
+		});
+	</script>
 {/block}

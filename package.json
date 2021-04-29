@@ -15,7 +15,7 @@
     "@types/node": "^14.11.8",
     "babel-loader": "^8.1.0",
     "form-serialize": "^0.7.2",
-    "lightbox2": "^2.11.1",
+    "glightbox": "^3.0.8",
     "moment": "^2.29.1",
     "ts-loader": "^8.0.5",
     "webpack": "^5.1.0"

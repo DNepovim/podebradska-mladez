@@ -14,9 +14,8 @@
     "theme/libs/**",
     "theme/images/**/*.svg",
     "theme/fonts/**",
-    "node_modules/lightbox2/dist/js/lightbox.min.js",
-    "node_modules/lightbox2/dist/css/lightbox.min.css",
-    "node_modules/lightbox2/dist/images/*",
+    "node_modules/glightbox/dist/js/glightbox.min.js",
+    "node_modules/glightbox/dist/css/glightbox.min.css"
   ],
   "buildstamp": [
     "public/assets/styles/index.css",
