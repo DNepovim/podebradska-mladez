@@ -75,8 +75,6 @@ export class Form extends Component<Props, HTMLFormElement> {
 		})
 
 		if (isValid) {
-			console.log('Form valid')
-			console.log(this.getSerializedValues())
 			try {
 				const response = await fetch(this.props.endpoint, {
 					method: 'POST',
