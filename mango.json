@@ -17,7 +17,6 @@
     "node_modules/lightbox2/dist/js/lightbox.min.js",
     "node_modules/lightbox2/dist/css/lightbox.min.css",
     "node_modules/lightbox2/dist/images/*",
-    "theme/scripts/libs/2048/*"
   ],
   "buildstamp": [
     "public/assets/styles/index.css",
