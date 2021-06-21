@@ -18,19 +18,25 @@
 							670px'}
 					</a>
 				</div>
-			{else}
+			{/if}
+			{if !empty($nextEvent->post_content)}
+				<div class="box view-white view-padding">
+					<h1 class="invitation-title">{$nextEvent|wp_title}</h1>
+					<h2 class="invitation-subtitle">{$nextEvent|daterange}</h2>
+					<div class="article view-topm">
+						{$nextEvent|wp_content}
+					</div>
+				</div>
+			{/if}
+			{if !has_post_thumbnail($nextEvent) && empty($nextEvent->post_content)}
 				<div class="invitation-image box view-empty view-border">
 					<p class="invitation-text text">Příští akce pro mládež<br>poděbradského seniorátu je</p>
 					<h1 class="invitation-title">{$nextEvent|wp_title}</h1>
 					<h2 class="invitation-subtitle">{$nextEvent|daterange}</h2>
 					<p class="invitation-text text view-low">Brzo se dozvíš víc informací.</p>
-					<p class="invitation-text text text view-low">Zatím hoď voko na náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a>.</p>
+					<p class="invitation-text text view-low">Zatím hoď voko na náš <a href="https://www.facebook.com/podebradskamladez/" target="_blank">facebook</a>.</p>
 				</div>
 			{/if}
-			<div class="article box text view-white view-article" n:if="has_post_thumbnail($nextEvent)">
-				<h2>{$nextEvent|wp_title}</h2>
-				{$nextEvent|wp_content}
-			</div>
 		</article>
 	{else}
 		<div class="invitation-image invitation-image view-empty box">
