@@ -159,7 +159,6 @@ register:
 	six:
 		title: Cover
 		post_types:
-			- events
 			- page
 		context: side
 		fields:
